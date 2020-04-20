@@ -15,8 +15,9 @@
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/user_login_password"
@@ -28,28 +29,32 @@
         android:inputType="textPassword"
         android:singleLine="true"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/user_login_username"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_login_username" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="169dp"
         android:layout_height="204dp"
         android:layout_marginTop="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man"
-        tools:layout_editor_absoluteX="121dp" />
+        app:srcCompat="@drawable/man" />
 
     <Button
         android:id="@+id/user_login_btn1"
         android:layout_width="126dp"
         android:layout_height="51dp"
-        android:layout_marginStart="51dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="55dp"
+        android:layout_marginEnd="50dp"
         android:background="#979EA3"
         android:text="LOG IN"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/user_login_btn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_login_password" />
 
@@ -57,12 +62,14 @@
         android:id="@+id/user_login_btn2"
         android:layout_width="126dp"
         android:layout_height="51dp"
-        android:layout_marginStart="49dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="55dp"
+        android:layout_marginEnd="80dp"
         android:background="#979EA3"
         android:text="SIGN UP"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/user_login_btn1"
         app:layout_constraintTop_toBottomOf="@+id/user_login_password" />
 
