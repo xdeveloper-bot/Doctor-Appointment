@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/Doctor_id"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="#020202"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/Dooctor_pass"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Doctor_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Doctor_id" />
+
+    <Button
+        android:id="@+id/Doctor_login"
+        android:layout_width="126dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="55dp"
+        android:background="#979EA3"
+        android:ellipsize="none"
+        android:text="Log In"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#0328FB"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Dooctor_pass" />
+
+    <Button
+        android:id="@+id/doctor_sigin"
+        android:layout_width="126dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="55dp"
+        android:background="#979EA3"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/Doctor_login"
+        app:layout_constraintTop_toBottomOf="@+id/Dooctor_pass" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="169dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/doctor" />
+</androidx.constraintlayout.widget.ConstraintLayout>
