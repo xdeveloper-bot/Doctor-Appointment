@@ -14,8 +14,9 @@
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/user_reg_lname"
@@ -25,8 +26,9 @@
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/user_reg_fname"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_fname" />
 
     <EditText
         android:id="@+id/user_reg_dob"
@@ -36,8 +38,9 @@
         android:ems="10"
         android:hint="DOB"
         android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@+id/user_reg_rbtn1"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_rbtn1" />
 
     <EditText
         android:id="@+id/user_reg_num"
@@ -47,8 +50,9 @@
         android:ems="10"
         android:hint="Mobile Number"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/user_reg_lname"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_lname" />
 
     <EditText
         android:id="@+id/user_reg_email"
@@ -58,17 +62,19 @@
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/user_reg_num"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_num" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man"
-        tools:layout_editor_absoluteX="141dp" />
+        app:srcCompat="@drawable/man" />
 
     <RadioButton
         android:id="@+id/user_reg_rbtn1"
@@ -86,8 +92,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Female"
-        app:layout_constraintTop_toBottomOf="@+id/user_reg_email"
-        tools:layout_editor_absoluteX="166dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_email" />
 
     <RadioButton
         android:id="@+id/user_reg_rbtn3"
