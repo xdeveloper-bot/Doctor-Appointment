@@ -9,7 +9,7 @@
         android:id="@+id/user_login_username"
         android:layout_width="349dp"
         android:layout_height="64dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -17,7 +17,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/user_login_password"
@@ -37,7 +37,7 @@
         android:id="@+id/imageView"
         android:layout_width="169dp"
         android:layout_height="204dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="29dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -72,5 +72,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/user_login_btn1"
         app:layout_constraintTop_toBottomOf="@+id/user_login_password" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="342dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="User Login"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
