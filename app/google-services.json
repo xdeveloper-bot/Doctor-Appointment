@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "221415499319-j1dmlrbe35chaafe23mdcrln0hnjs30f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doctor_appointment",
+            "certificate_hash": "0ee88fb47ab087a3144f18f563959af0078bd370"
+          }
+        },
+        {
           "client_id": "221415499319-48rjj715s83mprhomek8s60ga482ttoq.apps.googleusercontent.com",
           "client_type": 3
         }
