@@ -4,28 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    public Button btn1;
+    public static  int SPLASH = 2000 ;
 
-    public void init(){
-        btn1= (Button)findViewById(R.id.buttontemp);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent ask = new Intent(MainActivity.this, askdoctor.class);
-                startActivity(ask);
-
-            }
-        });
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent h = new Intent(MainActivity.this , askdoctor.class);
+                startActivity(h);
+                finish();
+            }
+        },SPLASH);
     }
 }
