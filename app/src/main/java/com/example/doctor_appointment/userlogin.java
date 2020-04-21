@@ -11,18 +11,18 @@ public class userlogin extends AppCompatActivity {
     public Button btnsignin;
 
     public void init(){
+
         btnsignin= (Button)findViewById(R.id.btn_signup);
         btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent reg = new Intent(userlogin.this, userregister.class);
                 startActivity(reg);
-
             }
         });
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
