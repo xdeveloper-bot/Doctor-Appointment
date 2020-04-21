@@ -18,7 +18,7 @@
     <EditText
         android:id="@+id/Doctor_Firstname"
         android:layout_width="349dp"
-        android:layout_height="55dp"
+        android:layout_height="45dp"
         android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="First Name"
@@ -30,8 +30,8 @@
     <EditText
         android:id="@+id/Doctor_lastname"
         android:layout_width="349dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPersonName"
@@ -42,8 +42,8 @@
     <EditText
         android:id="@+id/Doctor_number"
         android:layout_width="349dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Mobile No."
         android:inputType="phone"
@@ -54,8 +54,8 @@
     <EditText
         android:id="@+id/Doctor_emailid"
         android:layout_width="349dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Email_Id"
         android:inputType="textEmailAddress"
@@ -66,8 +66,8 @@
     <EditText
         android:id="@+id/Doctor_speciatlity"
         android:layout_width="349dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Specialty"
         android:inputType="textPersonName"
@@ -78,42 +78,59 @@
     <Button
         android:id="@+id/Doctor_register"
         android:layout_width="126dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
         android:background="#979EA3"
         android:text="Register"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Doctor_female" />
 
     <RadioButton
-        android:id="@+id/Doctor_others"
+        android:id="@+id/Doctor_female"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:text="others"
-        app:layout_constraintStart_toEndOf="@+id/Doctor_female"
+        android:layout_marginTop="60dp"
+        android:text="Female"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Doctor_speciatlity" />
 
     <RadioButton
         android:id="@+id/Doctor_male"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="28dp"
         android:text="Male"
         app:layout_constraintEnd_toStartOf="@+id/Doctor_female"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Doctor_speciatlity" />
 
     <RadioButton
-        android:id="@+id/Doctor_female"
+        android:id="@+id/Doctor_others"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Female"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="64dp"
+        android:text="others"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Doctor_female"
+        app:layout_constraintTop_toBottomOf="@+id/Doctor_speciatlity" />
+
+    <EditText
+        android:id="@+id/doc_pass"
+        android:layout_width="349dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Doctor_speciatlity" />
