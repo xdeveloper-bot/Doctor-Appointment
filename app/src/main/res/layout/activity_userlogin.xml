@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/user_login_username"
+        android:id="@+id/txt_username"
         android:layout_width="349dp"
         android:layout_height="64dp"
         android:layout_marginTop="20dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/user_login_password"
+        android:id="@+id/txt_password"
         android:layout_width="349dp"
         android:layout_height="64dp"
         android:layout_marginTop="10dp"
@@ -31,7 +31,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_login_username" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_username" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/man" />
 
     <Button
-        android:id="@+id/user_login_btn1"
+        android:id="@+id/btn_login"
         android:layout_width="126dp"
         android:layout_height="51dp"
         android:layout_marginStart="80dp"
@@ -56,7 +56,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_signup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_login_password" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
     <Button
         android:id="@+id/btn_signup"
@@ -70,8 +70,8 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/user_login_btn1"
-        app:layout_constraintTop_toBottomOf="@+id/user_login_password" />
+        app:layout_constraintStart_toEndOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
     <TextView
         android:id="@+id/textView"
