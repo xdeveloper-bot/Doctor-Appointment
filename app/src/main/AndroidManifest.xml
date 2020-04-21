@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".userregister"></activity>
+        <activity android:name=".userlogin" />
+        <activity android:name=".doctorregister" />
+        <activity android:name=".doctorlogin" />
+        <activity android:name=".askdoctor" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
