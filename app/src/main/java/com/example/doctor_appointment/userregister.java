@@ -3,12 +3,21 @@ package com.example.doctor_appointment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,25 +26,31 @@ import com.google.firebase.database.ValueEventListener;
 
 public class userregister extends AppCompatActivity {
     Button btnregister;
-    EditText txtfname,txtlname,txtmobile,txtemail,txtdob,txtpass;
-    DatabaseReference reff;
-    User user;
-    long maxid=0;
+    EditText txtname,txtmobile,txtemail,txtpass;
+    TextView txtlogin;
+    ProgressBar progress;
+    FirebaseAuth uAuth;
+
+    //DatabaseReference reff;
+    //User user;
+    //long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userregister);
 
-        txtfname=(EditText)findViewById(R.id.first_name);
-        txtlname=(EditText)findViewById(R.id.last_name);
-        txtmobile=(EditText)findViewById(R.id.mob_num);
-        txtemail=(EditText)findViewById(R.id.user_email);
-        txtdob=(EditText)findViewById(R.id.user_dob);
-        txtpass=(EditText)findViewById(R.id.user_pass);
-        btnregister=(Button)findViewById(R.id.submit_btn);
+        txtname=(EditText)findViewById(R.id.ureg_fullname);
+        txtmobile=(EditText)findViewById(R.id.ureg_mobnum);
+        txtemail=(EditText)findViewById(R.id.ureg_email);
+        txtpass=(EditText)findViewById(R.id.ureg_pass);
+        btnregister=(Button)findViewById(R.id.ureg_registerBtn);
+        txtlogin=(TextView)findViewById(R.id.ureg_alreadyreg);
+        progress=(ProgressBar)findViewById(R.id.ureg_progress);
 
-        user=new User();
+        uAuth = FirebaseAuth.getInstance();
+
+        /*user=new User();
         reff= FirebaseDatabase.getInstance().getReference().child("User");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
@@ -49,20 +64,70 @@ public class userregister extends AppCompatActivity {
 
             }
         });
+        */
 
+        if(uAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),userlogin.class));
+            finish();
+        }
+
+        //Register Button
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String email = txtemail.getText().toString().trim();
+                String pass = txtpass.getText().toString().trim();
+
+                if(TextUtils.isEmpty(email)){
+                    txtemail.setError("Email is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(pass)){
+                    txtpass.setError("Password is required.");
+                    return;
+                }
+                if(pass.length() < 6){
+                    txtpass.setError("Password must be >= 6 characters.");
+                    return;
+                }
+
+                progress.setVisibility(View.VISIBLE);
+
+                // Register user to Firebase
+                uAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(userregister.this,"User Created.",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),userlogin.class));
+                        }else{
+                            Toast.makeText(userregister.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            progress.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                /*
                 Long mob=Long.parseLong(txtmobile.getText().toString().trim());
-                user.setFirstName(txtfname.getText().toString().trim());
-                user.setLastName(txtlname.getText().toString().trim());
+                user.setFirstName(txtname.getText().toString().trim());
                 user.setMob(mob);
                 user.setEmail(txtemail.getText().toString().trim());
-                user.setDOB(txtdob.getText().toString().trim());
                 user.setPass(txtpass.getText().toString().trim());
                 reff.child(String.valueOf(maxid+1)).setValue(user);
                 Toast.makeText(userregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
+                */
+
             }
         });
+
+        //Login Text Button
+        txtlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),userlogin.class));
+            }
+        });
+
     }
 }
