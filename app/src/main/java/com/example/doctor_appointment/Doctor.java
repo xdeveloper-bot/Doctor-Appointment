@@ -2,7 +2,7 @@ package com.example.doctor_appointment;
 
 public class Doctor {
 
-    private String FirstName,LastName,Email,DOB,Pass;
+    private String FirstName,LastName,Email,Speciality,Pass;
     private Long Mob;
     public Doctor() {
 
@@ -32,12 +32,12 @@ public class Doctor {
         Email = email;
     }
 
-    public String getDOB() {
-        return DOB;
+    public String getSpeciality() {
+        return Speciality;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setSpeciality(String Speciality) {
+        this.Speciality = Speciality;
     }
 
     public String getPass() {
