@@ -48,7 +48,7 @@ public class userregister extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        })
+        });
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +61,6 @@ public class userregister extends AppCompatActivity {
                 user.setDOB(txtdob.getText().toString().trim());
                 user.setPass(txtpass.getText().toString().trim());
                 reff.child(String.valueOf(maxid+1)).setValue(user);
-                reff.push().setValue(user);
                 Toast.makeText(userregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
