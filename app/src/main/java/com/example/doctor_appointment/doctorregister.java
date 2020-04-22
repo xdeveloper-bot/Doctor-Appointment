@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,16 +22,16 @@ public class doctorregister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctorregister);
 
-        txtfname=(EditText)findViewById(R.id.first_name);
-        txtlname=(EditText)findViewById(R.id.last_name);
-        txtmobile=(EditText)findViewById(R.id.mob_num);
-        txtemail=(EditText)findViewById(R.id.user_email);
-        txtdob=(EditText)findViewById(R.id.user_dob);
-        txtpass=(EditText)findViewById(R.id.user_pass);
-        btnregister=(Button)findViewById(R.id.submit_btn);
+        txtfname=(EditText)findViewById(R.id.Doctor_Firstname);
+        txtlname=(EditText)findViewById(R.id.Doctor_lastname);
+        txtmobile=(EditText)findViewById(R.id.Doctor_number);
+        txtemail=(EditText)findViewById(R.id.Doctor_emailid);
+        txtdob=(EditText)findViewById(R.id.Doctor_speciatlity);
+        txtpass=(EditText)findViewById(R.id.doc_pass);
+        btnregister=(Button)findViewById(R.id.Doctor_register);
 
         doctor=new Doctor();
-        reff= FirebaseDatabase.getInstance().getReference().child("User");
+        reff= FirebaseDatabase.getInstance().getReference().child("Doctor");
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +44,8 @@ public class doctorregister extends AppCompatActivity {
                 doctor.setDOB(txtdob.getText().toString().trim());
                 doctor.setPass(txtpass.getText().toString().trim());
                 reff.push().setValue(doctor);
-                //Toast.makeText(datainsert.this, "data inserted successfully",Toast.LENGTH_LONG).show();
+                Toast.makeText(doctorregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
     }
 }
-
-

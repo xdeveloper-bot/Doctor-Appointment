@@ -44,7 +44,7 @@ public class userregister extends AppCompatActivity {
                 user.setDOB(txtdob.getText().toString().trim());
                 user.setPass(txtpass.getText().toString().trim());
                 reff.push().setValue(user);
-                //Toast.makeText(datainsert.this, "data inserted successfully",Toast.LENGTH_LONG).show();
+                Toast.makeText(userregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
     }
