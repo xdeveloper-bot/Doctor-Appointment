@@ -13,10 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class userlogin extends AppCompatActivity {
-    public Button btnsignup,btnlogin;
-    EditText txtuname,txtpass;
-    DatabaseReference reff;
-    User user;
+    public Button btnsignup;
 
     public void init(){
 

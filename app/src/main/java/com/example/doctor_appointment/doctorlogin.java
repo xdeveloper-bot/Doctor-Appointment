@@ -14,17 +14,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class doctorlogin extends AppCompatActivity {
 
-    public Button btnsignup,btnlogin;
-    EditText textuname,textpass;
-    DatabaseReference reff;
-    Doctor doctor;
+    public Button btnsignup;
 
     public void init(){
         btnsignup= (Button)findViewById(R.id.doctor_sigin);
-        doctor=new Doctor();
-
-
-
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
