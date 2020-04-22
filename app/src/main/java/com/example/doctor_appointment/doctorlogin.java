@@ -82,7 +82,7 @@ public class doctorlogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(doctorlogin.this,"Logged in successfully.",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                            startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
                         }else {
                             Toast.makeText(doctorlogin.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
@@ -96,7 +96,7 @@ public class doctorlogin extends AppCompatActivity {
         txtregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),userregister.class));
+                startActivity(new Intent(getApplicationContext(),doctorregister.class));
             }
         });
 
