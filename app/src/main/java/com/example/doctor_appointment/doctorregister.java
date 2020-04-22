@@ -61,7 +61,6 @@ public class doctorregister extends AppCompatActivity {
                 doctor.setSpeciality(txtspeciality.getText().toString().trim());
                 doctor.setPass(txtpass.getText().toString().trim());
                 reff.child(String.valueOf(maxid+1)).setValue(doctor);
-                reff.push().setValue(doctor);
                 Toast.makeText(doctorregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
