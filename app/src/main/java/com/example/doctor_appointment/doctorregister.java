@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,13 +24,21 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class doctorregister extends AppCompatActivity {
+    public static final String TAG = "TAG";
     Button btnregister;
     EditText txtname,txtmobile,txtemail,txtpass;
     TextView txtlogin;
     ProgressBar progress;
     FirebaseAuth dAuth;
+    FirebaseFirestore fstore;
+    String docID;
 
     //DatabaseReference reff;
     //Doctor doctor;
@@ -48,6 +58,7 @@ public class doctorregister extends AppCompatActivity {
         progress=(ProgressBar)findViewById(R.id.dreg_progress);
 
         dAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
 
         /*
         txtfname=(EditText)findViewById(R.id.Doctor_Firstname);
@@ -98,8 +109,10 @@ public class doctorregister extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = txtemail.getText().toString().trim();
-                String pass = txtpass.getText().toString().trim();
+                final String email = txtemail.getText().toString().trim();
+                final String pass = txtpass.getText().toString().trim();
+                final String name = txtname.getText().toString();
+                final String phone = txtmobile.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
                     txtemail.setError("Email is Required.");
@@ -121,7 +134,21 @@ public class doctorregister extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(doctorregister.this, "User Created.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(doctorregister.this, "Doctor Profile Created.", Toast.LENGTH_SHORT).show();
+                            docID = dAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fstore.collection("doctors").document(docID);
+                            Map<String,Object> doc = new HashMap<>();
+                            doc.put("name",name);
+                            doc.put("mobile",phone);
+                            doc.put("email",email);
+                            doc.put("pass",pass);
+                            documentReference.set(doc).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess: user profile is created for "+docID);
+                                }
+                            });
+
                             startActivity(new Intent(getApplicationContext(), doctorlogin.class));
                         } else {
                             Toast.makeText(doctorregister.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
