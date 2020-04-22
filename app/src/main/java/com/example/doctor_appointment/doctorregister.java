@@ -1,5 +1,6 @@
 package com.example.doctor_appointment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,14 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class doctorregister extends AppCompatActivity {
     Button btnregister;
     EditText txtfname,txtlname,txtmobile,txtemail,txtspeciality,txtpass;
     DatabaseReference reff;
     Doctor doctor;
+    long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,18 @@ public class doctorregister extends AppCompatActivity {
 
         doctor=new Doctor();
         reff= FirebaseDatabase.getInstance().getReference().child("Doctor");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                    maxid=(dataSnapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +60,7 @@ public class doctorregister extends AppCompatActivity {
                 doctor.setEmail(txtemail.getText().toString().trim());
                 doctor.setSpeciality(txtspeciality.getText().toString().trim());
                 doctor.setPass(txtpass.getText().toString().trim());
-                reff.push().setValue(doctor);
+                reff.child(String.valueOf(maxid+1)).setValue(doctor);
                 Toast.makeText(doctorregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
