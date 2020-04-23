@@ -53,6 +53,11 @@ public class doctorlogin extends AppCompatActivity {
         progress=(ProgressBar)findViewById(R.id.dlin_progressBar);
         dAuth=FirebaseAuth.getInstance();
 
+        if(dAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
+            finish();
+        }
+
         //Login Button
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override

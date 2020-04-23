@@ -100,7 +100,7 @@ public class doctorregister extends AppCompatActivity {
         });*/
 
         if(dAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),doctorlogin.class));
+            startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
             finish();
         }
 
