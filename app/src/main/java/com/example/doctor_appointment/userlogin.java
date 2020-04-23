@@ -84,7 +84,7 @@ public class userlogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(userlogin.this,"Logged in successfully.",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                            startActivity(new Intent(getApplicationContext(),user_personal_details.class));
                         }else {
                             Toast.makeText(userlogin.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
