@@ -80,7 +80,7 @@ public class userregister extends AppCompatActivity {
         */
 
         if(uAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),userlogin.class));
+            startActivity(new Intent(getApplicationContext(),userDashboard.class));
             finish();
         }
 
