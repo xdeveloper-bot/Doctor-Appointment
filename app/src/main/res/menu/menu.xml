@@ -5,32 +5,32 @@
 
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/doctor"
             android:title="Home" />
         <item
             android:id="@+id/nav_edit_profile"
+            android:icon="@drawable/doctor"
             android:title="Edit Profile" />
         <item
             android:id="@+id/nav_search"
+            android:icon="@drawable/doctor"
             android:title="Search" />
     </group>
 
     <group android:checkableBehavior="single">
         <item android:title="Others">
-
             <menu>
-
                 <item
                     android:id="@+id/nav_home1"
+                    android:icon="@drawable/doctor"
                     android:title="Contact Us" />
                 <item
                     android:id="@+id/nav_home2"
+                    android:icon="@drawable/doctor"
                     android:title="About Us" />
-                
             </menu>
         </item>
 
-
     </group>
-
 
 </menu>
