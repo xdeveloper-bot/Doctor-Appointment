@@ -8,13 +8,21 @@
             android:icon="@drawable/ic_home"
             android:title="Home" />
         <item
-            android:id="@+id/nav_edit_profile"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/ic_edit"
-            android:title="Edit Profile" />
+            android:title="Profile" />
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
             android:title="Search" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Log Out">
+
+        </item>
     </group>
 
     <group android:checkableBehavior="single">
