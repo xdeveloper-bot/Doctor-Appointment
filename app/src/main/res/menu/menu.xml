@@ -15,9 +15,7 @@
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
             android:title="Search" />
-    </group>
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/baseline_power_settings_new_white_18"
@@ -26,16 +24,19 @@
         </item>
     </group>
 
-
         <item android:title="Others">
             <menu>
                 <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_home1"
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_share"
+                    android:title="Share"/>
+                <item
+                    android:id="@+id/nav_about"
                     android:icon="@drawable/ic_contact_mail"
                     android:title="Contact Us" />
                 <item
-                    android:id="@+id/nav_home2"
+                    android:id="@+id/nav_contact"
                     android:icon="@drawable/doctor_bag"
                     android:title="About Us" />
                 </group>
