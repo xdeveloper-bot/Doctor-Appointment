@@ -16,7 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/header"
-        app:menu="@menu/menu"/>
+        app:menu="@menu/menu">
+
+    </com.google.android.material.navigation.NavigationView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
@@ -30,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/menu" />
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -38,7 +41,7 @@
             android:id="@+id/l1"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +118,7 @@
             android:id="@+id/l2"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="60dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +187,7 @@
             android:id="@+id/l3"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -252,5 +255,6 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:headerLayout="@layout/header"
-        app:menu="@menu/menu"/>
+        app:menu="@menu/menu" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
@@ -39,7 +39,7 @@
             android:id="@+id/l7"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
             android:id="@+id/l8"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="60dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +184,7 @@
             android:id="@+id/l9"
             android:layout_width="409dp"
             android:layout_height="175dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
