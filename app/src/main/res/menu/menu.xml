@@ -25,9 +25,10 @@
         </item>
     </group>
 
-    <group android:checkableBehavior="single">
+
         <item android:title="Others">
             <menu>
+                <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_home1"
                     android:icon="@drawable/ic_contact_mail"
@@ -36,9 +37,10 @@
                     android:id="@+id/nav_home2"
                     android:icon="@drawable/doctor_bag"
                     android:title="About Us" />
+                </group>
             </menu>
         </item>
 
-    </group>
+
 
 </menu>
