@@ -29,7 +29,6 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-
         drawerLayout = findViewById(R.id.udash_drawer_layout);
         navigationView = findViewById(R.id.udash_nav_view1);
         toolbar = findViewById(R.id.udash_toolbar1);
@@ -46,7 +45,6 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-
         navigationView.setCheckedItem(R.id.nav_home);
 
     }
@@ -71,14 +69,14 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_home:
                 break;
             case R.id.nav_profile:
-                Intent intent = new Intent(userDashboard.this,home.class);
+                Intent intent = new Intent(userDashboard.this, home.class);
                 startActivity(intent);
             case R.id.nav_logout:
-                Intent intent1 = new Intent(userDashboard.this,search.class);
+                Intent intent1 = new Intent(userDashboard.this, search.class);
                 startActivity(intent1);
 
             case R.id.nav_share:
