@@ -5,13 +5,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +32,7 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
         navigationView = findViewById(R.id.udash_nav_view1);
         toolbar = findViewById(R.id.udash_toolbar1);
 
-        setActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -47,7 +47,6 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
     public void onBackPressed() {
 
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-
             drawerLayout.isDrawerOpen(GravityCompat.START);
         } else {
             super.onBackPressed();
