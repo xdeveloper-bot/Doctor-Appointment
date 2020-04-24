@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class doctorregister extends AppCompatActivity {
     FirebaseAuth dAuth;
     FirebaseFirestore fstore;
     String docID;
+    ImageView profileimage;
 
     //DatabaseReference reff;
     //Doctor doctor;
@@ -59,6 +61,9 @@ public class doctorregister extends AppCompatActivity {
 
         dAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+
+        profileimage=findViewById(R.id.dreg_img);
+
 
         /*
         txtfname=(EditText)findViewById(R.id.Doctor_Firstname);
