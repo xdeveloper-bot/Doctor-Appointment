@@ -36,7 +36,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/l7"
+            android:id="@+id/l1"
             android:layout_width="409dp"
             android:layout_height="175dp"
             android:layout_marginTop="24dp"
@@ -44,10 +44,10 @@
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/l9">
+            app:layout_constraintTop_toBottomOf="@+id/l3">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c7"
+                android:id="@+id/c1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -59,13 +59,13 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r7"
+                    android:id="@+id/r1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF">
 
                     <TextView
-                        android:id="@+id/textView44"
+                        android:id="@+id/textView51"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
@@ -79,7 +79,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c8"
+                android:id="@+id/c2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -89,13 +89,13 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r8"
+                    android:id="@+id/r2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF">
 
                     <TextView
-                        android:id="@+id/textView22"
+                        android:id="@+id/textView52"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignWithParentIfMissing="false"
@@ -113,7 +113,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/l8"
+            android:id="@+id/l2"
             android:layout_width="409dp"
             android:layout_height="175dp"
             android:layout_marginTop="84dp"
@@ -124,7 +124,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c9"
+                android:id="@+id/c3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -134,13 +134,13 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r9"
+                    android:id="@+id/r3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFDFD">
 
                     <TextView
-                        android:id="@+id/textView88"
+                        android:id="@+id/textView53"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
@@ -152,7 +152,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c10"
+                android:id="@+id/c4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -162,13 +162,13 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r10"
+                    android:id="@+id/r4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF">
 
                     <TextView
-                        android:id="@+id/textView66"
+                        android:id="@+id/textView54"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
@@ -182,7 +182,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/l9"
+            android:id="@+id/l3"
             android:layout_width="409dp"
             android:layout_height="175dp"
             android:layout_marginTop="24dp"
@@ -190,10 +190,10 @@
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/l8">
+            app:layout_constraintTop_toBottomOf="@+id/l2">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c11"
+                android:id="@+id/c5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -203,7 +203,7 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r11"
+                    android:id="@+id/r5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF">
@@ -224,7 +224,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/c12"
+                android:id="@+id/c6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -234,13 +234,13 @@
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
-                    android:id="@+id/r12"
+                    android:id="@+id/r6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF">
 
                     <TextView
-                        android:id="@+id/textView77"
+                        android:id="@+id/textView56"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
