@@ -5,15 +5,15 @@
 
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/doctor"
+            android:icon="@drawable/ic_home"
             android:title="Home" />
         <item
             android:id="@+id/nav_edit_profile"
-            android:icon="@drawable/doctor"
+            android:icon="@drawable/ic_edit"
             android:title="Edit Profile" />
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/doctor"
+            android:icon="@drawable/ic_search"
             android:title="Search" />
     </group>
 
@@ -22,11 +22,11 @@
             <menu>
                 <item
                     android:id="@+id/nav_home1"
-                    android:icon="@drawable/doctor"
+                    android:icon="@drawable/ic_contact_mail"
                     android:title="Contact Us" />
                 <item
                     android:id="@+id/nav_home2"
-                    android:icon="@drawable/doctor"
+                    android:icon="@drawable/doctor_bag"
                     android:title="About Us" />
             </menu>
         </item>
