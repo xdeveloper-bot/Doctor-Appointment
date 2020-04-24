@@ -3,9 +3,9 @@
     android:id="@+id/linearLayoutCompat"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:orientation="horizontal"
     android:background="#FFFFFF"
     android:gravity="bottom"
+    android:orientation="horizontal"
     android:padding="10dp">
 
 
