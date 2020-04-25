@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     android:textDirection="firstStrong"
     tools:context=".userDashboard"
-    tools:openDrawer="start">
+    tools:openDrawer="">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/udash_nav_view1"
@@ -182,8 +182,10 @@
                             android:text="Search For Doctor"
                             android:textAlignment="center"
                             android:textSize="28sp" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -253,6 +255,47 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/udash_black"
+                android:layout_width="390dp"
+                android:layout_height="580dp"
+                android:background="#A7000000"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/udash_toolbar1"
+                app:layout_constraintStart_toStartOf="@+id/udash_toolbar1"
+                app:layout_constraintTop_toTopOf="@+id/udash_toolbar1"
+                app:layout_constraintVertical_bias="0.88" />
+
+            <TextView
+                android:id="@+id/udash_notverifytxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text="Email Not Verified !!!"
+                android:textColor="#D60505"
+                android:textSize="36sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.07999998" />
+
+            <Button
+                android:id="@+id/udash_resendcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_weight="1"
+                android:text="Resend Code"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/udash_notverifytxt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

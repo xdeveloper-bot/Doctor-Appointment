@@ -9,19 +9,28 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class doctorDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    Button resendbtn;
+    TextView resendbg,resendtxt;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,36 @@ public class doctorDashboard extends AppCompatActivity implements NavigationView
         drawerLayout = findViewById(R.id.ddash_drawer_layout);
         navigationView = findViewById(R.id.ddash_nav_view1);
         toolbar = findViewById(R.id.ddash_toolbar1);
+
+        fAuth=FirebaseAuth.getInstance();
+
+        resendbg=findViewById(R.id.ddash_black);
+        resendtxt=findViewById(R.id.ddash_notverifytxt);
+        resendbtn=findViewById(R.id.ddash_resendcode);
+        final FirebaseUser usr=fAuth.getCurrentUser();
+
+        if(!usr.isEmailVerified()){
+            resendbg.setVisibility(View.VISIBLE);
+            resendtxt.setVisibility(View.VISIBLE);
+            resendbtn.setVisibility(View.VISIBLE);
+
+            resendbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(doctorDashboard.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("TAG","onFailure: "+e.getMessage());
+                        }
+                    });
+                }
+            });
+        }
 
         setSupportActionBar(toolbar);
 
