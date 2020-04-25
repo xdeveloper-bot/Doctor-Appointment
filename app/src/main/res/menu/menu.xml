@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <group android:checkableBehavior="single">
 
         <item
@@ -15,22 +16,24 @@
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
             android:title="Search" />
+    </group>
 
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/baseline_power_settings_new_white_18"
-            android:title="Log Out"/>
-
+            android:icon="@drawable/ic_power"
+            android:title="Log Out" />
 
     </group>
 
+
+    <group android:checkableBehavior="single">
         <item android:title="Others">
             <menu>
-                <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_share"
                     android:icon="@drawable/ic_share"
-                    android:title="Share"/>
+                    android:title="Share" />
                 <item
                     android:id="@+id/nav_about"
                     android:icon="@drawable/ic_contact_mail"
@@ -39,10 +42,10 @@
                     android:id="@+id/nav_contact"
                     android:icon="@drawable/doctor_bag"
                     android:title="About Us" />
-                </group>
+
             </menu>
         </item>
-
+    </group>
 
 
 </menu>
