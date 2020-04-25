@@ -72,7 +72,7 @@ public class doctorregister extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("users/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
+        StorageReference profileRef = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -221,7 +221,7 @@ public class doctorregister extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
+        final StorageReference fileref = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
