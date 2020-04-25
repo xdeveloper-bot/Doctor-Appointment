@@ -30,8 +30,6 @@ public class doctorlogin extends AppCompatActivity {
     TextView txtregister;
     ProgressBar progress;
     FirebaseAuth dAuth;
-    FirebaseFirestore fstore;
-    String uid;
 
     /*public void init(){
 
@@ -58,18 +56,10 @@ public class doctorlogin extends AppCompatActivity {
         txtregister=(TextView)findViewById(R.id.dlin_createaccount);
         progress=(ProgressBar)findViewById(R.id.dlin_progressBar);
         dAuth=FirebaseAuth.getInstance();
-        fstore=FirebaseFirestore.getInstance();
 
         if(dAuth.getCurrentUser() != null){
-            uid=dAuth.getCurrentUser().getUid();
-            Toast.makeText(doctorlogin.this,uid,Toast.LENGTH_SHORT).show();
-            try {
-                fstore.collection("doctors").document(uid);
-                startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
-                finish();
-            } catch (Exception e){
-                Log.d("Tag","d4");
-            }
+            startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
+            finish();
         }
 
         //Login Button

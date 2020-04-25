@@ -59,13 +59,6 @@ public class doctorDashboard extends AppCompatActivity implements NavigationView
     }
 
 
-    public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),askdoctor.class));
-        finish();
-    }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -73,16 +66,19 @@ public class doctorDashboard extends AppCompatActivity implements NavigationView
             case R.id.nav_home:
                 break;
             case R.id.nav_profile:
-                Intent intent = new Intent(doctorDashboard.this, home.class);
-                startActivity(intent);
-            case R.id.nav_logout:
-                Intent intent1 = new Intent(doctorDashboard.this, search.class);
-                startActivity(intent1);
-
+                startActivity(new Intent(getApplicationContext(), home.class));
+                break;
+            case R.id.nav_search:
+                startActivity(new Intent(getApplicationContext(), search.class));
+                break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
-
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),askdoctor.class));
+                finish();
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

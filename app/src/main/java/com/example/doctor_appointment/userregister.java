@@ -44,7 +44,7 @@ import java.util.Map;
 public class userregister extends AppCompatActivity {
     public static final String TAG = "TAG";
     Button btnregister;
-    EditText txtname,txtmobile,txtemail,txtpass;
+    EditText txtname, txtmobile, txtemail, txtpass;
     TextView txtlogin;
     ProgressBar progress;
     FirebaseAuth uAuth;
@@ -62,19 +62,19 @@ public class userregister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userregister);
 
-        txtname=(EditText)findViewById(R.id.ureg_fullname);
-        txtmobile=(EditText)findViewById(R.id.ureg_mobnum);
-        txtemail=(EditText)findViewById(R.id.ureg_email);
-        txtpass=(EditText)findViewById(R.id.ureg_pass);
-        btnregister=(Button)findViewById(R.id.ureg_registerBtn);
-        txtlogin=(TextView)findViewById(R.id.ureg_alreadyreg);
-        progress=(ProgressBar)findViewById(R.id.ureg_progress);
+        txtname = (EditText) findViewById(R.id.ureg_fullname);
+        txtmobile = (EditText) findViewById(R.id.ureg_mobnum);
+        txtemail = (EditText) findViewById(R.id.ureg_email);
+        txtpass = (EditText) findViewById(R.id.ureg_pass);
+        btnregister = (Button) findViewById(R.id.ureg_registerBtn);
+        txtlogin = (TextView) findViewById(R.id.ureg_alreadyreg);
+        progress = (ProgressBar) findViewById(R.id.ureg_progress);
 
         uAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        profileimage=findViewById(R.id.ureg_img);
+        profileimage = findViewById(R.id.ureg_img);
 
         /*user=new User();
         reff= FirebaseDatabase.getInstance().getReference().child("User");
@@ -92,8 +92,8 @@ public class userregister extends AppCompatActivity {
         });
         */
 
-        if(uAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+        if (uAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), userDashboard.class));
             finish();
         }
 
@@ -108,15 +108,15 @@ public class userregister extends AppCompatActivity {
                 final String phone = txtmobile.getText().toString();
                 final String type = "user";
 
-                if(TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     txtemail.setError("Email is Required.");
                     return;
                 }
-                if(TextUtils.isEmpty(pass)){
+                if (TextUtils.isEmpty(pass)) {
                     txtpass.setError("Password is required.");
                     return;
                 }
-                if(pass.length() < 6){
+                if (pass.length() < 6) {
                     txtpass.setError("Password must be >= 6 characters.");
                     return;
                 }
@@ -124,29 +124,29 @@ public class userregister extends AppCompatActivity {
                 progress.setVisibility(View.VISIBLE);
 
                 // Register user to Firebase
-                uAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                uAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(userregister.this,"User Created.",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(userregister.this, "User Created.", Toast.LENGTH_SHORT).show();
                             userID = uAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("name",name);
-                            user.put("mobile",phone);
-                            user.put("email",email);
-                            user.put("pass",pass);
-                            user.put("type",type);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("name", name);
+                            user.put("mobile", phone);
+                            user.put("email", email);
+                            user.put("pass", pass);
+                            user.put("type", type);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess: user profile is created for "+userID);
+                                    Log.d(TAG, "onSuccess: user profile is created for " + userID);
                                 }
                             });
 
-                            startActivity(new Intent(getApplicationContext(),userlogin.class));
-                        }else{
-                            Toast.makeText(userregister.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), user_personal_details.class));
+                        } else {
+                            Toast.makeText(userregister.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
                         }
                     }
@@ -169,7 +169,7 @@ public class userregister extends AppCompatActivity {
         txtlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),userlogin.class));
+                startActivity(new Intent(getApplicationContext(), userlogin.class));
             }
         });
         profileimage.setOnClickListener(new View.OnClickListener() {
@@ -178,17 +178,18 @@ public class userregister extends AppCompatActivity {
                 //profile change
 
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent,1000);
+                startActivityForResult(openGalleryIntent, 1000);
             }
         });
 
 
     }
+
     @Override
-    protected void onActivityResult(int requestCode,int resultCode, @androidx.annotation.NonNull Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-        if(requestCode==1000){
-            if (resultCode == Activity.RESULT_OK){
+    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.NonNull Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
                 Uri imageuri = data.getData();
                 profileimage.setImageURI(imageuri);
 
@@ -203,12 +204,12 @@ public class userregister extends AppCompatActivity {
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(userregister.this,"Image Uploaded",Toast.LENGTH_SHORT).show();
+                Toast.makeText(userregister.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
             }
         })).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(userregister.this,"Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(userregister.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
