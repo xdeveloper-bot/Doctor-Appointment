@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
@@ -23,13 +26,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Tag;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class userregister extends AppCompatActivity {
+    public static final String TAG = "TAG";
     Button btnregister;
     EditText txtname,txtmobile,txtemail,txtpass;
     TextView txtlogin;
     ProgressBar progress;
     FirebaseAuth uAuth;
+    FirebaseFirestore fstore;
+    String userID;
 
     //DatabaseReference reff;
     //User user;
@@ -49,6 +61,7 @@ public class userregister extends AppCompatActivity {
         progress=(ProgressBar)findViewById(R.id.ureg_progress);
 
         uAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
 
         /*user=new User();
         reff= FirebaseDatabase.getInstance().getReference().child("User");
@@ -67,7 +80,7 @@ public class userregister extends AppCompatActivity {
         */
 
         if(uAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),userlogin.class));
+            startActivity(new Intent(getApplicationContext(),userDashboard.class));
             finish();
         }
 
@@ -76,8 +89,10 @@ public class userregister extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = txtemail.getText().toString().trim();
-                String pass = txtpass.getText().toString().trim();
+                final String email = txtemail.getText().toString().trim();
+                final String pass = txtpass.getText().toString().trim();
+                final String name = txtname.getText().toString();
+                final String phone = txtmobile.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
                     txtemail.setError("Email is Required.");
@@ -100,6 +115,20 @@ public class userregister extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(userregister.this,"User Created.",Toast.LENGTH_SHORT).show();
+                            userID = uAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fstore.collection("users").document(userID);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("name",name);
+                            user.put("mobile",phone);
+                            user.put("email",email);
+                            user.put("pass",pass);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess: user profile is created for "+userID);
+                                }
+                            });
+
                             startActivity(new Intent(getApplicationContext(),userlogin.class));
                         }else{
                             Toast.makeText(userregister.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();

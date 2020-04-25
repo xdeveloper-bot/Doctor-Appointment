@@ -55,6 +55,11 @@ public class userlogin extends AppCompatActivity {
         progress=(ProgressBar)findViewById(R.id.ulin_progressBar);
         uAuth=FirebaseAuth.getInstance();
 
+        if(uAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+            finish();
+        }
+
         //Login Button
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +89,8 @@ public class userlogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(userlogin.this,"Logged in successfully.",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                            progress.setVisibility(View.GONE);
+                            startActivity(new Intent(getApplicationContext(),user_personal_details.class));
                         }else {
                             Toast.makeText(userlogin.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
