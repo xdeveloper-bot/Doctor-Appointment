@@ -118,6 +118,7 @@ public class doctorregister extends AppCompatActivity {
                 final String pass = txtpass.getText().toString().trim();
                 final String name = txtname.getText().toString();
                 final String phone = txtmobile.getText().toString();
+                final String type = "doctor";
 
                 if (TextUtils.isEmpty(email)) {
                     txtemail.setError("Email is Required.");
@@ -147,6 +148,7 @@ public class doctorregister extends AppCompatActivity {
                             doc.put("mobile",phone);
                             doc.put("email",email);
                             doc.put("pass",pass);
+                            doc.put("type",type);
                             documentReference.set(doc).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class doctorlogin extends AppCompatActivity {
     EditText txtemail,txtpass;
@@ -26,6 +30,8 @@ public class doctorlogin extends AppCompatActivity {
     TextView txtregister;
     ProgressBar progress;
     FirebaseAuth dAuth;
+    FirebaseFirestore fstore;
+    String uid;
 
     /*public void init(){
 
@@ -52,10 +58,18 @@ public class doctorlogin extends AppCompatActivity {
         txtregister=(TextView)findViewById(R.id.dlin_createaccount);
         progress=(ProgressBar)findViewById(R.id.dlin_progressBar);
         dAuth=FirebaseAuth.getInstance();
+        fstore=FirebaseFirestore.getInstance();
 
         if(dAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
-            finish();
+            uid=dAuth.getCurrentUser().getUid();
+            Toast.makeText(doctorlogin.this,uid,Toast.LENGTH_SHORT).show();
+            try {
+                fstore.collection("doctors").document(uid);
+                startActivity(new Intent(getApplicationContext(),doctorDashboard.class));
+                finish();
+            } catch (Exception e){
+                Log.d("Tag","d4");
+            }
         }
 
         //Login Button

@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.Tag;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -93,6 +94,7 @@ public class userregister extends AppCompatActivity {
                 final String pass = txtpass.getText().toString().trim();
                 final String name = txtname.getText().toString();
                 final String phone = txtmobile.getText().toString();
+                final String type = "user";
 
                 if(TextUtils.isEmpty(email)){
                     txtemail.setError("Email is Required.");
@@ -122,6 +124,7 @@ public class userregister extends AppCompatActivity {
                             user.put("mobile",phone);
                             user.put("email",email);
                             user.put("pass",pass);
+                            user.put("type",type);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

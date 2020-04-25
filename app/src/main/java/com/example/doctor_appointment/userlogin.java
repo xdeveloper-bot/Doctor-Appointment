@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class userlogin extends AppCompatActivity {
     EditText txtemail,txtpass;
@@ -27,6 +30,8 @@ public class userlogin extends AppCompatActivity {
     TextView txtregister;
     ProgressBar progress;
     FirebaseAuth uAuth;
+    FirebaseFirestore fstore;
+    String uid;
 
     /*
     public void init(){
@@ -54,10 +59,19 @@ public class userlogin extends AppCompatActivity {
         txtregister=(TextView)findViewById(R.id.ulin_createaccount);
         progress=(ProgressBar)findViewById(R.id.ulin_progressBar);
         uAuth=FirebaseAuth.getInstance();
+        fstore=FirebaseFirestore.getInstance();
 
         if(uAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),userDashboard.class));
-            finish();
+            uid=uAuth.getCurrentUser().getUid();
+            Toast.makeText(userlogin.this,uid,Toast.LENGTH_SHORT).show();
+            try {
+                fstore.collection("users").document(uid);
+                startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                finish();
+            }catch (Exception e){
+                Log.d("Tag","u4");
+            }
+
         }
 
         //Login Button
