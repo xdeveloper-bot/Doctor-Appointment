@@ -35,6 +35,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,6 +72,14 @@ public class doctorregister extends AppCompatActivity {
         dAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        StorageReference profileRef = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileimage);
+            }
+        });
 
         profileimage=findViewById(R.id.dreg_img);
 
@@ -218,7 +227,8 @@ public class doctorregister extends AppCompatActivity {
         if(requestCode==1000){
             if (resultCode == Activity.RESULT_OK){
                 Uri imageuri = data.getData();
-                profileimage.setImageURI(imageuri);
+
+                //profileimage.setImageURI(imageuri);
 
                 uploadImageToFirebase(imageuri);
             }
@@ -227,11 +237,16 @@ public class doctorregister extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        StorageReference fileref = storageReference.child("profile.jpg");
+        final StorageReference fileref = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(doctorregister.this,"Image Uploaded",Toast.LENGTH_SHORT).show();
+                fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(profileimage);
+                    }
+                });
             }
         })).addOnFailureListener(new OnFailureListener() {
             @Override
