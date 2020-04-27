@@ -102,7 +102,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), user_dashboard.class));
+                onBackPressed();
                 break;
             case R.id.nav_profile:
                 startActivity(new Intent(getApplicationContext(), user_profile.class));

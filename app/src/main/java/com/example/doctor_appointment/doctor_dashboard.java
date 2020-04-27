@@ -103,7 +103,7 @@ public class doctor_dashboard extends AppCompatActivity implements NavigationVie
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
+                onBackPressed();
                 break;
             case R.id.nav_profile:
                 startActivity(new Intent(getApplicationContext(), doctor_profile.class));

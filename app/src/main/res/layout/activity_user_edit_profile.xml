@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/uedtpro_imageView2"
+        android:id="@+id/uedpro_img"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="47dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView4" />
 
     <TextView
-        android:id="@+id/uedtpro_textView5"
+        android:id="@+id/uedpro_name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -73,11 +73,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Email Id"
-        app:layout_constraintStart_toStartOf="@+id/uedtpro_textView5"
+        app:layout_constraintStart_toStartOf="@+id/uedpro_name"
         app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView6" />
 
     <TextView
-        android:id="@+id/uedtpro_textView7"
+        android:id="@+id/uedpro_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -101,11 +101,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Phone"
-        app:layout_constraintStart_toStartOf="@+id/uedtpro_textView7"
+        app:layout_constraintStart_toStartOf="@+id/uedpro_email"
         app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView7" />
 
     <TextView
-        android:id="@+id/uedtpro_textView9"
+        android:id="@+id/uedpro_mobile"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -129,11 +129,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Address"
-        app:layout_constraintStart_toStartOf="@+id/uedtpro_textView9"
+        app:layout_constraintStart_toStartOf="@+id/uedpro_mobile"
         app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView8" />
 
     <TextView
-        android:id="@+id/uedtpro_textView11"
+        android:id="@+id/uedpro_address"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -143,7 +143,7 @@
 
 
     <Button
-        android:id="@+id/uedtpro_button"
+        android:id="@+id/uedpro_changebtn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -152,18 +152,18 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/uedpro_address" />
 
     <Button
-        android:id="@+id/uedtpro_button2"
+        android:id="@+id/uedpro_resetbtn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:backgroundTint="#979EA8"
         android:text="Reset Password"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/uedtpro_button"
-        app:layout_constraintTop_toBottomOf="@+id/uedtpro_button" />
+        app:layout_constraintStart_toStartOf="@+id/uedpro_changebtn"
+        app:layout_constraintTop_toBottomOf="@+id/uedpro_changebtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
