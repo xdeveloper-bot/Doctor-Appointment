@@ -51,7 +51,7 @@ public class doctor_profile extends AppCompatActivity {
         dStore =FirebaseFirestore.getInstance();
         userID = dAuth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = dStore.collection("users").document(userID);
+        DocumentReference documentReference = dStore.collection("doctors").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {

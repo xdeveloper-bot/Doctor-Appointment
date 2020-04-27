@@ -71,7 +71,7 @@ public class doctor_details extends AppCompatActivity {
 
         profileimage = findViewById(R.id.ddtl_profilepic);
 
-        final DocumentReference documentReference = dStore.collection("users").document(userID);
+        final DocumentReference documentReference = dStore.collection("doctors").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {

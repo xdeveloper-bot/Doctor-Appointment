@@ -24,7 +24,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/ic_arrowback" />
+                app:navigationIcon="@drawable/ic_arrowback"
+                app:titleTextColor="#000000" />
 
             <LinearLayout
                 android:id="@+id/dpro_linearLayout"
