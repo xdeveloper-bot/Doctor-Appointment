@@ -54,7 +54,7 @@ public class doctor_profile extends AppCompatActivity {
         txtedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), user_details.class));
+                startActivity(new Intent(getApplicationContext(), doctor_edit_profile.class));
             }
         });
 
