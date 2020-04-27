@@ -22,18 +22,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.Tag;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -43,40 +35,40 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.Map;
 
-public class userregister extends AppCompatActivity {
+public class doctor_register extends AppCompatActivity {
     public static final String TAG = "TAG";
     Button btnregister;
-    EditText txtname, txtmobile, txtemail, txtpass;
+    EditText txtname,txtmobile,txtemail,txtpass;
     TextView txtlogin;
     ProgressBar progress;
-    FirebaseAuth uAuth;
+    FirebaseAuth dAuth;
     FirebaseFirestore fstore;
-    String userID;
+    String docID;
     ImageView profileimage;
     StorageReference storageReference;
 
     //DatabaseReference reff;
-    //User user;
+    //Doctor doctor;
     //long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userregister);
+        setContentView(R.layout.activity_doctor_register);
 
-        txtname = (EditText) findViewById(R.id.ureg_fullname);
-        txtmobile = (EditText) findViewById(R.id.ureg_mobnum);
-        txtemail = (EditText) findViewById(R.id.ureg_email);
-        txtpass = (EditText) findViewById(R.id.ureg_pass);
-        btnregister = (Button) findViewById(R.id.ureg_registerBtn);
-        txtlogin = (TextView) findViewById(R.id.ureg_alreadyreg);
-        progress = (ProgressBar) findViewById(R.id.ureg_progress);
+        txtname=(EditText)findViewById(R.id.dreg_fullname);
+        txtmobile=(EditText)findViewById(R.id.dreg_mobnum);
+        txtemail=(EditText)findViewById(R.id.dreg_email);
+        txtpass=(EditText)findViewById(R.id.dreg_pass);
+        btnregister=(Button)findViewById(R.id.dreg_registerBtn);
+        txtlogin=(TextView)findViewById(R.id.dreg_alreadyreg);
+        progress=(ProgressBar)findViewById(R.id.dreg_progress);
 
-        uAuth = FirebaseAuth.getInstance();
+        dAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("users/"+uAuth.getCurrentUser().getUid()+"profile.jpg");
+        StorageReference profileRef = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -84,10 +76,20 @@ public class userregister extends AppCompatActivity {
             }
         });
 
-        profileimage = findViewById(R.id.ureg_img);
+        profileimage=findViewById(R.id.dreg_img);
 
-        /*user=new User();
-        reff= FirebaseDatabase.getInstance().getReference().child("User");
+
+        /*
+        txtfname=(EditText)findViewById(R.id.Doctor_Firstname);
+        txtlname=(EditText)findViewById(R.id.Doctor_lastname);
+        txtmobile=(EditText)findViewById(R.id.Doctor_number);
+        txtemail=(EditText)findViewById(R.id.Doctor_emailid);
+        txtspeciality=(EditText)findViewById(R.id.Doctor_speciatlity);
+        txtpass=(EditText)findViewById(R.id.doc_pass);
+        btnregister=(Button)findViewById(R.id.Doctor_register);
+
+        doctor=new Doctor();
+        reff= FirebaseDatabase.getInstance().getReference().child("Doctor");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,10 +102,24 @@ public class userregister extends AppCompatActivity {
 
             }
         });
-        */
 
-        if (uAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), userDashboard.class));
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Long mob=Long.parseLong(txtmobile.getText().toString().trim());
+                doctor.setFirstName(txtfname.getText().toString().trim());
+                doctor.setLastName(txtlname.getText().toString().trim());
+                doctor.setMob(mob);
+                doctor.setEmail(txtemail.getText().toString().trim());
+                doctor.setSpeciality(txtspeciality.getText().toString().trim());
+                doctor.setPass(txtpass.getText().toString().trim());
+                reff.child(String.valueOf(maxid+1)).setValue(doctor);
+                Toast.makeText(doctorregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
+            }
+        });*/
+
+        if(dAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
             finish();
         }
 
@@ -116,7 +132,7 @@ public class userregister extends AppCompatActivity {
                 final String pass = txtpass.getText().toString().trim();
                 final String name = txtname.getText().toString();
                 final String phone = txtmobile.getText().toString();
-                final String type = "user";
+                final String type = "doctor";
 
                 if (TextUtils.isEmpty(email)) {
                     txtemail.setError("Email is Required.");
@@ -134,17 +150,17 @@ public class userregister extends AppCompatActivity {
                 progress.setVisibility(View.VISIBLE);
 
                 // Register user to Firebase
-                uAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                dAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
                             //Verify Email
-                            FirebaseUser usr=uAuth.getCurrentUser();
+                            FirebaseUser usr=dAuth.getCurrentUser();
                             usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(userregister.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(doctor_register.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -153,40 +169,29 @@ public class userregister extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(userregister.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            userID = uAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fstore.collection("users").document(userID);
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("name", name);
-                            user.put("mobile", phone);
-                            user.put("email", email);
-                            user.put("pass", pass);
-                            user.put("type", type);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            Toast.makeText(doctor_register.this, "Doctor Profile Created.", Toast.LENGTH_SHORT).show();
+                            docID = dAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fstore.collection("doctors").document(docID);
+                            Map<String,Object> doc = new HashMap<>();
+                            doc.put("name",name);
+                            doc.put("mobile",phone);
+                            doc.put("email",email);
+                            doc.put("pass",pass);
+                            doc.put("type",type);
+                            documentReference.set(doc).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess: user profile is created for " + userID);
+                                    Log.d(TAG, "onSuccess: user profile is created for "+docID);
                                 }
                             });
 
-                            startActivity(new Intent(getApplicationContext(), user_personal_details.class));
+                            startActivity(new Intent(getApplicationContext(), doctor_details.class));
                         } else {
-                            Toast.makeText(userregister.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(doctor_register.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
                         }
                     }
                 });
-
-                /*
-                Long mob=Long.parseLong(txtmobile.getText().toString().trim());
-                user.setFirstName(txtname.getText().toString().trim());
-                user.setMob(mob);
-                user.setEmail(txtemail.getText().toString().trim());
-                user.setPass(txtpass.getText().toString().trim());
-                reff.child(String.valueOf(maxid+1)).setValue(user);
-                Toast.makeText(userregister.this, "data inserted successfully",Toast.LENGTH_LONG).show();
-                */
-
             }
         });
 
@@ -194,29 +199,31 @@ public class userregister extends AppCompatActivity {
         txtlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), userlogin.class));
+                startActivity(new Intent(getApplicationContext(), doctor_login.class));
             }
         });
+
         profileimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //profile change
 
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent, 1000);
+                startActivityForResult(openGalleryIntent,1000);
             }
         });
 
 
-    }
 
+    }
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.NonNull Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == Activity.RESULT_OK) {
+    protected void onActivityResult(int requestCode,int resultCode, @androidx.annotation.NonNull Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==1000){
+            if (resultCode == Activity.RESULT_OK){
                 Uri imageuri = data.getData();
-               // profileimage.setImageURI(imageuri);
+
+                //profileimage.setImageURI(imageuri);
 
                 uploadImageToFirebase(imageuri);
             }
@@ -225,7 +232,7 @@ public class userregister extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/"+uAuth.getCurrentUser().getUid()+"profile.jpg");
+        final StorageReference fileref = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -239,7 +246,7 @@ public class userregister extends AppCompatActivity {
         })).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(userregister.this, "Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(doctor_register.this,"Failed",Toast.LENGTH_SHORT).show();
             }
         });
     }

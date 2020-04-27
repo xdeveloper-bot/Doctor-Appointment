@@ -3,11 +3,9 @@ package com.example.doctor_appointment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,26 +17,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-public class userlogin extends AppCompatActivity {
-    EditText txtemail, txtpass;
+public class doctor_login extends AppCompatActivity {
+    EditText txtemail,txtpass;
     Button btnlogin;
     TextView txtregister;
     ProgressBar progress;
-    FirebaseAuth uAuth;
+    FirebaseAuth dAuth;
 
-    /*
-    public void init(){
+    /*public void init(){
 
-        btnsignup= (Button)findViewById(R.id.btn_signup);
+        btnsignup= (Button)findViewById(R.id.dl);
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent reg = new Intent(userlogin.this, userregister.class);
+                Intent reg = new Intent(doctorlogin.this, doctorregister.class);
                 startActivity(reg);
             }
         });
@@ -48,18 +41,18 @@ public class userlogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userlogin);
+        setContentView(R.layout.activity_doctor_login);
         //init();
 
-        txtemail = (EditText) findViewById(R.id.ulin_email);
-        txtpass = (EditText) findViewById(R.id.ulin_pass);
-        btnlogin = (Button) findViewById(R.id.ulin_loginBtn);
-        txtregister = (TextView) findViewById(R.id.ulin_createaccount);
-        progress = (ProgressBar) findViewById(R.id.ulin_progressBar);
-        uAuth = FirebaseAuth.getInstance();
+        txtemail=(EditText)findViewById(R.id.dlin_email);
+        txtpass=(EditText)findViewById(R.id.dlin_pass);
+        btnlogin=(Button)findViewById(R.id.dlin_loginBtn);
+        txtregister=(TextView)findViewById(R.id.dlin_createaccount);
+        progress=(ProgressBar)findViewById(R.id.dlin_progressBar);
+        dAuth=FirebaseAuth.getInstance();
 
-        if (uAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), userDashboard.class));
+        if(dAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
             finish();
         }
 
@@ -71,15 +64,15 @@ public class userlogin extends AppCompatActivity {
                 String email = txtemail.getText().toString().trim();
                 String pass = txtpass.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
+                if(TextUtils.isEmpty(email)){
                     txtemail.setError("Email is Required.");
                     return;
                 }
-                if (TextUtils.isEmpty(pass)) {
+                if(TextUtils.isEmpty(pass)){
                     txtpass.setError("Password is required.");
                     return;
                 }
-                if (pass.length() < 6) {
+                if(pass.length() < 6){
                     txtpass.setError("Password must be >= 6 characters.");
                     return;
                 }
@@ -87,15 +80,14 @@ public class userlogin extends AppCompatActivity {
                 progress.setVisibility(View.VISIBLE);
 
                 // Authenticate user
-                uAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                dAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(userlogin.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                            progress.setVisibility(View.GONE);
-                            startActivity(new Intent(getApplicationContext(), user_personal_details.class));
-                        } else {
-                            Toast.makeText(userlogin.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        if(task.isSuccessful()){
+                            Toast.makeText(doctor_login.this,"Logged in successfully.",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
+                        }else {
+                            Toast.makeText(doctor_login.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
                         }
                     }
@@ -107,7 +99,7 @@ public class userlogin extends AppCompatActivity {
         txtregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), userregister.class));
+                startActivity(new Intent(getApplicationContext(), doctor_register.class));
             }
         });
 

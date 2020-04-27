@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".doc_edit_profile1">
+    tools:context=".doctor_details">
 
     <ImageView
         android:id="@+id/imageView14"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="#9799A8"
-        android:text="Save"
+        android:text="Submit"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

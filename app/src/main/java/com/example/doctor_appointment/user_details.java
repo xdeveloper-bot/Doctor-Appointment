@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -25,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class user_personal_details extends AppCompatActivity {
+public class user_details extends AppCompatActivity {
     EditText txtname,txtemail,txtdob,txtaddress,txtstate,txtzip;
     DatePicker txtdatepicker;
     Button btnsubmit;
@@ -37,7 +34,7 @@ public class user_personal_details extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_personal_details);
+        setContentView(R.layout.activity_user_details);
 
         txtname=findViewById(R.id.udtl_name);
         txtemail=findViewById(R.id.udtl_email);
@@ -85,9 +82,9 @@ public class user_personal_details extends AppCompatActivity {
                 user.put("zip",zip);
                 documentReference.set(user);
 
-                Toast.makeText(user_personal_details.this,"Profile Created.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_details.this,"Profile Created.",Toast.LENGTH_SHORT).show();
                 progress.setVisibility(View.GONE);
-                startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                startActivity(new Intent(getApplicationContext(), user_dashboard.class));
 
             }
         });

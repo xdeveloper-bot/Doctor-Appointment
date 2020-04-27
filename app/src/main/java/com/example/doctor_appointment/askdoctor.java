@@ -16,7 +16,7 @@ public class askdoctor extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent doc = new Intent(askdoctor.this, doctorlogin.class);
+                Intent doc = new Intent(askdoctor.this, doctor_login.class);
                 startActivity(doc);
             }
         });
@@ -25,7 +25,7 @@ public class askdoctor extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent user = new Intent(askdoctor.this, userlogin.class);
+                Intent user = new Intent(askdoctor.this, user_login.class);
                 startActivity(user);
             }
         });

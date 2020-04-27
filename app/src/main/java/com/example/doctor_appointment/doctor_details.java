@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class doc_edit_profile1 extends AppCompatActivity {
+public class doctor_details extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doc_edit_profile1);
+        setContentView(R.layout.activity_doctor_details);
     }
 }
