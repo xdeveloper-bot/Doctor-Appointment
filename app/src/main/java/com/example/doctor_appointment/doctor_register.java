@@ -44,8 +44,6 @@ public class doctor_register extends AppCompatActivity {
     FirebaseAuth dAuth;
     FirebaseFirestore fstore;
     String docID;
-    ImageView profileimage;
-    StorageReference storageReference;
 
     //DatabaseReference reff;
     //Doctor doctor;
@@ -66,17 +64,6 @@ public class doctor_register extends AppCompatActivity {
 
         dAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
-
-        StorageReference profileRef = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(profileimage);
-            }
-        });
-
-        profileimage=findViewById(R.id.dreg_img);
 
 
         /*
@@ -203,51 +190,6 @@ public class doctor_register extends AppCompatActivity {
             }
         });
 
-        profileimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //profile change
-
-                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent,1000);
-            }
-        });
-
-
-
-    }
-    @Override
-    protected void onActivityResult(int requestCode,int resultCode, @androidx.annotation.NonNull Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-        if(requestCode==1000){
-            if (resultCode == Activity.RESULT_OK){
-                Uri imageuri = data.getData();
-
-                //profileimage.setImageURI(imageuri);
-
-                uploadImageToFirebase(imageuri);
-            }
-        }
     }
 
-    private void uploadImageToFirebase(Uri imageuri) {
-        //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("Doctor/"+dAuth.getCurrentUser().getUid()+"profile.jpg");
-        fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profileimage);
-                    }
-                });
-            }
-        })).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(doctor_register.this,"Failed",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

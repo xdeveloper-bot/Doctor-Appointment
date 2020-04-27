@@ -44,8 +44,7 @@ public class user_register extends AppCompatActivity {
     FirebaseAuth uAuth;
     FirebaseFirestore fstore;
     String userID;
-    ImageView profileimage;
-    StorageReference storageReference;
+
 
     //DatabaseReference reff;
     //User user;
@@ -66,17 +65,7 @@ public class user_register extends AppCompatActivity {
 
         uAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("users/"+uAuth.getCurrentUser().getUid()+"profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(profileimage);
-            }
-        });
-
-        profileimage = findViewById(R.id.ureg_img);
 
         /*user=new User();
         reff= FirebaseDatabase.getInstance().getReference().child("User");
@@ -189,49 +178,10 @@ public class user_register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), user_login.class));
             }
         });
-        profileimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //profile change
-                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent, 1000);
-            }
-        });
+
 
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.NonNull Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == Activity.RESULT_OK) {
-                Uri imageuri = data.getData();
-               // profileimage.setImageURI(imageuri);
 
-                uploadImageToFirebase(imageuri);
-            }
-        }
-    }
-
-    private void uploadImageToFirebase(Uri imageuri) {
-        //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/"+uAuth.getCurrentUser().getUid()+"profile.jpg");
-        fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profileimage);
-                    }
-                });
-            }
-        })).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(user_register.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }
