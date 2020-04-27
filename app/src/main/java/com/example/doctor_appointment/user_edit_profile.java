@@ -1,9 +1,11 @@
 package com.example.doctor_appointment;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,9 +16,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -34,6 +39,7 @@ public class user_edit_profile extends AppCompatActivity {
     FirebaseFirestore fstore;
     StorageReference storageReference;
     String userID;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,7 @@ public class user_edit_profile extends AppCompatActivity {
         fstore=FirebaseFirestore.getInstance();
         storageReference= FirebaseStorage.getInstance().getReference();
         userID=uAuth.getCurrentUser().getUid();
+        user= uAuth.getCurrentUser();
 
         DocumentReference documentReference=fstore.collection("users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -85,10 +92,40 @@ public class user_edit_profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Reset Password code here      <--
+                final Button resetpassword = new Button(v.getContext());
+                AlertDialog.Builder passwordresretdialog = new AlertDialog.Builder(v.getContext());
+                passwordresretdialog.setTitle("Reset password");
+                passwordresretdialog.setMessage("Enter your to Recived reset link");
+                passwordresretdialog.setView(resetpassword);
 
+                passwordresretdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String newPassword = resetpassword.getText().toString();
+                        user.updatePassword(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(user_edit_profile.this, "Password Reser Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(user_edit_profile.this, "Password Reset Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+            });
+                 passwordresretdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Close Dialog
+                    }
+                });
+                 passwordresretdialog.create().show();
+        }
 
-            }
         });
+
 
 
     }

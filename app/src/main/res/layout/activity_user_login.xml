@@ -31,6 +31,7 @@
         android:singleLine="true"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ulin_email" />
 
@@ -48,7 +49,7 @@
         android:id="@+id/ulin_loginBtn"
         android:layout_width="349dp"
         android:layout_height="46dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="25dp"
         android:background="#979EA3"
         android:text="LOG IN"
         android:textColor="#FFFFFF"
@@ -85,7 +86,7 @@
         android:id="@+id/ulin_createaccount"
         android:layout_width="284dp"
         android:layout_height="23dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:text="Create Account"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -98,10 +99,22 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ulin_createaccount" />
+
+    <TextView
+        android:id="@+id/ulin_forget"
+        android:layout_width="284dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="5dp"
+        android:text="Forget Password?"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ulin_createaccount"
+        app:layout_constraintStart_toStartOf="@+id/ulin_createaccount"
         app:layout_constraintTop_toBottomOf="@+id/ulin_createaccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
