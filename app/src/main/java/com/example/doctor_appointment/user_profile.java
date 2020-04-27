@@ -59,7 +59,6 @@ public class user_profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),user_personal_details.class));
-                finish();
             }
         });
 

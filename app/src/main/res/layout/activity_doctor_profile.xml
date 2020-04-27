@@ -47,7 +47,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/dpro_textView4"
+                            android:id="@+id/dpro_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="150dp"
@@ -57,7 +57,7 @@
                             android:textSize="36sp" />
 
                         <TextView
-                            android:id="@+id/dpro_textView5"
+                            android:id="@+id/dpro_edit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="155dp"
@@ -67,7 +67,7 @@
                             android:textSize="24sp" />
 
                         <ImageView
-                            android:id="@+id/dpro_imageView2"
+                            android:id="@+id/dpro_profilepic"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_margin="20dp"
@@ -101,7 +101,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/dpro_textView7"
+                            android:id="@+id/dpro_reminder"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
@@ -134,7 +134,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/dpro_textView8"
+                            android:id="@+id/dpro_precription"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
@@ -167,7 +167,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/dpro_textView9"
+                            android:id="@+id/dpro_share"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
@@ -200,7 +200,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/dpro_textView10"
+                            android:id="@+id/dpro_logout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
