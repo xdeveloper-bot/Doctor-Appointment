@@ -58,7 +58,7 @@ public class user_profile extends AppCompatActivity {
         txtedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),user_edit_profile.class));
+                startActivity(new Intent(getApplicationContext(),user_personal_details.class));
                 finish();
             }
         });

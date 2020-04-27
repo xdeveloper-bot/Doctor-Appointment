@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".user_edit_profile"></activity>
+        <activity android:name=".doc_edit_profile1" />
+        <activity android:name=".doc_edit_profile" />
         <activity android:name=".doc_search" />
         <activity android:name=".user_search" />
         <activity android:name=".doctor_profile" />

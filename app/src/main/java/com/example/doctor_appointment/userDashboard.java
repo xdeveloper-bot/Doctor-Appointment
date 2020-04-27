@@ -106,7 +106,7 @@ public class userDashboard extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(getApplicationContext(), home.class));
                 break;
             case R.id.nav_profile:
-                startActivity(new Intent(getApplicationContext(), user_edit_profile.class));
+                startActivity(new Intent(getApplicationContext(), user_profile.class));
                 break;
             case R.id.nav_search:
                 startActivity(new Intent(getApplicationContext(), search.class));
