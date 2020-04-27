@@ -47,7 +47,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/upro_textView4"
+                    android:id="@+id/upro_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="150dp"
@@ -57,7 +57,7 @@
                     android:textSize="36sp" />
 
                 <TextView
-                    android:id="@+id/upro_textView5"
+                    android:id="@+id/upro_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="155dp"
@@ -67,7 +67,7 @@
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:id="@+id/upro_imageView2"
+                    android:id="@+id/upro_profilepic"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
@@ -101,7 +101,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/upro_textView7"
+                    android:id="@+id/upro_reminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -134,7 +134,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/upro_textView8"
+                    android:id="@+id/upro_precription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -167,7 +167,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/upro_textView9"
+                    android:id="@+id/upro_share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -200,7 +200,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/upro_textView10"
+                    android:id="@+id/upro_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"

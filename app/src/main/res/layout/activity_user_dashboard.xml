@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:textDirection="firstStrong"
     tools:context=".userDashboard"
-    tools:openDrawer="">
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/udash_nav_view1"

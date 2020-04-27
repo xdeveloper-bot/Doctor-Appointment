@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doc_search"></activity>
+        <activity android:name=".user_edit_profile"></activity>
+        <activity android:name=".doc_search" />
         <activity android:name=".user_search" />
         <activity android:name=".doctor_profile" />
         <activity android:name=".user_profile" />
