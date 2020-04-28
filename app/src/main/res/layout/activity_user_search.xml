@@ -14,17 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/usea_toolbar"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrowback" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/usea_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrowback"
+            app:titleTextColor="#000000" />
 
     <LinearLayout
         android:id="@+id/usea_linearLayout"

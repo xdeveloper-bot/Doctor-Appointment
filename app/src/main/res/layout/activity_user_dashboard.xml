@@ -38,7 +38,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/menu" />
+                app:navigationIcon="@drawable/menu"
+                app:titleTextColor="#000000" />
 
             <LinearLayout
                 android:id="@+id/udash_l7"
