@@ -92,7 +92,7 @@ public class user_edit_profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Reset Password code here      <--
-                final Button resetpassword = new Button(v.getContext());
+                final EditText resetpassword = new EditText(v.getContext());
                 AlertDialog.Builder passwordresretdialog = new AlertDialog.Builder(v.getContext());
                 passwordresretdialog.setTitle("Reset password");
                 passwordresretdialog.setMessage("Enter your to Recived reset link");
@@ -105,7 +105,7 @@ public class user_edit_profile extends AppCompatActivity {
                         user.updatePassword(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(user_edit_profile.this, "Password Reser Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(user_edit_profile.this, "Password Reset Successfully", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override

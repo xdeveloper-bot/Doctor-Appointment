@@ -94,10 +94,10 @@ public class doctor_edit_profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Reset Password code here      <--
-                final Button resetpassword = new Button(v.getContext());
+                final EditText resetpassword = new EditText(v.getContext());
                 AlertDialog.Builder passwordresretdialog = new AlertDialog.Builder(v.getContext());
                 passwordresretdialog.setTitle("Reset password");
-                passwordresretdialog.setMessage("Enter your to Recived reset link");
+                passwordresretdialog.setMessage("Enter your New Password");
                 passwordresretdialog.setView(resetpassword);
 
                 passwordresretdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -107,7 +107,7 @@ public class doctor_edit_profile extends AppCompatActivity {
                         user.updatePassword(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(doctor_edit_profile.this, "Password Reser Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(doctor_edit_profile.this, "Password Reset Successfully", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
