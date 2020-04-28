@@ -104,6 +104,7 @@ public class doctor_details extends AppCompatActivity {
                 Toast.makeText(doctor_details.this,"Profile Created.",Toast.LENGTH_SHORT).show();
                 progress.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
+                finish();
 
             }
         });

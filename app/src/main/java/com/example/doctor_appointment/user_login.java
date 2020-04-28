@@ -94,6 +94,7 @@ public class user_login extends AppCompatActivity {
                             Toast.makeText(user_login.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
                             startActivity(new Intent(getApplicationContext(), user_dashboard.class));
+                            finish();
                         } else {
                             Toast.makeText(user_login.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
@@ -151,6 +152,7 @@ public class user_login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), user_register.class));
+                finish();
             }
         });
 

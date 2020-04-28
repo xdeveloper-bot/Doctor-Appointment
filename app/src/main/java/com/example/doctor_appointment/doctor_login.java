@@ -91,6 +91,7 @@ public class doctor_login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(doctor_login.this,"Logged in successfully.",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), doctor_dashboard.class));
+                            finish();
                         }else {
                             Toast.makeText(doctor_login.this,"Error!! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progress.setVisibility(View.GONE);
@@ -146,6 +147,7 @@ public class doctor_login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), doctor_register.class));
+                finish();
             }
         });
 

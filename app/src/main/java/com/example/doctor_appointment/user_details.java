@@ -109,6 +109,7 @@ public class user_details extends AppCompatActivity {
                 Toast.makeText(user_details.this,"Profile Created.",Toast.LENGTH_SHORT).show();
                 progress.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), user_dashboard.class));
+                finish();
 
             }
         });
