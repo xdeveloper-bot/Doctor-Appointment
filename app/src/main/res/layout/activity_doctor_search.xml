@@ -54,15 +54,14 @@
                             android:layout_marginTop="10dp"
                             app:srcCompat="@drawable/ic_search" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/dsea_textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_marginStart="50dp"
-                            android:layout_marginTop="15dp"
-                            android:fontFamily="sans-serif-condensed-medium"
+                            android:fontFamily="sans-serif-black"
                             android:text="Search For Doctor"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
