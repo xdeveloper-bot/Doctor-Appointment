@@ -9,12 +9,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +43,7 @@ public class user_edit_profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_edit_profile);
+        setContentView(R.layout.activity_user_edit_profile);
 
         profileimg=findViewById(R.id.uedpro_img);
         btnchange=findViewById(R.id.uedpro_changebtn);
@@ -86,7 +85,6 @@ public class user_edit_profile extends AppCompatActivity {
 
             }
         });
-
 
         btnreset.setOnClickListener(new View.OnClickListener() {
             @Override
