@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".bookappointment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout>
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    <androidx.appcompat.widget.Toolbar
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -22,7 +23,8 @@
         app:navigationIcon="@drawable/ic_arrowback">
 
     </androidx.appcompat.widget.Toolbar>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
