@@ -7,24 +7,25 @@
     tools:context=".bookappointment">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrowback">
+            android:id="@+id/bapp_toolbar3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrowback">
 
-    </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +33,6 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="58dp"
@@ -42,6 +42,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/bapp_cardview"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -52,7 +53,7 @@
                     android:layout_margin="8dp">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/bapp_search"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
@@ -60,14 +61,14 @@
                         app:srcCompat="@drawable/ic_search" />
 
                     <EditText
-                        android:id="@+id/editText3"
+                        android:id="@+id/bapp_searchdoc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="0dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="-2dp"
-                        android:layout_toEndOf="@+id/imageView4"
+                        android:layout_toEndOf="@+id/bapp_search"
                         android:ems="10"
                         android:hint="Search doctors,specialities,clincs,...."
                         android:inputType="textPersonName" />
@@ -89,7 +90,7 @@
 
 
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout8"
+                android:id="@+id/bapp_gridLayout8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -97,7 +98,7 @@
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout5">
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout5">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="100dp"
@@ -114,7 +115,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView81"
+                            android:id="@+id/bapp_cancer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="40dp"
@@ -142,7 +143,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView91"
+                            android:id="@+id/bapp_heart"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="40dp"
@@ -157,7 +158,7 @@
             </androidx.gridlayout.widget.GridLayout>
 
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout2"
+                android:id="@+id/bapp_gridLayout2"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="10dp"
@@ -182,7 +183,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/bapp_skin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -211,7 +212,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView5"
+                            android:id="@+id/bapp_women"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -228,7 +229,7 @@
             </androidx.gridlayout.widget.GridLayout>
 
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout3"
+                android:id="@+id/bapp_gridLayout3"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="10dp"
@@ -236,7 +237,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout2">
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout2">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="100dp"
@@ -253,7 +254,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/bapp_child"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
@@ -282,14 +283,14 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView7"
+                            android:id="@+id/bapp_general\"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Gernal Physician"
+                            android:text="General Physician"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="24sp" />
@@ -298,7 +299,7 @@
             </androidx.gridlayout.widget.GridLayout>
 
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout5"
+                android:id="@+id/bapp_gridLayout5"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="10dp"
@@ -306,7 +307,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout">
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="100dp"
@@ -323,7 +324,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/bapp_brain"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -351,7 +352,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/bapp_mental"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -366,7 +367,7 @@
             </androidx.gridlayout.widget.GridLayout>
 
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout"
+                android:id="@+id/bapp_gridLayout"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="10dp"
@@ -374,7 +375,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout3">
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout3">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="100dp"
@@ -391,7 +392,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView8"
+                            android:id="@+id/bapp_eye"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -419,7 +420,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/bapp_dental"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
