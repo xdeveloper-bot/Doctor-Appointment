@@ -29,7 +29,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     Toolbar toolbar;
     Button resendbtn;
-    TextView resendbg,resendtxt;
+    TextView resendbg,resendtxt,txtsearch;
     FirebaseAuth fAuth;
 
     @Override
@@ -37,6 +37,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
+        txtsearch=findViewById(R.id.udash_textView2);
         drawerLayout = findViewById(R.id.udash_drawer_layout);
         navigationView = findViewById(R.id.udash_nav_view1);
         toolbar = findViewById(R.id.udash_toolbar1);
@@ -85,6 +86,13 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
+        txtsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),user_search.class));
+            }
+        });
+
     }
 
     @Override
@@ -96,6 +104,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             super.onBackPressed();
         }
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
