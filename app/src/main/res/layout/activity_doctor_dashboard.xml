@@ -72,7 +72,7 @@
 
                         <TextView
                             android:id="@+id/ddash_textView44"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_marginTop="20dp"
@@ -80,7 +80,7 @@
                             android:fontFamily="sans-serif-black"
                             android:text="Location of Patient"
                             android:textAlignment="center"
-                            android:textSize="28sp" />
+                            android:textSize="25sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -113,7 +113,7 @@
                             android:text="Data of Patients"
                             android:textAlignment="center"
                             android:textAllCaps="false"
-                            android:textSize="28sp" />
+                            android:textSize="25sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -147,13 +147,13 @@
 
                         <TextView
                             android:id="@+id/ddash_textView88"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
                             android:fontFamily="sans-serif-black"
                             android:text="Detail of Patients"
                             android:textAlignment="center"
-                            android:textSize="28sp" />
+                            android:textSize="25sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -175,13 +175,13 @@
 
                         <TextView
                             android:id="@+id/ddash_textView66"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="28dp"
                             android:fontFamily="sans-serif-black"
                             android:text="Reminder of Appointments"
                             android:textAlignment="center"
-                            android:textSize="28sp" />
+                            android:textSize="25sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -215,13 +215,14 @@
 
                         <TextView
                             android:id="@+id/ddash_textView55"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
                             android:layout_marginTop="30dp"
                             android:fontFamily="sans-serif-black"
                             android:text="Emergency"
                             android:textAlignment="center"
-                            android:textSize="28sp" />
+                            android:textSize="25sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -243,7 +244,7 @@
 
                         <TextView
                             android:id="@+id/ddash_textView77"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
                             android:fontFamily="sans-serif-black"
