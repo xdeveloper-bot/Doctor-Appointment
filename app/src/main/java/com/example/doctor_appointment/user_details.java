@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -43,6 +44,7 @@ public class user_details extends AppCompatActivity {
     FirebaseFirestore uStore;
     String userID;
     ImageView profileimage, calenderimg;
+    TextView txtselectdate;
     StorageReference storageReference;
 
     @Override
@@ -58,6 +60,7 @@ public class user_details extends AppCompatActivity {
         txtzip = findViewById(R.id.udtl_zip);
         calenderimg = findViewById(R.id.udtl_calender);
         txtdatepicker = findViewById(R.id.udtl_datepicker);
+        txtselectdate = findViewById(R.id.udtl_selectdate);
         progress = findViewById(R.id.udtl_progressBar);
         btnsubmit = findViewById(R.id.udtl_submitBtn);
 
@@ -90,20 +93,26 @@ public class user_details extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 txtdatepicker.setVisibility(View.VISIBLE);
+                txtselectdate.setVisibility(View.VISIBLE);
+                btnsubmit.setVisibility(View.GONE);
                 Calendar calender = Calendar.getInstance();
                 txtdatepicker.init(calender.get(Calendar.YEAR), calender.get(Calendar.MONTH),
                         calender.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
                             @Override
                             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                /*Toast.makeText(getApplicationContext(),
-                                        txtdatepicker.getDayOfMonth() + "-" +
-                                                txtdatepicker.getMonth() + "-" + txtdatepicker.getYear(),
-                                        Toast.LENGTH_SHORT).show();*/
                                 String date = txtdatepicker.getDayOfMonth() + "-" + txtdatepicker.getMonth() + "-" + txtdatepicker.getYear();
                                 txtdob.setText(date);
-                                txtdatepicker.setVisibility(View.GONE);
                             }
                         });
+            }
+        });
+
+        txtselectdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtdatepicker.setVisibility(View.GONE);
+                btnsubmit.setVisibility(View.VISIBLE);
+                txtselectdate.setVisibility(View.GONE);
             }
         });
 
