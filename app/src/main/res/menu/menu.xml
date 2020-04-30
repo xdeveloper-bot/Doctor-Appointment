@@ -19,6 +19,31 @@
     </group>
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_appoint"
+            android:icon="@drawable/ic_power"
+            android:title="Appointments" />
+
+        <item
+            android:id="@+id/nav_test_booking"
+            android:icon="@drawable/ic_power"
+            android:title="Test Booking" />
+
+        <item
+            android:id="@+id/nav_Consultations"
+            android:icon="@drawable/ic_power"
+            android:title="Consultations" />
+
+        <item
+            android:id="@+id/nav_medical"
+            android:icon="@drawable/ic_power"
+            android:title="Medical Records" />
+
+
+    </group>
+
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_power"
@@ -35,9 +60,9 @@
                     android:icon="@drawable/ic_share"
                     android:title="Share" />
                 <item
-                    android:id="@+id/nav_about"
+                    android:id="@+id/nav_setting"
                     android:icon="@drawable/ic_contact_mail"
-                    android:title="Contact Us" />
+                    android:title="Setting" />
                 <item
                     android:id="@+id/nav_contact"
                     android:icon="@drawable/doctor_bag"

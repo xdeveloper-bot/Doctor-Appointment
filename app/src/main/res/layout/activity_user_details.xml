@@ -57,9 +57,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/udtl_name"
+        app:layout_constraintEnd_toStartOf="@+id/udtl_name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/udtl_name"
-        app:srcCompat="@drawable/ic_profile"
-        tools:layout_editor_absoluteX="31dp" />
+        app:srcCompat="@drawable/ic_profile" />
 
     <EditText
         android:id="@+id/udtl_email"
