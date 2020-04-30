@@ -8,58 +8,62 @@
 
     <TextView
         android:id="@+id/identity"
-        android:layout_width="111dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="30dp"
-        android:text="Are you "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who are you?"
         android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/identity_doctor"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
 
     <ImageView
         android:id="@+id/identity_doctor"
         android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/doctor_button"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identity"
         app:srcCompat="@drawable/doctor" />
 
     <ImageView
         android:id="@+id/identity_user"
         android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doctor_button"
         app:srcCompat="@drawable/man" />
 
     <Button
         android:id="@+id/doctor_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
         android:background="#979EA3"
         android:text="DOCTOR"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/identity_doctor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@+id/identity_doctor" />
 
     <Button
         android:id="@+id/patient_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
         android:background="#979EA3"
         android:text="PATIENT"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identity_user" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/identity_user"
+        app:layout_constraintEnd_toStartOf="@+id/identity_user"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

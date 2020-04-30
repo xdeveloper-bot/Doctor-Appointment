@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user_personal_details">
+    tools:context=".user_details">
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/udtl_profileimg"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -27,7 +27,7 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/udtl_profileimg" />
 
     <TextView
         android:id="@+id/textView3"
@@ -41,8 +41,9 @@
 
     <EditText
         android:id="@+id/udtl_name"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Name"
@@ -53,8 +54,9 @@
 
     <EditText
         android:id="@+id/udtl_email"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="E-mail id"
@@ -65,8 +67,9 @@
 
     <EditText
         android:id="@+id/udtl_dob"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="DOB"
@@ -77,8 +80,9 @@
 
     <EditText
         android:id="@+id/udtl_address"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Address"
@@ -89,8 +93,9 @@
 
     <EditText
         android:id="@+id/udtl_state"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="State"
@@ -101,8 +106,9 @@
 
     <EditText
         android:id="@+id/udtl_zip"
-        android:layout_width="349dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Postal Code"
@@ -117,7 +123,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:background="#979EA3"
-        android:text="Submit"
+        android:text="Save"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,8 +132,9 @@
 
     <DatePicker
         android:id="@+id/udtl_datepicker"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="340dp"
+        android:layout_marginStart="50dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -144,5 +151,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/udtl_submitBtn" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_name"
+        app:layout_constraintTop_toTopOf="@+id/udtl_name"
+        app:srcCompat="@drawable/ic_profile"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_email"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/udtl_email"
+        app:srcCompat="@drawable/ic_email" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_address"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/udtl_address"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_dob"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/udtl_dob"
+        app:srcCompat="@drawable/ic_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

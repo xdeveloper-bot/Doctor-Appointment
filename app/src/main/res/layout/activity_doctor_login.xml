@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/ulin_email"
+        android:id="@+id/dlin_email"
         android:layout_width="349dp"
         android:layout_height="64dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/ulin_pass"
+        android:id="@+id/dlin_pass"
         android:layout_width="349dp"
         android:layout_height="64dp"
         android:layout_marginTop="8dp"
@@ -32,23 +32,23 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_email" />
+        app:layout_constraintTop_toBottomOf="@+id/dlin_email" />
 
     <ImageView
-        android:id="@+id/ulin_img"
+        android:id="@+id/dlin_img"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man" />
+        app:srcCompat="@drawable/doctor" />
 
     <Button
-        android:id="@+id/ulin_loginBtn"
+        android:id="@+id/dlin_loginBtn"
         android:layout_width="349dp"
         android:layout_height="46dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:background="#979EA3"
         android:text="LOG IN"
         android:textColor="#FFFFFF"
@@ -56,22 +56,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_pass"
+        app:layout_constraintTop_toBottomOf="@+id/dlin_pass"
         app:layout_constraintVertical_bias="0.07999998" />
 
     <TextView
-        android:id="@+id/ulin_txt1"
+        android:id="@+id/dlin_txt1"
         android:layout_width="342dp"
         android:layout_height="45dp"
-        android:text="User Login"
+        android:layout_marginTop="8dp"
+        android:text="Doctor Login"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_img" />
+        app:layout_constraintTop_toBottomOf="@+id/dlin_img" />
 
     <TextView
-        android:id="@+id/ulin_txt2"
+        android:id="@+id/dlin_txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -79,29 +80,41 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_txt1" />
+        app:layout_constraintTop_toBottomOf="@+id/dlin_txt1" />
 
     <TextView
-        android:id="@+id/ulin_createaccount"
+        android:id="@+id/dlin_createaccount"
         android:layout_width="284dp"
         android:layout_height="23dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:text="Create Account"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_loginBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/dlin_loginBtn" />
 
     <ProgressBar
-        android:id="@+id/ulin_progressBar"
+        android:id="@+id/dlin_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulin_createaccount" />
+        app:layout_constraintTop_toBottomOf="@+id/dlin_createaccount" />
+
+    <TextView
+        android:id="@+id/dlin_forget"
+        android:layout_width="284dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="5dp"
+        android:text="Forget Password?"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dlin_createaccount"
+        app:layout_constraintStart_toStartOf="@+id/dlin_createaccount"
+        app:layout_constraintTop_toBottomOf="@+id/dlin_createaccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
