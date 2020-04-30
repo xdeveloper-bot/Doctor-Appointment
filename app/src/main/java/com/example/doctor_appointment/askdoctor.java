@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class askdoctor extends AppCompatActivity {
     public Button btn1, btn2;
+    //hogya sahi
 
     public void init(){
 
