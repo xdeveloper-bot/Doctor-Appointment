@@ -52,6 +52,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_name"
+        app:layout_constraintTop_toTopOf="@+id/udtl_name"
+        app:srcCompat="@drawable/ic_profile"
+        tools:layout_editor_absoluteX="31dp" />
+
     <EditText
         android:id="@+id/udtl_email"
         android:layout_width="300dp"
@@ -64,6 +73,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/udtl_name" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_email"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/udtl_email"
+        app:srcCompat="@drawable/ic_email" />
 
     <EditText
         android:id="@+id/udtl_dob"
@@ -78,6 +96,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/udtl_email" />
 
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_dob"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/udtl_dob"
+        app:srcCompat="@drawable/ic_date" />
+
     <EditText
         android:id="@+id/udtl_address"
         android:layout_width="300dp"
@@ -90,6 +117,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/udtl_dob" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/udtl_address"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/udtl_address"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <EditText
         android:id="@+id/udtl_state"
@@ -132,14 +168,16 @@
 
     <DatePicker
         android:id="@+id/udtl_datepicker"
-        android:layout_width="300dp"
-        android:layout_height="340dp"
-        android:layout_marginStart="50dp"
-        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DFDDDD"
+        android:backgroundTint="#F1EFEF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/udtl_dob" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ProgressBar
         android:id="@+id/udtl_progressBar"
@@ -153,39 +191,14 @@
         app:layout_constraintTop_toBottomOf="@+id/udtl_submitBtn" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/udtl_name"
-        app:layout_constraintTop_toTopOf="@+id/udtl_name"
-        app:srcCompat="@drawable/ic_profile"
-        tools:layout_editor_absoluteX="31dp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/udtl_email"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/udtl_email"
-        app:srcCompat="@drawable/ic_email" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/udtl_address"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/udtl_address"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/udtl_calender"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/udtl_dob"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/udtl_dob"
         app:layout_constraintTop_toTopOf="@+id/udtl_dob"
-        app:srcCompat="@drawable/ic_date" />
+        app:layout_constraintVertical_bias=".3"
+        app:srcCompat="@drawable/baseline_calendar_today_black_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent h = new Intent(MainActivity.this , askdoctor.class);
+                Intent h = new Intent(MainActivity.this , user_login.class);
                 startActivity(h);
                 finish();
             }

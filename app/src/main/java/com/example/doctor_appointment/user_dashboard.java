@@ -29,7 +29,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     Toolbar toolbar;
     Button resendbtn;
-    TextView resendbg,resendtxt,txtsearch;
+    TextView resendbg,resendtxt,txtsearch,txtbookappointment;
     FirebaseAuth fAuth;
 
     @Override
@@ -37,7 +37,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-        txtsearch=findViewById(R.id.udash_textView2);
+        txtsearch=findViewById(R.id.udash_search);
+        txtbookappointment=findViewById(R.id.udash_bookappointment);
         drawerLayout = findViewById(R.id.udash_drawer_layout);
         navigationView = findViewById(R.id.udash_nav_view1);
         toolbar = findViewById(R.id.udash_toolbar1);
@@ -86,18 +87,18 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-        txtsearch.setOnClickListener(new View.OnClickListener() {
+        txtbookappointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),user_search.class));
+                startActivity(new Intent(getApplicationContext(),bookappointment.class));
             }
         });
 
     }
 
+
     @Override
     public void onBackPressed() {
-
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
@@ -106,10 +107,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     }
 
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.nav_home:
                 onBackPressed();
@@ -118,14 +117,14 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(getApplicationContext(), user_profile.class));
                 break;
             case R.id.nav_search:
-                startActivity(new Intent(getApplicationContext(), user_search.class));
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_logout:
                 fAuth.signOut();
-                startActivity(new Intent(getApplicationContext(), askdoctor.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
         }
         drawerLayout.closeDrawer(GravityCompat.START);

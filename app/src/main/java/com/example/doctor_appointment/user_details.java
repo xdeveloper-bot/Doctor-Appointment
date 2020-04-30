@@ -30,18 +30,19 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class user_details extends AppCompatActivity {
-    EditText txtname,txtemail,txtdob,txtaddress,txtstate,txtzip;
+    EditText txtname, txtemail, txtdob, txtaddress, txtstate, txtzip;
     DatePicker txtdatepicker;
     Button btnsubmit;
     ProgressBar progress;
     FirebaseAuth uAuth;
     FirebaseFirestore uStore;
     String userID;
-    ImageView profileimage;
+    ImageView profileimage, calenderimg;
     StorageReference storageReference;
 
     @Override
@@ -49,23 +50,24 @@ public class user_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_details);
 
-        txtname=findViewById(R.id.udtl_name);
-        txtemail=findViewById(R.id.udtl_email);
-        txtdob=findViewById(R.id.udtl_dob);
-        txtaddress=findViewById(R.id.udtl_address);
-        txtstate=findViewById(R.id.udtl_state);
-        txtzip=findViewById(R.id.udtl_zip);
-        txtdatepicker=findViewById(R.id.udtl_datepicker);
-        progress=findViewById(R.id.udtl_progressBar);
-        btnsubmit=findViewById(R.id.udtl_submitBtn);
+        txtname = findViewById(R.id.udtl_name);
+        txtemail = findViewById(R.id.udtl_email);
+        txtdob = findViewById(R.id.udtl_dob);
+        txtaddress = findViewById(R.id.udtl_address);
+        txtstate = findViewById(R.id.udtl_state);
+        txtzip = findViewById(R.id.udtl_zip);
+        calenderimg = findViewById(R.id.udtl_calender);
+        txtdatepicker = findViewById(R.id.udtl_datepicker);
+        progress = findViewById(R.id.udtl_progressBar);
+        btnsubmit = findViewById(R.id.udtl_submitBtn);
 
-        uAuth=FirebaseAuth.getInstance();
-        uStore=FirebaseFirestore.getInstance();
+        uAuth = FirebaseAuth.getInstance();
+        uStore = FirebaseFirestore.getInstance();
 
         userID = uAuth.getCurrentUser().getUid();
 
         storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/"+ userID +"profile.jpg");
+        StorageReference profileRef = storageReference.child("users/" + userID + "profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -84,6 +86,27 @@ public class user_details extends AppCompatActivity {
             }
         });
 
+        calenderimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtdatepicker.setVisibility(View.VISIBLE);
+                Calendar calender = Calendar.getInstance();
+                txtdatepicker.init(calender.get(Calendar.YEAR), calender.get(Calendar.MONTH),
+                        calender.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+                            @Override
+                            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                /*Toast.makeText(getApplicationContext(),
+                                        txtdatepicker.getDayOfMonth() + "-" +
+                                                txtdatepicker.getMonth() + "-" + txtdatepicker.getYear(),
+                                        Toast.LENGTH_SHORT).show();*/
+                                String date = txtdatepicker.getDayOfMonth() + "-" + txtdatepicker.getMonth() + "-" + txtdatepicker.getYear();
+                                txtdob.setText(date);
+                                txtdatepicker.setVisibility(View.GONE);
+                            }
+                        });
+            }
+        });
+
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,16 +120,16 @@ public class user_details extends AppCompatActivity {
 
                 progress.setVisibility(View.VISIBLE);
 
-                Map<String,Object> user = new HashMap<>();
+                Map<String, Object> user = new HashMap<>();
                 user.put("name", name);
-                user.put("email",email);
-                user.put("dob",dob);
-                user.put("address",address);
-                user.put("state",state);
-                user.put("zip",zip);
+                user.put("email", email);
+                user.put("dob", dob);
+                user.put("address", address);
+                user.put("state", state);
+                user.put("zip", zip);
                 documentReference.set(user);
 
-                Toast.makeText(user_details.this,"Profile Created.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_details.this, "Profile Created.", Toast.LENGTH_SHORT).show();
                 progress.setVisibility(View.GONE);
                 startActivity(new Intent(getApplicationContext(), user_dashboard.class));
                 finish();
@@ -123,7 +146,6 @@ public class user_details extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
@@ -133,7 +155,6 @@ public class user_details extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 Uri imageuri = data.getData();
                 // profileimage.setImageURI(imageuri);
-
                 uploadImageToFirebase(imageuri);
             }
         }
@@ -141,7 +162,7 @@ public class user_details extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/"+uAuth.getCurrentUser().getUid()+"profile.jpg");
+        final StorageReference fileref = storageReference.child("users/" + uAuth.getCurrentUser().getUid() + "profile.jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -159,6 +180,5 @@ public class user_details extends AppCompatActivity {
             }
         });
     }
-
 
 }

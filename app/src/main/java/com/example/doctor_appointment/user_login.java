@@ -29,7 +29,6 @@ public class user_login extends AppCompatActivity {
     ProgressBar progress;
     FirebaseAuth uAuth;
 
-
     /*
     public void init(){
 
@@ -105,7 +104,6 @@ public class user_login extends AppCompatActivity {
         });
 
         //forget password
-
         forgetpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,7 +137,6 @@ public class user_login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //close dialog
-
                     }
                 });
                 passwordresretdialog.create().show();

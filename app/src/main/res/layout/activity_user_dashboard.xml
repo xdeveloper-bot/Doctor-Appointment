@@ -70,7 +70,7 @@
                         android:background="#FFFFFF">
 
                         <TextView
-                            android:id="@+id/udash_textView5"
+                            android:id="@+id/udash_bookappointment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
@@ -173,7 +173,7 @@
                         android:background="#FFFFFF">
 
                         <TextView
-                            android:id="@+id/udash_textView2"
+                            android:id="@+id/udash_search"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"

@@ -82,14 +82,12 @@ public class user_edit_profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),user_details.class));
-
             }
         });
 
         btnreset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Reset Password code here      <--
                 final EditText resetpassword = new EditText(v.getContext());
                 AlertDialog.Builder passwordresretdialog = new AlertDialog.Builder(v.getContext());
                 passwordresretdialog.setTitle("Reset password");
@@ -112,19 +110,15 @@ public class user_edit_profile extends AppCompatActivity {
                             }
                         });
                     }
-            });
-                 passwordresretdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                });
+                passwordresretdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //Close Dialog
                     }
                 });
-                 passwordresretdialog.create().show();
-        }
-
+                passwordresretdialog.create().show();
+            }
         });
-
-
-
     }
 }

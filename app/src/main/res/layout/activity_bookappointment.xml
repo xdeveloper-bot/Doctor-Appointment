@@ -283,7 +283,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/bapp_general\"
+                            android:id="@+id/bapp_general"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
@@ -294,6 +294,7 @@
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="24sp" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </androidx.gridlayout.widget.GridLayout>

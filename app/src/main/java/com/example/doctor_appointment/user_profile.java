@@ -82,24 +82,19 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
-
         txtreminder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(user_profile.this,"Reminder clicked.",Toast.LENGTH_SHORT).show();
-
             }
         });
-
 
         txtprecription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(user_profile.this,"Prescription clicked.",Toast.LENGTH_SHORT).show();
-
             }
         });
-
 
         txtshare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,16 +103,14 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
-
         txtlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 uAuth.signOut();
-                startActivity(new Intent(getApplicationContext(), askdoctor.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
-
 
     }
 }

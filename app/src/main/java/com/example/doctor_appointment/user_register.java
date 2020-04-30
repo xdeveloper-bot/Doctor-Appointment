@@ -45,7 +45,6 @@ public class user_register extends AppCompatActivity {
     FirebaseFirestore fstore;
     String userID;
 
-
     //DatabaseReference reff;
     //User user;
     //long maxid=0;
@@ -66,7 +65,6 @@ public class user_register extends AppCompatActivity {
         uAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
 
-
         /*user=new User();
         reff= FirebaseDatabase.getInstance().getReference().child("User");
         reff.addValueEventListener(new ValueEventListener() {
@@ -82,11 +80,6 @@ public class user_register extends AppCompatActivity {
             }
         });
         */
-
-        if (uAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), user_dashboard.class));
-            finish();
-        }
 
         //Register Button
         btnregister.setOnClickListener(new View.OnClickListener() {
@@ -179,9 +172,6 @@ public class user_register extends AppCompatActivity {
             }
         });
 
-
-
     }
-
 
 }
