@@ -77,7 +77,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
 
         Menu menu = navigationView.getMenu();
         menu.findItem(R.id.nav_logout).setVisible(true);
-        menu.findItem(R.id.nav_profile).setVisible(true);
+        menu.findItem(R.id.arrow).setVisible(true);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -113,7 +113,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             case R.id.nav_home:
                 onBackPressed();
                 break;
-            case R.id.nav_profile:
+            case R.id.arrow:
                 startActivity(new Intent(getApplicationContext(), user_profile.class));
                 break;
             case R.id.nav_search:
