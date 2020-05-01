@@ -1,100 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bookappointment">
+    tools:context=".bookAppointment2">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/bapp_toolbar3"
-            android:layout_width="0dp"
+            android:id="@+id/bapp_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
+            android:background="#FFFFFF"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_arrowback">
+            app:navigationIcon="@drawable/ic_arrowback"
+            android:theme="?attr/actionBarTheme" />
 
-        </androidx.appcompat.widget.Toolbar>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="58dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/bapp_cardview"
-                android:layout_width="0dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_margin="8dp">
 
-                <RelativeLayout
+                <ImageView
+                    android:id="@+id/bapp_searchimg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_search" />
+
+                <EditText
+                    android:id="@+id/bapp_searchtext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp">
-
-                    <ImageView
-                        android:id="@+id/bapp_search"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        app:srcCompat="@drawable/ic_search" />
-
-                    <EditText
-                        android:id="@+id/bapp_searchdoc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="-2dp"
-                        android:layout_toEndOf="@+id/bapp_search"
-                        android:ems="10"
-                        android:hint="Search doctors,specialities,clincs,...."
-                        android:inputType="textPersonName" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/bapp_searchimg"
+                    android:ems="10"
+                    android:hint="Search doctor, specialities, clinics, ..."
+                    android:inputType="textPersonName" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="130dp">
+            android:layout_height="match_parent">
 
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/bapp_gridLayout2"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_skin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Skin and Hair"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textIsSelectable="true"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_women"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Women's Health"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/bapp_gridLayout3"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_child"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Child Specialist"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_general"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="General Physician"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/bapp_gridLayout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_eye"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Eye Specialist"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_dental"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Dental Care"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/bapp_gridLayout5"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_brain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Brain and Nerves"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="1"
+                    app:layout_rowWeight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/bapp_mental"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Mental Wellness"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.gridlayout.widget.GridLayout>
 
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/bapp_gridLayout8"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:layout_margin="10dp"
-                android:layout_marginTop="18dp"
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -157,285 +398,9 @@
                 </androidx.cardview.widget.CardView>
             </androidx.gridlayout.widget.GridLayout>
 
-            <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/bapp_gridLayout2"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_margin="10dp"
-                android:layout_marginTop="100dp"
-                android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="1"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_skin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="30dp"
-                            android:text="Skin and Hair"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textIsSelectable="true"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="0"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_women"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="Women's Health"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-            </androidx.gridlayout.widget.GridLayout>
-
-            <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/bapp_gridLayout3"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout2">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="1"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_child"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="Child Specialist"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="0"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_general"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="General Physician"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </androidx.gridlayout.widget.GridLayout>
-
-            <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/bapp_gridLayout5"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="1"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_brain"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="30dp"
-                            android:text="Brain and Nerves"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="0"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_mental"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="30dp"
-                            android:text="Mental Wellness"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </androidx.gridlayout.widget.GridLayout>
-
-            <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/bapp_gridLayout"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.842"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bapp_gridLayout3">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="1"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_eye"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="30dp"
-                            android:text="Eye Specialist"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    app:layout_column="0"
-                    app:layout_columnWeight="1"
-                    app:layout_row="1"
-                    app:layout_rowWeight="1" >
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/bapp_dental"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginEnd="30dp"
-                            android:text="Dental Care"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="24sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </androidx.gridlayout.widget.GridLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+
+    </LinearLayout>
+</ScrollView>
