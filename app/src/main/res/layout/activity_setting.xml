@@ -22,7 +22,7 @@
             app:navigationIcon="@drawable/ic_arrowback" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/setting"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
@@ -51,7 +51,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/health"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -80,7 +80,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/reminder"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
+            app:layout_constraintTop_toBottomOf="@+id/reminder">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/volume"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -117,7 +117,7 @@
                         android:textSize="24sp" />
 
                     <Switch
-                        android:id="@+id/switch1"
+                        android:id="@+id/switch2"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginStart="350dp"
@@ -145,7 +145,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/vibrate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -155,7 +155,7 @@
                         android:textSize="24sp" />
 
                     <Switch
-                        android:id="@+id/switch1"
+                        android:id="@+id/switch3"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginStart="350dp"
@@ -183,7 +183,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/snooze"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -221,7 +221,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/notification"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -244,7 +244,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/general"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="Gerenal"
@@ -252,7 +252,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="@+id/reminder"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
         <LinearLayout
@@ -260,7 +260,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView6">
+            app:layout_constraintTop_toBottomOf="@+id/general">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -271,7 +271,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/aboutapp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -300,7 +300,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/policy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -329,7 +329,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/share"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -358,7 +358,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/rate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -372,21 +372,21 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView66"
+            android:id="@+id/account"
             android:layout_width="401dp"
             android:layout_height="50dp"
             android:text="Accounts"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout11"
-            tools:layout_editor_absoluteX="10dp" />
+            app:layout_constraintStart_toStartOf="@+id/general"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
 
         <LinearLayout
             android:id="@+id/linearLayout12"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView66">
+            app:layout_constraintTop_toBottomOf="@+id/account">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -397,7 +397,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
