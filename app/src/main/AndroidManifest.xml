@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bookappointment"></activity>
+        <activity android:name=".doctor_list"></activity>
+        <activity android:name=".setting" />
+        <activity android:name=".bookappointment" />
         <activity android:name=".user_edit_profile" />
         <activity android:name=".user_profile" />
         <activity android:name=".user_details" />
