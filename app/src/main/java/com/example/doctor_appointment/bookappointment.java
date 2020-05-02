@@ -40,61 +40,61 @@ public class bookappointment extends AppCompatActivity {
 
     public void btnWomenClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Women");
+        i.putExtra("value", txtwomen.getText());
         startActivity(i);
     }
 
     public void btnSkinClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Skin");
+        i.putExtra("value", txtskin.getText());
         startActivity(i);
     }
 
     public void btnGeneralClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "General");
+        i.putExtra("value", txtgeneral.getText());
         startActivity(i);
     }
 
     public void btnChildClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Child");
+        i.putExtra("value", txtchild.getText());
         startActivity(i);
     }
 
     public void btnDentalClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Dental");
+        i.putExtra("value", txtdental.getText());
         startActivity(i);
     }
 
     public void btnEyeClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Eye");
+        i.putExtra("value", txteye.getText());
         startActivity(i);
     }
 
     public void btnMentalClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Mental");
+        i.putExtra("value", txtmental.getText());
         startActivity(i);
     }
 
     public void btnBrainClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Brain");
+        i.putExtra("value", txtbrain.getText());
         startActivity(i);
     }
 
     public void btnHeartClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Heart");
+        i.putExtra("value", txtheart.getText());
         startActivity(i);
     }
 
     public void btnCancerClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
-        i.putExtra("value", "Cancer");
+        i.putExtra("value", txtcancer.getText());
         startActivity(i);
     }
 

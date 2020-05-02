@@ -71,12 +71,15 @@
 
                         <TextView
                             android:id="@+id/udash_bookappointment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:text="Book Appointment"
                             android:textAlignment="center"
                             android:textSize="25sp" />
@@ -101,13 +104,17 @@
 
                         <TextView
                             android:id="@+id/udash_textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_alignWithParentIfMissing="false"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:includeFontPadding="true"
                             android:text="Enter Your Health Data"
                             android:textAlignment="center"
@@ -146,10 +153,14 @@
 
                         <TextView
                             android:id="@+id/udash_textView1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:text="Daily Routine for Health"
                             android:textAlignment="center"
                             android:textSize="25sp" />
@@ -174,10 +185,14 @@
 
                         <TextView
                             android:id="@+id/udash_search"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:text="Search For Doctor"
                             android:textAlignment="center"
                             android:textSize="25sp" />
@@ -216,10 +231,14 @@
 
                         <TextView
                             android:id="@+id/udash_textView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:text="Search For Medicine"
                             android:textAlignment="center"
                             android:textSize="25sp" />
@@ -244,10 +263,14 @@
 
                         <TextView
                             android:id="@+id/udash_textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
+                            android:gravity="center"
                             android:text="Location of Near Hospiat"
                             android:textAlignment="center"
                             android:textSize="25sp" />
