@@ -75,9 +75,9 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
 
         setSupportActionBar(toolbar);
 
-        Menu menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_logout).setVisible(true);
-        menu.findItem(R.id.arrow).setVisible(true);
+//        Menu menu = navigationView.getMenu();
+//        menu.findItem(R.id.nav_logout).setVisible(true);
+//        menu.findItem(R.id.arrow).setVisible(true);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -126,6 +126,9 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 fAuth.signOut();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
+            case R.id.nav_setting:
+                startActivity(new Intent(getApplicationContext(), setting.class));
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
