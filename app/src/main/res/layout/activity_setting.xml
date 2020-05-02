@@ -192,13 +192,12 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton"
+                    <ImageView
+                        android:id="@+id/imageView15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="350dp"
-                        android:clickable="true"
-                        app:backgroundTint="#FFFFFF"
+                        android:layout_marginTop="18dp"
                         app:srcCompat="@drawable/ic_chevron" />
 
                 </RelativeLayout>
@@ -230,13 +229,12 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton2"
+                    <ImageView
+                        android:id="@+id/imageView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="350dp"
-                        android:clickable="true"
-                        app:backgroundTint="#FFFFFF"
+                        android:layout_marginTop="18dp"
                         app:srcCompat="@drawable/ic_chevron" />
 
                 </RelativeLayout>
