@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +27,7 @@ public class doctor_list extends AppCompatActivity {
     String valFromBookAppointment;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    Integer intNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,9 @@ public class doctor_list extends AppCompatActivity {
                                 txtName.setText(document.get("name").toString());
                                 txtSpecialty.setText(document.get("designation").toString());
                                 txtHospital.setText(document.get("hospital").toString());
-                                //btnBook.setId();
+                                btnBook.setOnClickListener(btnClick);
+                                btnBook.setId(intNum);
+                                intNum++;
 
                                 mainLayout.addView(tempView);
                             }
@@ -77,4 +81,23 @@ public class doctor_list extends AppCompatActivity {
 
 
     }
+
+    View.OnClickListener btnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            /*switch (v.getId()){
+                case 0:
+                    // action
+                    break;
+                case 1:
+                    // as
+                    break;
+
+                default:
+                    break;
+            }*/
+            Toast.makeText(getApplicationContext(), "Button" + v.getId(), Toast.LENGTH_SHORT).show();
+        }
+    };
+
 }
