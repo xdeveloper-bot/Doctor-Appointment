@@ -21,7 +21,7 @@
             app:navigationIcon="@drawable/ic_arrowback" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/CardView"
+            android:id="@+id/tmp_CardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

@@ -50,19 +50,20 @@ public class doctor_list extends AppCompatActivity {
                             LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                             for (QueryDocumentSnapshot document : task.getResult()){
                                 Log.d("TAG", document.getId() + " => " + document.getData());
-                                Log.d("TAG", document.getId() + " => " + document.get("name"));
                                 // Create multiple Card Layout
-                                View tempView = li.inflate(R.layout.doctorListTemplete, null);
+                                View tempView = li.inflate(R.layout.doctor_list_templete, null);
 
-                                TextView txtName = (TextView) tempView.findViewById(R.id.dlst_name);
-                                TextView txtSpecialty = (TextView) tempView.findViewById(R.id.dlst_specialty);
-                                TextView txtHospital = (TextView) tempView.findViewById(R.id.dlst_hospital);
-                                ImageView imgProfile, imgArrow;
-                                Button btnBook;
+                                TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
+                                TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
+                                TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
+                                ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
+                                ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
+                                Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
 
                                 txtName.setText(document.get("name").toString());
                                 txtSpecialty.setText(document.get("designation").toString());
                                 txtHospital.setText(document.get("hospital").toString());
+                                //btnBook.setId();
 
                                 mainLayout.addView(tempView);
                             }
