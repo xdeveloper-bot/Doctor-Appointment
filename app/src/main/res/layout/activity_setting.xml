@@ -70,10 +70,16 @@
                         android:id="@+id/switch1"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginStart="350dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="310dp"
                         android:layout_marginTop="15dp"
-                        android:backgroundTint="#2196F3"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="15dp"
                         android:clickable="true"
+                        android:cursorVisible="true"
                         android:scrollbarSize="20dp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -120,9 +126,14 @@
                         android:id="@+id/switch2"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginStart="350dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="310dp"
                         android:layout_marginTop="15dp"
-                        android:backgroundTint="#2196F3"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="15dp"
                         android:clickable="true"
                         android:scrollbarSize="20dp" />
                 </RelativeLayout>
@@ -158,9 +169,14 @@
                         android:id="@+id/switch3"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginStart="350dp"
-                        android:layout_marginTop="15dp"
-                        android:backgroundTint="#2196F3"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="310dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="15dp"
                         android:clickable="true"
                         android:scrollbarSize="20dp" />
                 </RelativeLayout>
@@ -196,8 +212,14 @@
                         android:id="@+id/imageView15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="350dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="300dp"
                         android:layout_marginTop="18dp"
+                        android:layout_marginEnd="37dp"
+                        android:layout_marginBottom="18dp"
                         app:srcCompat="@drawable/ic_chevron" />
 
                 </RelativeLayout>
@@ -233,8 +255,15 @@
                         android:id="@+id/imageView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="350dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="300dp"
                         android:layout_marginTop="18dp"
+                        android:layout_marginEnd="37dp"
+                        android:layout_marginBottom="18dp"
+                        android:background="#FFFFFF"
                         app:srcCompat="@drawable/ic_chevron" />
 
                 </RelativeLayout>
@@ -403,15 +432,6 @@
                         android:text="Log Out"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="350dp"
-                        android:clickable="true"
-                        app:backgroundTint="#FFFFFF"
-                        app:srcCompat="@drawable/ic_logout" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
