@@ -65,6 +65,8 @@ public class doctor_list extends AppCompatActivity {
                                 txtName.setText(document.get("name").toString());
                                 txtSpecialty.setText(document.get("designation").toString());
                                 txtHospital.setText(document.get("hospital").toString());
+                                imgProfile.setImageResource(R.drawable.doctor);
+                                imgArrow.setImageResource(R.drawable.ic_chevron);
                                 btnBook.setOnClickListener(btnClick);
                                 btnBook.setId(intNum);
                                 intNum++;

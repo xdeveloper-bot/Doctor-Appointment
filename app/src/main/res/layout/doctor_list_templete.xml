@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="15dp"
+            android:text="Naame"
             android:textSize="24sp" />
 
         <TextView
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="55dp"
+            android:text="Speciality"
             android:textSize="18sp" />
 
         <TextView
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="90dp"
+            android:text="Hospital"
             android:textSize="18sp" />
 
         <ImageView
