@@ -271,7 +271,7 @@
                             android:layout_marginBottom="5dp"
                             android:fontFamily="sans-serif-black"
                             android:gravity="center"
-                            android:text="Location of Near Hospiat"
+                            android:text="Location of Near Hospital"
                             android:textAlignment="center"
                             android:textSize="25sp" />
                     </RelativeLayout>
