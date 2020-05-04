@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,9 +26,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class doctor_list extends AppCompatActivity {
     EditText txtSearch;
-    String valFromBookAppointment;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    String searchText;
     Integer intNum = 0;
 
     @Override
@@ -35,14 +37,29 @@ public class doctor_list extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_list);
 
         txtSearch = findViewById(R.id.dlst_searchtxt);
-        valFromBookAppointment = getIntent().getExtras().getString("value");
-        txtSearch.setText(valFromBookAppointment);
+        txtSearch.setText(getIntent().getExtras().getString("value"));
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
+        final TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                searchText = String.valueOf(s);
+                Toast.makeText(getApplicationContext(), searchText, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        //txtSearch.addTextChangedListener(textWatcher);
+
         fStore.collection("doctors")
-                .whereEqualTo("designation", valFromBookAppointment)
+                //.whereEqualTo("designation", txtSearch.getText().toString().trim())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -51,27 +68,37 @@ public class doctor_list extends AppCompatActivity {
                             LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
                             LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                             for (QueryDocumentSnapshot document : task.getResult()){
-                                Log.d("TAG", document.getId() + " => " + document.getData());
-                                // Create multiple Card Layout
-                                View tempView = li.inflate(R.layout.doctor_list_templete, null);
+                                Log.d("TAG", document.getId() + " ==> " + document.getData());
+                                String Name = document.get("name").toString().trim();
+                                String Hospital = document.get("hospital").toString().trim();
+                                String Designation = document.get("designation").toString().trim();
+                                Log.d("TAG", "n-" +Name + " h-" + Hospital + " d-" + Designation);
 
-                                TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
-                                TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
-                                TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
-                                ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
-                                ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
-                                Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
 
-                                txtName.setText(document.get("name").toString());
-                                txtSpecialty.setText(document.get("designation").toString());
-                                txtHospital.setText(document.get("hospital").toString());
-                                imgProfile.setImageResource(R.drawable.doctor);
-                                imgArrow.setImageResource(R.drawable.ic_chevron);
-                                btnBook.setOnClickListener(btnClick);
-                                btnBook.setId(intNum);
-                                intNum++;
+                                // sdfghjkrwerftgjhk
+                                if (Designation.contains(searchText) || Name.contains(searchText) || Hospital.contains(searchText)) {
+                                    // Create multiple Card Layout
+                                    View tempView = li.inflate(R.layout.doctor_list_templete, null);
 
-                                mainLayout.addView(tempView);
+                                    TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
+                                    TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
+                                    TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
+                                    ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
+                                    ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
+                                    Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
+
+                                    txtName.setText(document.get("name").toString());
+                                    txtSpecialty.setText(document.get("designation").toString());
+                                    txtHospital.setText(document.get("hospital").toString());
+                                    imgProfile.setImageResource(R.drawable.doctor);
+                                    imgArrow.setImageResource(R.drawable.ic_chevron);
+                                    btnBook.setOnClickListener(btnClick);
+                                    btnBook.setId(intNum);
+                                    intNum++;
+                                    mainLayout.addView(tempView);
+                                } else {
+                                    Log.d("TAG", "22222");
+                                }
                             }
                         } else {
                             Log.d("TAG", "Error getting documents: ",task.getException());
