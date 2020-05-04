@@ -3,6 +3,7 @@ package com.example.doctor_appointment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
@@ -10,7 +11,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +29,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     Toolbar toolbar;
     Button resendbtn;
-    TextView resendbg,resendtxt,txtsearch,txtbookappointment;
+    ConstraintLayout verifyEmailLayout;
+    TextView txtbookappointment;
     FirebaseAuth fAuth;
 
     @Override
@@ -37,23 +38,19 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-        txtsearch=findViewById(R.id.udash_search);
-        txtbookappointment=findViewById(R.id.udash_bookappointment);
-        drawerLayout = findViewById(R.id.udash_drawer_layout);
-        navigationView = findViewById(R.id.udash_nav_view1);
-        toolbar = findViewById(R.id.udash_toolbar1);
+        txtbookappointment = findViewById(R.id.dash_bookAppointment);
+        drawerLayout = findViewById(R.id.dash_DrawerLayout);
+        navigationView = findViewById(R.id.dash_navView);
+        toolbar = findViewById(R.id.dash_toolBar);
+        verifyEmailLayout = findViewById(R.id.dash_verifyEmail);
+        resendbtn = findViewById(R.id.dash_resendcode);
 
-        fAuth=FirebaseAuth.getInstance();
+        fAuth = FirebaseAuth.getInstance();
 
-        resendbg=findViewById(R.id.udash_black);
-        resendtxt=findViewById(R.id.udash_notverifytxt);
-        resendbtn=findViewById(R.id.udash_resendcode);
-        final FirebaseUser usr=fAuth.getCurrentUser();
+        final FirebaseUser usr = fAuth.getCurrentUser();
 
-        if(!usr.isEmailVerified()){
-            resendbg.setVisibility(View.VISIBLE);
-            resendtxt.setVisibility(View.VISIBLE);
-            resendbtn.setVisibility(View.VISIBLE);
+        if (!usr.isEmailVerified()) {
+            verifyEmailLayout.setVisibility(View.VISIBLE);
 
             resendbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,7 +63,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.d("TAG","onFailure: "+e.getMessage());
+                            Log.d("TAG", "onFailure: " + e.getMessage());
                         }
                     });
                 }
@@ -90,7 +87,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         txtbookappointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),bookappointment.class));
+                startActivity(new Intent(getApplicationContext(), bookappointment.class));
             }
         });
 
