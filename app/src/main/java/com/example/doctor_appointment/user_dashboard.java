@@ -28,9 +28,9 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    Button resendbtn;
+    Button resendBtn;
     ConstraintLayout verifyEmailLayout;
-    TextView txtbookappointment;
+    TextView txtBookAppointment;
     FirebaseAuth fAuth;
 
     @Override
@@ -38,12 +38,12 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-        txtbookappointment = findViewById(R.id.dash_bookAppointment);
+        txtBookAppointment = findViewById(R.id.dash_bookAppointment);
         drawerLayout = findViewById(R.id.dash_DrawerLayout);
         navigationView = findViewById(R.id.dash_navView);
         toolbar = findViewById(R.id.dash_toolBar);
         verifyEmailLayout = findViewById(R.id.dash_verifyEmail);
-        resendbtn = findViewById(R.id.dash_resendcode);
+        resendBtn = findViewById(R.id.dash_resendcode);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -52,7 +52,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         if (!usr.isEmailVerified()) {
             verifyEmailLayout.setVisibility(View.VISIBLE);
 
-            resendbtn.setOnClickListener(new View.OnClickListener() {
+            resendBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -84,7 +84,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-        txtbookappointment.setOnClickListener(new View.OnClickListener() {
+        txtBookAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), bookappointment.class));
@@ -123,6 +123,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 fAuth.signOut();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
+                break;
             case R.id.nav_setting:
                 startActivity(new Intent(getApplicationContext(), setting.class));
                 break;
