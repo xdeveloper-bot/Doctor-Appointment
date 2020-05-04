@@ -1,3 +1,5 @@
+package com.example.doctor_appointment;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -7,11 +9,11 @@ import com.example.doctor_appointment.tab1;
 import com.example.doctor_appointment.tab2;
 import com.example.doctor_appointment.tab3;
 
-public class pageAdapter extends FragmentPagerAdapter {
+public class PagerAdapter extends FragmentPagerAdapter {
 
     private int tabNumber;
 
-    public pageAdapter(@NonNull FragmentManager fm, int behavior, int tabs) {
+    public PagerAdapter(@NonNull FragmentManager fm, int behavior, int tabs) {
         super(fm, behavior);
         this.tabNumber = tabs;
     }
