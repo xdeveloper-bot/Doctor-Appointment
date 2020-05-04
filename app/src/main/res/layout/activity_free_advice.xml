@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".free_advice">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:navigationIcon="@drawable/ic_arrowback" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            android:text="Ask free question"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/ic_attach" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="15dp"
+            android:text="SUBMIT"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="For  Select a profile"
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="70dp"
+            app:srcCompat="@drawable/ic_arrow_dropdown" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="Problem type - Treatment pref"
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="115dp"
+            app:srcCompat="@drawable/ic_arrow_dropdown" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="152dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:hint="Title(min 10 chars)"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="205dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Desciption(min100 chars)"
+            android:inputType="textMultiLine" />
+
+
+    </RelativeLayout>
+</LinearLayout>
