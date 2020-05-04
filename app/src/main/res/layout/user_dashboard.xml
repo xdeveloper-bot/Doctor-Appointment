@@ -66,6 +66,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:gravity="center"
                             android:text="Meet a doctor"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -89,6 +90,7 @@
                             android:layout_marginTop="45dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Book Apppintments"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -120,6 +122,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Pharmacy"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="20dp" />
@@ -132,6 +135,7 @@
                             android:layout_marginTop="35dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Medicines $ health"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -144,6 +148,7 @@
                             android:layout_marginTop="55dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="products"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -194,6 +199,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:gravity="center"
                             android:text="Near Hospitals"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -217,6 +223,7 @@
                             android:layout_marginTop="45dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Locations"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -248,6 +255,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Health Data"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="20dp" />
@@ -260,6 +268,7 @@
                             android:layout_marginTop="35dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Safety Requirements"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -311,6 +320,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:gravity="center"
                             android:text="Daily Routine"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -359,6 +369,7 @@
                             android:layout_marginTop="120dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Ask A Question"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
@@ -371,6 +382,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Free Health"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="20sp" />
@@ -383,6 +395,7 @@
                             android:layout_marginTop="35dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
+                            android:background="#99FFFFFF"
                             android:text="Advice on 20+"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="20sp" />
@@ -395,6 +408,7 @@
                             android:layout_marginTop="60dp"
                             android:layout_marginEnd="10sp"
                             android:layout_marginBottom="10sp"
+                            android:background="#99FFFFFF"
                             android:text="specialities"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="20sp" />
