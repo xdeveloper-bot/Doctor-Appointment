@@ -60,6 +60,7 @@ public class doctor_list extends AppCompatActivity {
 
         fStore.collection("doctors")
                 //.whereEqualTo("designation", txtSearch.getText().toString().trim())
+                //.where todo sdfsd
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -74,8 +75,6 @@ public class doctor_list extends AppCompatActivity {
                                 String Designation = document.get("designation").toString().trim();
                                 Log.d("TAG", "n-" +Name + " h-" + Hospital + " d-" + Designation);
 
-
-                                // sdfghjkrwerftgjhk
                                 if (Designation.contains(searchText) || Name.contains(searchText) || Hospital.contains(searchText)) {
                                     // Create multiple Card Layout
                                     View tempView = li.inflate(R.layout.doctor_list_templete, null);
