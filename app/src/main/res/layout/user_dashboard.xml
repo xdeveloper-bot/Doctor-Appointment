@@ -48,6 +48,12 @@
                     android:layout_weight="1"
                     android:padding="2dp">
 
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/meetdoctor" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -86,6 +92,7 @@
                             android:text="Book Apppintments"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -94,6 +101,12 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/phramacy" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -144,6 +157,7 @@
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
                             app:srcCompat="@drawable/ic_chevron" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -161,6 +175,12 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/hospital" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -200,6 +220,7 @@
                             android:text="Locations"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="18sp" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -208,6 +229,12 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/health" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -246,6 +273,7 @@
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
                             app:srcCompat="@drawable/ic_chevron" />
+
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -264,6 +292,12 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/routine" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -300,7 +334,8 @@
                     android:layout_width="188dp"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:padding="2dp">
+                    android:padding="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
