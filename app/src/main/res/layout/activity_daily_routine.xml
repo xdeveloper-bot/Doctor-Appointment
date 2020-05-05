@@ -6,16 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".daily_routine">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/daily_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrowback"
+        android:background="#FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </Toolbar>
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrowback" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/daily_tabLayout"
