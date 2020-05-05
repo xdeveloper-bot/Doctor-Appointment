@@ -16,7 +16,7 @@
     </Toolbar>
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/chdta_bp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -27,7 +27,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/chdta_sugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -38,7 +38,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/chdta_diabetes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -49,7 +49,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/chdta_other"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -60,7 +60,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/chdta_saveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
