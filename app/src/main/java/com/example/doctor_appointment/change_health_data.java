@@ -70,9 +70,15 @@ public class change_health_data extends AppCompatActivity {
                     return;
                 }
 
-                Map<String, Object> user = new HashMap<>();
-                user.put("healthData", Arrays.asList(Bp, Sugar, Diabetes, Other));
-                fStore.collection("users").document(userID).update(user);
+                Map<String, Object> nested = new HashMap<>();
+                nested.put("bp", Bp);
+                nested.put("sugar", Sugar);
+                nested.put("diabetes", Diabetes);
+                nested.put("other", Other);
+
+                Map<String, Object> hData = new HashMap<>();
+                hData.put("health_data", nested);
+                fStore.collection("users").document(userID).update(hData);
 
                 Intent i = new Intent(getApplicationContext(), health_data.class);
                 i.putExtra("bp", Bp);

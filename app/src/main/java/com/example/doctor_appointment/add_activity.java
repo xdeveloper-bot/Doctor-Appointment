@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -127,10 +128,15 @@ public class add_activity extends AppCompatActivity {
                     return;
                 }
 
+                Map<String, Object> act = new HashMap<>();
+                act.put("act_name", Name);
+                act.put("start", Start);
+                act.put("stop", Stop);
                 Map<String, Object> time = new HashMap<>();
-                //time.put("Activity", Arrays.asList(Name, Start, Stop));
-                //fStore.collection("users").document(userID).update(time);
+                time.put("activity_" + Name, act);
 
+                fStore.collection("users").document(userID).update(time);
+                Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
 
             }
         });

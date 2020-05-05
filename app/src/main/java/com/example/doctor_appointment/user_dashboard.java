@@ -104,7 +104,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         txtDaily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), daily_routine.class));
+                //startActivity(new Intent(getApplicationContext(), daily_routine.class));
+                startActivity(new Intent(getApplicationContext(), show_routine.class));
             }
         });
 
