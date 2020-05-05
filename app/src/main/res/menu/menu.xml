@@ -28,11 +28,13 @@
 
         <item
             android:id="@+id/nav_Consultations"
-            android:title="Consultations" />
+            android:title="Consultations"
+            android:icon=""/>
 
         <item
             android:id="@+id/nav_medical"
-            android:title="Medical Records" />
+            android:title="Medical Records"
+            android:icon="@drawable/ic_chat"/>
 
 
     </group>
