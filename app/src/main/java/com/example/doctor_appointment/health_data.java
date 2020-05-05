@@ -1,6 +1,7 @@
 package com.example.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import java.util.Objects;
 
 public class health_data extends AppCompatActivity {
     Button btnChange;
+    Toolbar toolbar;
     TextView txtBp, txtSugar, txtDiabetes, txtOther;
     String valBp, valSugar, valDiabetes, valOther;
 
@@ -25,6 +27,7 @@ public class health_data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_data);
 
+        toolbar = findViewById(R.id.hdta_toolbar);
         btnChange = findViewById(R.id.hdta_changeBtn);
         txtBp = findViewById(R.id.hdta_bp);
         txtSugar = findViewById(R.id.hdta_sugar);
@@ -46,6 +49,14 @@ public class health_data extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), change_health_data.class));
+            }
+        });
+
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

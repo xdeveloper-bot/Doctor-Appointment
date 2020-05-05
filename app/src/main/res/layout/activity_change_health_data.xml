@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <Toolbar
+        android:id="@+id/chdta_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:navigationIcon="@drawable/ic_arrowback"

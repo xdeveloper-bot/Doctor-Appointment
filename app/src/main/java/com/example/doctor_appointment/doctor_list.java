@@ -2,6 +2,7 @@ package com.example.doctor_appointment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class doctor_list extends AppCompatActivity {
     FirebaseAuth fAuth;
     String valFromActivity;
     FirebaseFirestore fStore;
+    Toolbar toolbar;
     String searchText;
     Integer intNum = 0;
 
@@ -37,12 +39,21 @@ public class doctor_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_list);
 
+        toolbar = findViewById(R.id.dlst_toolbar);
         txtSearch = findViewById(R.id.dlst_searchtxt);
         valFromActivity = getIntent().getExtras().getString("value");
         txtSearch.setText(valFromActivity);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         final TextWatcher textWatcher = new TextWatcher() {
             @Override

@@ -1,6 +1,7 @@
 package com.example.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.Map;
 public class change_health_data extends AppCompatActivity {
     EditText txtBp, txtSugar, txtDiabetes, txtOther;
     Button btnSave;
+    Toolbar toolbar;
     String userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -29,6 +31,7 @@ public class change_health_data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_health_data);
 
+        toolbar = findViewById(R.id.chdta_toolbar);
         btnSave = findViewById(R.id.chdta_saveBtn);
         txtBp = findViewById(R.id.chdta_bp);
         txtSugar = findViewById(R.id.chdta_sugar);
@@ -38,7 +41,13 @@ public class change_health_data extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
-        Toast.makeText(getApplicationContext(), userID, Toast.LENGTH_SHORT).show();
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
