@@ -14,7 +14,7 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class tab2 extends Fragment {
-    TextView txtSun, txtMon, txtTue, txtWed, txtThu, txtFri, txtSat;
+    //TextView txtSun, txtMon, txtTue, txtWed, txtThu, txtFri, txtSat;
 
     public tab2() {
         // Required empty public constructor

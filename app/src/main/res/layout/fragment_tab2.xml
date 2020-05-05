@@ -6,7 +6,7 @@
     tools:context=".tab2">
 
     <TextView
-        android:id="@+id/sunday"
+        android:id="@+id/t2_sunday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -16,7 +16,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/monday"
+        android:id="@+id/t2_monday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
@@ -27,7 +27,7 @@
 
     <TextView
 
-        android:id="@+id/tuesday"
+        android:id="@+id/t2_tuesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -38,7 +38,7 @@
 
     <TextView
 
-        android:id="@+id/wednesday"
+        android:id="@+id/t2_wednesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
@@ -48,7 +48,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/thursday"
+        android:id="@+id/t2_thursday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
@@ -58,7 +58,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/friday"
+        android:id="@+id/t2_friday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
@@ -68,7 +68,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/saturday"
+        android:id="@+id/t2_saturday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="460dp"

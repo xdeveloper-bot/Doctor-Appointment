@@ -30,7 +30,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     Toolbar toolbar;
     Button resendBtn;
     ConstraintLayout verifyEmailLayout;
-    TextView txtBookAppointment, txtHealthData, txtDaily;
+    TextView txtBookAppointment, txtHealthData, txtDaily, txtAdvice;
     FirebaseAuth fAuth;
 
     @Override
@@ -41,6 +41,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         txtBookAppointment = findViewById(R.id.dash_bookAppointment);
         txtHealthData = findViewById(R.id.dash_healthData);
         txtDaily = findViewById(R.id.dash_daily);
+        txtAdvice = findViewById(R.id.dash_advice);
         drawerLayout = findViewById(R.id.dash_DrawerLayout);
         navigationView = findViewById(R.id.dash_navView);
         toolbar = findViewById(R.id.dash_toolBar);
@@ -104,6 +105,13 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), daily_routine.class));
+            }
+        });
+
+        txtAdvice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), free_advice.class));
             }
         });
 
