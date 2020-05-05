@@ -73,7 +73,7 @@
                         android:gravity="center"
                         android:text="Meet a doctor"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="20dp" />
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -209,7 +209,7 @@
                         android:gravity="center"
                         android:text="Near Hospitals"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="20dp" />
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
