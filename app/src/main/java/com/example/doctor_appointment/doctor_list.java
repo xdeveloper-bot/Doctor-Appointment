@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class doctor_list extends AppCompatActivity {
     EditText txtSearch;
     FirebaseAuth fAuth;
+    String valFromActivity;
     FirebaseFirestore fStore;
     String searchText;
     Integer intNum = 0;
@@ -37,7 +38,8 @@ public class doctor_list extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_list);
 
         txtSearch = findViewById(R.id.dlst_searchtxt);
-        txtSearch.setText(getIntent().getExtras().getString("value"));
+        valFromActivity = getIntent().getExtras().getString("value");
+        txtSearch.setText(valFromActivity);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -56,11 +58,10 @@ public class doctor_list extends AppCompatActivity {
             }
         };
 
-        //txtSearch.addTextChangedListener(textWatcher);
+        txtSearch.addTextChangedListener(textWatcher);
 
         fStore.collection("doctors")
-                //.whereEqualTo("designation", txtSearch.getText().toString().trim())
-                //.where todo sdfsd
+                .whereEqualTo("designation", valFromActivity)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -75,29 +76,25 @@ public class doctor_list extends AppCompatActivity {
                                 String Designation = document.get("designation").toString().trim();
                                 Log.d("TAG", "n-" +Name + " h-" + Hospital + " d-" + Designation);
 
-                                if (Designation.contains(searchText) || Name.contains(searchText) || Hospital.contains(searchText)) {
-                                    // Create multiple Card Layout
-                                    View tempView = li.inflate(R.layout.doctor_list_templete, null);
+                                // Create multiple Card Layout
+                                View tempView = li.inflate(R.layout.doctor_list_templete, null);
 
-                                    TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
-                                    TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
-                                    TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
-                                    ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
-                                    ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
-                                    Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
+                                TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
+                                TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
+                                TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
+                                ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
+                                ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
+                                Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
 
-                                    txtName.setText(document.get("name").toString());
-                                    txtSpecialty.setText(document.get("designation").toString());
-                                    txtHospital.setText(document.get("hospital").toString());
-                                    imgProfile.setImageResource(R.drawable.doctor);
-                                    imgArrow.setImageResource(R.drawable.ic_chevron);
-                                    btnBook.setOnClickListener(btnClick);
-                                    btnBook.setId(intNum);
-                                    intNum++;
-                                    mainLayout.addView(tempView);
-                                } else {
-                                    Log.d("TAG", "22222");
-                                }
+                                txtName.setText(document.get("name").toString());
+                                txtSpecialty.setText(document.get("designation").toString());
+                                txtHospital.setText(document.get("hospital").toString());
+                                imgProfile.setImageResource(R.drawable.doctor);
+                                imgArrow.setImageResource(R.drawable.ic_chevron);
+                                btnBook.setOnClickListener(btnClick);
+                                btnBook.setId(intNum);
+                                intNum++;
+                                mainLayout.addView(tempView);
                             }
                         } else {
                             Log.d("TAG", "Error getting documents: ",task.getException());
