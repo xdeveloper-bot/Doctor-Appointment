@@ -17,32 +17,31 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/ic_arrowback" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="12dp"
-            android:text="Ask free question"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="22sp" />
+            app:navigationIcon="@drawable/ic_arrowback"
+            app:title="Ask Free Question"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:titleTextColor="#000000" />
 
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="260dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="127dp"
             app:srcCompat="@drawable/ic_attach" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="320dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="19dp"
             android:text="SUBMIT"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
