@@ -72,7 +72,7 @@ public class change_health_data extends AppCompatActivity {
 
                 Map<String, Object> user = new HashMap<>();
                 user.put("healthData", Arrays.asList(Bp, Sugar, Diabetes, Other));
-                fStore.collection("users").document(userID).set(user);
+                fStore.collection("users").document(userID).update(user);
 
                 Intent i = new Intent(getApplicationContext(), health_data.class);
                 i.putExtra("bp", Bp);

@@ -136,11 +136,12 @@ public class user_details extends AppCompatActivity {
                 user.put("address", address);
                 user.put("state", state);
                 user.put("zip", zip);
-                documentReference.set(user);
+                documentReference.update(user);
 
                 Toast.makeText(user_details.this, "Profile Created.", Toast.LENGTH_SHORT).show();
                 progress.setVisibility(View.GONE);
-                startActivity(new Intent(getApplicationContext(), user_dashboard.class));
+                Toast.makeText(getApplicationContext(), "Verification code sended to your email id. Please verify and then login.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), user_login.class));
                 finish();
 
             }
