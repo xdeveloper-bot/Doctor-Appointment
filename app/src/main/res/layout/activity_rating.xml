@@ -7,7 +7,7 @@
     tools:context=".rating">
 
     <RatingBar
-        android:id="@+id/rating"
+        android:id="@+id/rat_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:foregroundGravity="center_horizontal"
@@ -15,10 +15,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"></RatingBar>
+        app:layout_constraintVertical_bias="0.25">
+
+    </RatingBar>
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/rat_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -27,8 +29,9 @@
         android:text="SUBMIT"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/rating"
-        app:layout_constraintStart_toStartOf="@+id/rating"
-        app:layout_constraintTop_toBottomOf="@+id/rating" />
+        android:onClick="onBtnClick"
+        app:layout_constraintEnd_toEndOf="@+id/rat_star"
+        app:layout_constraintStart_toStartOf="@+id/rat_star"
+        app:layout_constraintTop_toBottomOf="@+id/rat_star" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
