@@ -25,6 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
             android:text="Settings"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
@@ -88,6 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
             android:text="Reminder Setting"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
@@ -308,10 +310,10 @@
 
                     <TextView
                         android:id="@+id/aboutapp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
                         android:text="About App"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
@@ -337,10 +339,10 @@
 
                     <TextView
                         android:id="@+id/policy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
                         android:text="Privacy Policy"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
@@ -366,10 +368,11 @@
 
                     <TextView
                         android:id="@+id/share"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
                         android:text="Share With Family and Friends"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
@@ -395,10 +398,10 @@
 
                     <TextView
                         android:id="@+id/rate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
                         android:text="Rate App"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />
@@ -411,6 +414,7 @@
             android:id="@+id/account"
             android:layout_width="401dp"
             android:layout_height="50dp"
+            android:gravity="center_vertical"
             android:text="Accounts"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
@@ -438,6 +442,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
                         android:text="Log Out"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="24sp" />

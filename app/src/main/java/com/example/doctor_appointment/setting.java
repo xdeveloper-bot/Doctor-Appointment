@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class setting extends AppCompatActivity {
 
-    TextView txtSnooze, txtNotification, txtLogout;
+    TextView txtSnooze, txtNotification, txtLogout, txtabout, txtprivacy, txtshare, txtrate;
     FirebaseAuth fAuth;
 
     @Override
@@ -25,6 +26,10 @@ public class setting extends AppCompatActivity {
         txtSnooze = findViewById(R.id.snooze);
         txtNotification = findViewById(R.id.notification);
         txtLogout = findViewById(R.id.logout);
+        txtabout = findViewById(R.id.aboutapp);
+        txtprivacy = findViewById(R.id.policy);
+        txtshare = findViewById(R.id.share);
+        txtrate = findViewById(R.id.rate);
         fAuth = FirebaseAuth.getInstance();
 
         txtLogout.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +40,23 @@ public class setting extends AppCompatActivity {
                 finish();
             }
         });
+
+        txtrate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), rating.class));
+                finish();
+            }
+        });
+
+        txtshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(setting.this,"Share with Friends and Family",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         txtSnooze.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +72,36 @@ public class setting extends AppCompatActivity {
             }
         });
 
+        txtabout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAlertDialog2();
+            }
+        });
+
+
     }
+
+    private void showAlertDialog2() {
+        AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
+        alertdialog.setCancelable(false);
+        alertdialog.setTitle("About Us");
+        alertdialog.setMessage("Yash Gupta and Deepanshu Varshney ko Billioner bna dega ye app");
+        alertdialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alertdialog.create().show();
+
+    }
+
 
     private void showAlertDialog1() {
 
