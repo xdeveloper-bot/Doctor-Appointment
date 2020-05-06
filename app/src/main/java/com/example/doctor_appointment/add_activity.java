@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -28,6 +29,7 @@ public class add_activity extends AppCompatActivity {
     String time, userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    String day = "default";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,12 @@ public class add_activity extends AppCompatActivity {
         userID = fAuth.getCurrentUser().getUid();
 
         setSupportActionBar(toolbar);
+
+        if (getIntent().getExtras() != null){
+            day = getIntent().getExtras().getString("day");
+            toolbar.setTitle("Add Activity : " + day);
+        }
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,15 +136,19 @@ public class add_activity extends AppCompatActivity {
                     return;
                 }
 
-                Map<String, Object> act = new HashMap<>();
-                act.put("act_name", Name);
-                act.put("start", Start);
-                act.put("stop", Stop);
                 Map<String, Object> time = new HashMap<>();
-                time.put("activity_" + Name, act);
+                time.put("act_name", Name);
+                time.put("start", Start);
+                time.put("stop", Stop);
+                Map<String, Object> activity = new HashMap<>();
+                activity.put("act_" + Name, time);
+                Map<String, Object> days = new HashMap<>();
+                days.put(day, activity);
+                Map<String, Object> activities = new HashMap<>();
+                activities.put("activities", days);
 
-                fStore.collection("users").document(userID).update(time);
-                Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
+                fStore.collection("users").document(userID).set(activities, SetOptions.merge());
+                Toast.makeText(getApplicationContext(), "Activity Added", Toast.LENGTH_SHORT).show();
 
             }
         });
