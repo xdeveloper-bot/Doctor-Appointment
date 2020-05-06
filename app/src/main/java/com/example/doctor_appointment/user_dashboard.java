@@ -134,23 +134,37 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             case R.id.nav_home:
                 onBackPressed();
                 break;
-            case R.id.arrow:
-                startActivity(new Intent(getApplicationContext(), user_profile.class));
+            case R.id.arrow1:
+                startActivity(new Intent(getApplicationContext(), user_edit_profile.class));
                 break;
             case R.id.nav_search:
                 Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), bookappointment.class));
+                finish();
                 break;
             case R.id.nav_logout:
                 fAuth.signOut();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
                 break;
+            case R.id.nav_appoint:
+                startActivity(new Intent(getApplicationContext(), appointments.class));
+                finish();
+            case R.id.nav_test_booking:
+                startActivity(new Intent(getApplicationContext(), test_booking.class));
+                finish();
+            case R.id.nav_medical:
+                startActivity(new Intent(getApplicationContext(), medical_records.class));
+                finish();
             case R.id.nav_setting:
                 startActivity(new Intent(getApplicationContext(), setting.class));
                 break;
+            case R.id.nav_contact:
+                Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+                break;
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
