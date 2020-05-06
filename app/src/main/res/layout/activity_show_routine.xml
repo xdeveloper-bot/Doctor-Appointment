@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".show_routine"
-    android:orientation="vertical">
+    tools:context=".show_routine">
 
-    <Toolbar
-        android:id="@+id/srtn_toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrowback"
-        android:title="@string/app_name"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/srtn_mainLinearLayout">
+
+        <Toolbar
+            android:id="@+id/srtn_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:navigationIcon="@drawable/ic_arrowback"
+            android:title="@string/app_name"/>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/srtn_floatingBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="580dp"
-        android:clickable="true"
-        app:srcCompat="@drawable/baseline_add_white_18" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/srtn_floatingBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="580dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/baseline_add_white_18" />
 
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

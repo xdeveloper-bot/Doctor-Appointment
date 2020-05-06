@@ -85,7 +85,6 @@ public class doctor_list extends AppCompatActivity {
                                 String Name = document.get("name").toString().trim();
                                 String Hospital = document.get("hospital").toString().trim();
                                 String Designation = document.get("designation").toString().trim();
-                                Log.d("TAG", "n-" +Name + " h-" + Hospital + " d-" + Designation);
 
                                 // Create multiple Card Layout
                                 View tempView = li.inflate(R.layout.doctor_list_templete, null);
@@ -97,9 +96,9 @@ public class doctor_list extends AppCompatActivity {
                                 ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
                                 Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
 
-                                txtName.setText(document.get("name").toString());
-                                txtSpecialty.setText(document.get("designation").toString());
-                                txtHospital.setText(document.get("hospital").toString());
+                                txtName.setText(Name);
+                                txtSpecialty.setText(Designation);
+                                txtHospital.setText(Hospital);
                                 imgProfile.setImageResource(R.drawable.doctor);
                                 imgArrow.setImageResource(R.drawable.ic_chevron);
                                 btnBook.setOnClickListener(btnClick);
