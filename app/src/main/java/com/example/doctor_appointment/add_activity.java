@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -149,6 +150,8 @@ public class add_activity extends AppCompatActivity {
 
                 fStore.collection("users").document(userID).set(activities, SetOptions.merge());
                 Toast.makeText(getApplicationContext(), "Activity Added", Toast.LENGTH_SHORT).show();
+                Log.d("TAG", "1111" + activities);
+                // {activities={Monday={act_three={act_name=three, stop=18:50, start=17:40}}}}
 
             }
         });

@@ -21,6 +21,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Map;
+
 public class show_routine extends AppCompatActivity {
     Toolbar toolbar;
     FloatingActionButton fBtnAdd;
@@ -77,8 +79,11 @@ public class show_routine extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                // todo check nested data (activities-day)
-                // documentSnapshot.ge
+                String field = "activities." + day;
+                Log.d("TAG", documentSnapshot.get(field).toString());
+                // D/TAG: {act_one={act_name=one, stop=2:14, start=1:1}}
+                // D/TAG: {act_one={stop=2:50, start=2:20, name=one}, act_two={act_name=two, stop=2:10, start=1:30}}
+
 
 
             }
