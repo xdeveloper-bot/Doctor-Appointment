@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     Toolbar toolbar;
     Button resendBtn;
+    ImageView profileArrow;
     ConstraintLayout verifyEmailLayout;
     TextView txtBookAppointment, txtHealthData, txtDaily, txtAdvice;
     FirebaseAuth fAuth;
@@ -47,6 +49,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         toolbar = findViewById(R.id.dash_toolBar);
         verifyEmailLayout = findViewById(R.id.dash_verifyEmail);
         resendBtn = findViewById(R.id.dash_resendcode);
+        profileArrow = findViewById(R.id.hdr_arrow);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -134,7 +137,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             case R.id.nav_home:
                 onBackPressed();
                 break;
-            case R.id.head_arrow1:
+            case R.id.hdr_arrow:
                 startActivity(new Intent(getApplicationContext(), user_edit_profile.class));
                 break;
             case R.id.nav_share:

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-
     <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
-
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
@@ -16,26 +12,20 @@
     </group>
 
     <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/nav_appoint"
             android:title="Appointments"
             android:icon="@drawable/ic_description"/>
-
         <item
             android:id="@+id/nav_test_booking"
             android:title="Test Booking" />
-
         <item
             android:id="@+id/nav_Consultations"
             android:title="Consultations" />
-
         <item
             android:id="@+id/nav_medical"
             android:title="Medical Records"
             android:icon="@drawable/ic_chat"/>
-
-
     </group>
 
     <group android:checkableBehavior="single">
@@ -43,9 +33,7 @@
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_power"
             android:title="Log Out" />
-
     </group>
-
 
     <group android:checkableBehavior="single">
         <item android:title="Communicate">
@@ -62,10 +50,8 @@
                     android:id="@+id/nav_contact"
                     android:icon="@drawable/doctor_bag"
                     android:title="About Us" />
-
             </menu>
         </item>
     </group>
-
 
 </menu>

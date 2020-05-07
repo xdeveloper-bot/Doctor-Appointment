@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="200dp">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/hdr_img"
         android:layout_width="91dp"
         android:layout_height="91dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="304dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias=".1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_bias=".5"
         app:srcCompat="@drawable/doctor" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/hdr_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DOCTOR APP"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/hdr_img"
+        app:layout_constraintTop_toBottomOf="@+id/hdr_img" />
 
     <ImageView
-        android:id="@+id/head_arrow1"
+        android:id="@+id/hdr_arrow"
         android:layout_width="73dp"
         android:layout_height="75dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintBottom_toBottomOf="@+id/hdr_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias=".9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/hdr_img"
         app:srcCompat="@drawable/ic_chevron" />
 </androidx.constraintlayout.widget.ConstraintLayout>
