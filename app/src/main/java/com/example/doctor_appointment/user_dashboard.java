@@ -75,9 +75,9 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
 
         setSupportActionBar(toolbar);
 
-//        Menu menu = navigationView.getMenu();
-//        menu.findItem(R.id.nav_logout).setVisible(true);
-//        menu.findItem(R.id.arrow).setVisible(true);
+//        Menu ic_menu = navigationView.getMenu();
+//        ic_menu.findItem(R.id.nav_logout).setVisible(true);
+//        ic_menu.findItem(R.id.arrow).setVisible(true);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
