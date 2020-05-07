@@ -113,7 +113,7 @@
             android:layout_marginTop="35dp"
             app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView7"
             app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView7"
-            app:srcCompat="@drawable/ic_home_black_24dp" />
+            app:srcCompat="@drawable/ic_home" />
 
         <TextView
             android:id="@+id/uedtpro_textView10"

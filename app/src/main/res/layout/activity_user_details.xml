@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="@+id/udtl_dob"
         app:layout_constraintTop_toTopOf="@+id/udtl_dob"
         app:layout_constraintVertical_bias=".3"
-        app:srcCompat="@drawable/baseline_calendar_today_black_24" />
+        app:srcCompat="@drawable/ic_today" />
 
     <EditText
         android:id="@+id/udtl_address"
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/udtl_address"
         app:layout_constraintStart_toStartOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/udtl_address"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
+        app:srcCompat="@drawable/ic_home" />
 
     <EditText
         android:id="@+id/udtl_state"
