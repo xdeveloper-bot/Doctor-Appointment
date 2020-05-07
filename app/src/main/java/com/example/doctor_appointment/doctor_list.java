@@ -72,6 +72,7 @@ public class doctor_list extends AppCompatActivity {
 
         fStore.collection("doctors")
                 .whereEqualTo("designation", valFromActivity)
+                //.where()
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

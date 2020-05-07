@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".show_routine">
 
-
     <Toolbar
-        android:id="@+id/srtn_maintoolbar"
+        android:id="@+id/srtn_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -17,34 +16,43 @@
         android:titleTextColor="@color/colorHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </Toolbar>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/srtn_floatingBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:focusable="true"
         android:foregroundGravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/srtn_mainLinearLayout"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintTop_toBottomOf="@+id/srtn_toolbar"
+        app:layout_constraintVertical_bias="0.9"
         app:srcCompat="@drawable/ic_add_white" />
 
-    <LinearLayout
-        android:id="@+id/srtn_mainLinearLayout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/srtn_maintoolbar" />
+        app:layout_constraintTop_toBottomOf="@id/srtn_toolbar"
+        app:layout_constraintVertical_bias="0.02">
 
+        <LinearLayout
+            android:id="@+id/srtn_mainLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/srtn_toolbar" />
 
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
