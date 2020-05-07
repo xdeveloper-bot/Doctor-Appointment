@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,30 +7,47 @@
     tools:context=".show_routine">
 
 
+    <Toolbar
+        android:id="@+id/srtn_maintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:navigationIcon="@drawable/ic_arrow_back_white"
+        android:title="Show Routine"
+        android:titleTextColor="@color/colorHeading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Toolbar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foregroundGravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/srtn_mainLinearLayout"
+        app:layout_constraintVertical_bias="0.93"
+        app:srcCompat="@drawable/ic_add_white" />
+
     <LinearLayout
         android:id="@+id/srtn_mainLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/srtn_maintoolbar" />
 
-        <Toolbar
-            android:id="@+id/srtn_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:navigationIcon="@drawable/ic_arrow_back_white"
-            android:title="Your Routines"
-            android:titleTextColor="@color/colorHeading" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/srtn_floatingBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_add_white"
-            android:layout_margin="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
 
-</ScrollView>
+
+
+
