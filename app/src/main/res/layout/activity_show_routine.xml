@@ -26,10 +26,10 @@
             android:id="@+id/srtn_floatingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="550dp"
+            android:layout_gravity="bottom|end"
             android:clickable="true"
-            app:srcCompat="@drawable/ic_add_white" />
+            app:srcCompat="@drawable/ic_add_white"
+            android:layout_margin="16dp" />
 
     </LinearLayout>
 
