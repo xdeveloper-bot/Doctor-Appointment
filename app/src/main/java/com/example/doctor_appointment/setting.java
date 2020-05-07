@@ -52,10 +52,9 @@ public class setting extends AppCompatActivity {
         txtshare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(setting.this,"Share with Friends and Family",Toast.LENGTH_SHORT).show();
+                Toast.makeText(setting.this, "Share with Friends and Family", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         txtSnooze.setOnClickListener(new View.OnClickListener() {
@@ -105,10 +104,11 @@ public class setting extends AppCompatActivity {
 
     private void showAlertDialog1() {
 
-        AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
+        final AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
         alertdialog.setTitle("Snooze Duration");
         String[] items = {"No popup Notification", "Only When screen is 'ON'", "Only When screen is 'OFF'", "Always Show popup"};
         int checkedItem = 1;
+
         alertdialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -130,10 +130,21 @@ public class setting extends AppCompatActivity {
                         break;
                 }
             }
+        }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
         });
 
+
         AlertDialog alert1 = alertdialog.create();
-        alert1.setCanceledOnTouchOutside(false);
+        alert1.setCanceledOnTouchOutside(true);
         alert1.show();
 
     }
@@ -161,10 +172,20 @@ public class setting extends AppCompatActivity {
                         break;
                 }
             }
+        }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
         });
 
         AlertDialog alert = alertdialog.create();
-        alert.setCanceledOnTouchOutside(false);
+        alert.setCanceledOnTouchOutside(true);
         alert.show();
 
 

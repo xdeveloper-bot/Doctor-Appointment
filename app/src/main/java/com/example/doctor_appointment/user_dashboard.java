@@ -134,7 +134,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             case R.id.nav_home:
                 onBackPressed();
                 break;
-            case R.id.arrow1:
+            case R.id.head_arrow1:
                 startActivity(new Intent(getApplicationContext(), user_edit_profile.class));
                 break;
             case R.id.nav_share:

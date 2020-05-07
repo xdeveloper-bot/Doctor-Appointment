@@ -47,7 +47,7 @@
             android:padding="5dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="236dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -106,9 +106,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="188dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:padding="2dp">
 
                 <ImageView
@@ -183,7 +184,7 @@
             android:padding="5dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="236dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -242,9 +243,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="188dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:padding="2dp">
 
                 <ImageView
@@ -311,7 +313,7 @@
             android:padding="5dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="236dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -358,9 +360,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="188dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:padding="2dp"
                 app:cardBackgroundColor="#FFFFFF">
 
