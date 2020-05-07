@@ -24,11 +24,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:minHeight="?attr/actionBarSize"
-            android:navigationIcon="@drawable/ic_arrowback"
             android:theme="?attr/actionBarTheme"
             android:title="Add Activity"
-            android:titleTextColor="#000000"
-            tools:ignore="HardcodedText" />
+            android:navigationIcon="@drawable/ic_arrow_back_white"
+            android:background="@color/colorPrimaryDark"
+            android:titleTextColor="@color/colorHeading"/>
 
         <LinearLayout
             android:layout_width="match_parent"
