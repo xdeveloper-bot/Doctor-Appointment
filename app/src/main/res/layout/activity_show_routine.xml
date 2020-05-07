@@ -6,30 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".show_routine">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/srtn_mainLinearLayout">
+        android:layout_height="match_parent">
 
-        <Toolbar
-            android:id="@+id/srtn_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:navigationIcon="@drawable/ic_arrow_back_white"
-            android:background="@color/colorPrimaryDark"
-            android:titleTextColor="@color/colorHeading"
-            android:title="Your Routines"/>
+        <LinearLayout
+            android:id="@+id/srtn_mainLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="727dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/srtn_floatingBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="580dp"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_add_white" />
+            <Toolbar
+                android:id="@+id/srtn_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:navigationIcon="@drawable/ic_arrow_back_white"
+                android:title="Your Routines"
+                android:titleTextColor="@color/colorHeading" />
 
-    </LinearLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/srtn_floatingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="550dp"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_add_white" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
