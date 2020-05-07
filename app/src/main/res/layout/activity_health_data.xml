@@ -7,14 +7,12 @@
     tools:context=".health_data"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <Toolbar
         android:id="@+id/hdta_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/ic_arrowback" />
+        android:navigationIcon="@drawable/ic_arrowback"
+        android:title="Your Health Data"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -107,6 +105,5 @@
         android:text="Change Data"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
-
 
 </LinearLayout>

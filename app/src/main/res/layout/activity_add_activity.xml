@@ -18,16 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
+        <Toolbar
             android:id="@+id/aact_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:minHeight="?attr/actionBarSize"
+            android:navigationIcon="@drawable/ic_arrowback"
             android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/ic_arrowback"
-            app:title="Add activity"
-            app:titleTextColor="#000000" />
+            android:title="Add Activity"
+            android:titleTextColor="#000000"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
+                android:maxLines="1"
                 android:hint="Activity" />
 
         </LinearLayout>
@@ -60,13 +62,15 @@
                 android:layout_margin="10dp"
                 app:srcCompat="@drawable/ic_time" />
 
-            <EditText
+            <TextView
                 android:id="@+id/aact_start"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:hint="Start"
-                android:inputType="time" />
+                android:gravity="center_vertical"
+                android:hint="Select Start Time"
+                android:textSize="18sp" />
+
 
         </LinearLayout>
 
@@ -81,13 +85,14 @@
                 android:layout_margin="10dp"
                 app:srcCompat="@drawable/ic_time" />
 
-            <EditText
+            <TextView
                 android:id="@+id/aact_stop"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:hint="Stop"
-                android:inputType="time" />
+                android:gravity="center_vertical"
+                android:hint="Select Stop Time"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -119,8 +124,8 @@
 
     <TimePicker
         android:id="@+id/aact_timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="420dp"
         android:background="#C5BDBD"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,7 +133,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".25"></TimePicker>
+        app:layout_constraintVertical_bias=".25"/>
 
     <Button
         android:id="@+id/aact_startBtn"

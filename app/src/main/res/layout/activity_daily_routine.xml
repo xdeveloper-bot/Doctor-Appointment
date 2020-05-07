@@ -6,18 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".daily_routine">
 
-    <androidx.appcompat.widget.Toolbar
+    <Toolbar
         android:id="@+id/daily_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:navigationIcon="@drawable/ic_arrowback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrowback" />
+        android:title="Your daily Routine"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/daily_tabLayout"
@@ -54,6 +52,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_tabLayout" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

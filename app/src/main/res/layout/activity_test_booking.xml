@@ -7,16 +7,14 @@
     tools:context=".test_booking">
 
     <Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/tbok_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:navigationIcon="@drawable/ic_arrowback"
         android:title="Diagnostics Test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </Toolbar>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -29,7 +27,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/tbok_toolbar" />
 
     <TextView
         android:id="@+id/textView12"

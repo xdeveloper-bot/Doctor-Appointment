@@ -1,15 +1,11 @@
 package com.example.doctor_appointment;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class bookappointment extends AppCompatActivity {
     Toolbar toolbar;
@@ -31,7 +27,6 @@ public class bookappointment extends AppCompatActivity {
         txtheart = findViewById(R.id.bapp_heart);
         txtcancer = findViewById(R.id.bapp_cancer);
 
-        setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

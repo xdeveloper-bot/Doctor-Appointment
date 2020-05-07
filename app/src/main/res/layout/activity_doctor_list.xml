@@ -12,16 +12,15 @@
         android:orientation="vertical"
         android:id="@+id/mainLinearLayout">
 
-        <androidx.appcompat.widget.Toolbar
+        <Toolbar
             android:id="@+id/dlst_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
+            android:navigationIcon="@drawable/ic_arrowback"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_arrowback" />
+            android:title="Search Results"/>
 
         <LinearLayout
             android:id="@+id/dlst_linearLayout1"

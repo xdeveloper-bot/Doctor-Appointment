@@ -1,7 +1,6 @@
 package com.example.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,7 +25,8 @@ import java.util.Map;
 
 public class add_activity extends AppCompatActivity {
     Toolbar toolbar;
-    EditText txtName, txtStart, txtStop;
+    EditText txtName;
+    TextView txtStart, txtStop;
     TimePicker timePicker;
     Button btnAdd, btnCancel, btnStartTime, btnStopTime;
     String time, userID;
@@ -50,9 +52,7 @@ public class add_activity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
-        setSupportActionBar(toolbar);
-
-        if (getIntent().getExtras() != null){
+        if (getIntent().getExtras() != null) {
             day = getIntent().getExtras().getString("day");
             toolbar.setTitle("Add Activity : " + day);
         }
@@ -149,9 +149,11 @@ public class add_activity extends AppCompatActivity {
                 activities.put("activities", days);
 
                 fStore.collection("users").document(userID).set(activities, SetOptions.merge());
-                Toast.makeText(getApplicationContext(), "Activity Added", Toast.LENGTH_SHORT).show();
-                Log.d("TAG", "1111" + activities);
                 // {activities={Monday={act_three={act_name=three, stop=18:50, start=17:40}}}}
+                Toast.makeText(getApplicationContext(), "Activity Added", Toast.LENGTH_SHORT).show();
+                txtName.setText(null);
+                txtStart.setText(null);
+                txtStop.setText(null);
 
             }
         });

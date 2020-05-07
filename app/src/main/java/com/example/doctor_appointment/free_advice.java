@@ -1,10 +1,10 @@
 package com.example.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toolbar;
 
 public class free_advice extends AppCompatActivity {
     Toolbar toolbar;
@@ -16,7 +16,6 @@ public class free_advice extends AppCompatActivity {
 
         toolbar = findViewById(R.id.fad_toolbar);
 
-        setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

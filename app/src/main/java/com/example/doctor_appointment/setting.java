@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class setting extends AppCompatActivity {
-
+    Toolbar toolbar;
     TextView txtSnooze, txtNotification, txtLogout, txtabout, txtprivacy, txtshare, txtrate;
     FirebaseAuth fAuth;
 
@@ -23,6 +24,7 @@ public class setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        toolbar = findViewById(R.id.set_toolBar);
         txtSnooze = findViewById(R.id.snooze);
         txtNotification = findViewById(R.id.notification);
         txtLogout = findViewById(R.id.logout);
@@ -31,6 +33,13 @@ public class setting extends AppCompatActivity {
         txtshare = findViewById(R.id.share);
         txtrate = findViewById(R.id.rate);
         fAuth = FirebaseAuth.getInstance();
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         txtLogout.setOnClickListener(new View.OnClickListener() {
             @Override

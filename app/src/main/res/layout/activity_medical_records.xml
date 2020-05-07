@@ -7,16 +7,14 @@
     tools:context=".medical_records">
 
     <Toolbar
-        android:id="@+id/toolbar3"
+        android:id="@+id/mrcd_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:navigationIcon="@drawable/ic_arrowback"
         android:title="Medical Records"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </Toolbar>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:layout_width="match_parent"
@@ -29,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.97"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/mrcd_toolbar"
+        app:layout_constraintVertical_bias="0.97"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

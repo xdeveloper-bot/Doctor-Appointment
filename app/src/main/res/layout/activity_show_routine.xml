@@ -17,8 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:navigationIcon="@drawable/ic_arrowback"
-            android:title="@string/app_name"/>
-
+            android:title="Your Routines"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/srtn_floatingBtn"
