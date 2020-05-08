@@ -49,7 +49,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         toolbar = findViewById(R.id.dash_toolBar);
         verifyEmailLayout = findViewById(R.id.dash_verifyEmail);
         resendBtn = findViewById(R.id.dash_resendcode);
-        profileArrow = findViewById(R.id.hdr_arrow);
+        View headerView = navigationView.getHeaderView(0);
+        profileArrow = headerView.findViewById(R.id.hdr_arrow);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -75,6 +76,14 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 }
             });
         }
+
+        profileArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(getApplicationContext(), user_profile.class));
+            }
+        });
 
         setSupportActionBar(toolbar);
 
@@ -120,7 +129,6 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
 
     }
 
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -130,15 +138,11 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         }
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
                 onBackPressed();
-                break;
-            case R.id.hdr_arrow:
-                startActivity(new Intent(getApplicationContext(), user_edit_profile.class));
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
