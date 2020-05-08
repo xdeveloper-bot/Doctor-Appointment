@@ -163,7 +163,9 @@ public class add_activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), show_routine.class));
+        Intent i = new Intent(getApplicationContext(), show_routine.class);
+        i.putExtra("day", day);
+        startActivity(i);
         finish();
     }
 }
