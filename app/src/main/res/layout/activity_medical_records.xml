@@ -24,6 +24,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="#979EA3"
+        android:id="@+id/mrcd_record"
         android:text="Add a records"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
