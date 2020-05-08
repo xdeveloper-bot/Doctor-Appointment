@@ -66,11 +66,10 @@ public class user_details extends AppCompatActivity {
 
         uAuth = FirebaseAuth.getInstance();
         uStore = FirebaseFirestore.getInstance();
-
         userID = uAuth.getCurrentUser().getUid();
-
         storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/" + userID + "profile.jpg");
+
+        StorageReference profileRef = storageReference.child("users/" + userID + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -119,7 +118,6 @@ public class user_details extends AppCompatActivity {
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final String name = txtname.getText().toString();
                 final String email = txtemail.getText().toString().trim();
                 final String dob = txtdob.getText().toString().trim();
@@ -164,7 +162,6 @@ public class user_details extends AppCompatActivity {
         if (requestCode == 1000) {
             if (resultCode == Activity.RESULT_OK) {
                 Uri imageuri = data.getData();
-                // profileimage.setImageURI(imageuri);
                 uploadImageToFirebase(imageuri);
             }
         }
@@ -172,7 +169,7 @@ public class user_details extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/" + uAuth.getCurrentUser().getUid() + "profile.jpg");
+        final StorageReference fileref = storageReference.child("users/" + userID + "/profile.jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

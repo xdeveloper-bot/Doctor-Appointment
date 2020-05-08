@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,6 +23,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class medical_records extends AppCompatActivity {
     Toolbar toolbar;
@@ -47,18 +51,10 @@ public class medical_records extends AppCompatActivity {
         });
 
         //add record
+        uAuth = FirebaseAuth.getInstance();
         uStore = FirebaseFirestore.getInstance();
-
         userID = uAuth.getCurrentUser().getUid();
-
         storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/" + userID + "profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into((Target) buttonview);
-            }
-        });
 
         buttonview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +64,6 @@ public class medical_records extends AppCompatActivity {
                 startActivityForResult(openGalleryIntent, 1000);
             }
         });
-
-
-
     }
 
     @Override
@@ -79,7 +72,6 @@ public class medical_records extends AppCompatActivity {
         if (requestCode == 1000) {
             if (resultCode == Activity.RESULT_OK) {
                 Uri imageuri = data.getData();
-                // profileimage.setImageURI(imageuri);
                 uploadImageToFirebase(imageuri);
             }
         }
@@ -87,16 +79,12 @@ public class medical_records extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageuri) {
         //upload image to fire base storage
-        final StorageReference fileref = storageReference.child("users/" + uAuth.getCurrentUser().getUid() + "profile.jpg");
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        StorageReference fileref = storageReference.child("users/" + userID + "/prescription_" + timeStamp + ".jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into((Target) buttonview);
-                    }
-                });
+                Toast.makeText(getApplicationContext(), "File Uploaded Successfully", Toast.LENGTH_SHORT).show();
             }
         })).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -105,5 +93,4 @@ public class medical_records extends AppCompatActivity {
             }
         });
     }
-
 }

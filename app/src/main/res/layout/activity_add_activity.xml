@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:hint="Activity" />
 
         </LinearLayout>

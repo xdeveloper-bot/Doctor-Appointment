@@ -24,8 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class user_dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class user_dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -34,6 +33,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     ConstraintLayout verifyEmailLayout;
     TextView txtBookAppointment, txtHealthData, txtDaily, txtAdvice;
     FirebaseAuth fAuth;
+    FirebaseUser usr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,43 +53,18 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         profileArrow = headerView.findViewById(R.id.hdr_arrow);
 
         fAuth = FirebaseAuth.getInstance();
-
-        final FirebaseUser usr = fAuth.getCurrentUser();
+        usr = fAuth.getCurrentUser();
 
         if (!usr.isEmailVerified()) {
             verifyEmailLayout.setVisibility(View.VISIBLE);
-
-            resendBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(user_dashboard.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d("TAG", "onFailure: " + e.getMessage());
-                        }
-                    });
-                }
-            });
+            resendBtn.setOnClickListener(this);
         }
-
-        profileArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.closeDrawer(GravityCompat.START);
-                startActivity(new Intent(getApplicationContext(), user_profile.class));
-            }
-        });
 
         setSupportActionBar(toolbar);
 
-//        Menu ic_menu = navigationView.getMenu();
-//        ic_menu.findItem(R.id.nav_logout).setVisible(true);
-//        ic_menu.findItem(R.id.arrow).setVisible(true);
+        //Menu ic_menu = navigationView.getMenu();
+        //ic_menu.findItem(R.id.nav_logout).setVisible(true);
+        //ic_menu.findItem(R.id.arrow).setVisible(true);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -99,34 +74,42 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-        txtBookAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), bookappointment.class));
-            }
-        });
+        txtBookAppointment.setOnClickListener(this);
+        txtHealthData.setOnClickListener(this);
+        txtDaily.setOnClickListener(this);
+        txtAdvice.setOnClickListener(this);
+        profileArrow.setOnClickListener(this);
 
-        txtHealthData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), health_data.class));
-            }
-        });
+    }
 
-        txtDaily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), daily_routine.class));
-            }
-        });
-
-        txtAdvice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), free_advice.class));
-            }
-        });
-
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.dash_resendcode:
+                usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(user_dashboard.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+            case R.id.dash_bookAppointment:
+                startActivity(new Intent(this, bookappointment.class));
+                break;
+            case R.id.dash_healthData:
+                startActivity(new Intent(this, health_data.class));
+                break;
+            case R.id.dash_daily:
+                startActivity(new Intent(this, daily_routine.class));
+                break;
+            case R.id.dash_advice:
+                startActivity(new Intent(this, free_advice.class));
+                break;
+            case R.id.hdr_arrow:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(getApplicationContext(), user_profile.class));
+                break;
+        }
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
     @Override
@@ -142,7 +125,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                onBackPressed();
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
@@ -170,7 +153,6 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             case R.id.nav_contact:
                 Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
                 break;
-
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

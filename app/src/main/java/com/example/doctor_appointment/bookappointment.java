@@ -36,6 +36,19 @@ public class bookappointment extends AppCompatActivity {
 
     }
 
+    /*public void btnClicked(View view){
+        Intent i = new Intent(this, doctor_list.class);
+        switch (view.getId()){
+            case R.id.bapp_women:
+                i.putExtra("value", "Women's Health");
+                break;
+            case R.id.:
+                i.putExtra("value", "");
+                break;
+        }
+        startActivity(i);
+    }*/
+
     public void btnWomenClickAct(View v) {
         Intent i = new Intent(this, doctor_list.class);
         i.putExtra("value", txtwomen.getText());
