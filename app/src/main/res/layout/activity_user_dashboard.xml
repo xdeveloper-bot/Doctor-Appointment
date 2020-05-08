@@ -99,7 +99,8 @@
                 <TextView
                     android:id="@+id/dash_bookAppointment"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:onClick="onClick"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -297,7 +298,8 @@
                 <TextView
                     android:id="@+id/dash_healthData"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:onClick="onClick"/>
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -353,7 +355,8 @@
                 <TextView
                     android:id="@+id/dash_daily"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:onClick="onClick"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -431,7 +434,8 @@
                 <TextView
                     android:id="@+id/dash_advice"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:onClick="onClick"/>
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>

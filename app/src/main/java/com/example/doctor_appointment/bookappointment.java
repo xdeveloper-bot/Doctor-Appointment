@@ -15,6 +15,7 @@ public class bookappointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookappointment);
 
+        toolbar = findViewById(R.id.bapp_toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

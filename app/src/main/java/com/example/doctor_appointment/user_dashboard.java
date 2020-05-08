@@ -31,7 +31,6 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     Button resendBtn;
     ImageView profileArrow;
     ConstraintLayout verifyEmailLayout;
-    TextView txtBookAppointment, txtHealthData, txtDaily, txtAdvice;
     FirebaseAuth fAuth;
     FirebaseUser usr;
 
@@ -40,10 +39,6 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
-        txtBookAppointment = findViewById(R.id.dash_bookAppointment);
-        txtHealthData = findViewById(R.id.dash_healthData);
-        txtDaily = findViewById(R.id.dash_daily);
-        txtAdvice = findViewById(R.id.dash_advice);
         drawerLayout = findViewById(R.id.dash_DrawerLayout);
         navigationView = findViewById(R.id.dash_navView);
         toolbar = findViewById(R.id.dash_toolBar);
@@ -74,12 +69,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-        txtBookAppointment.setOnClickListener(this);
-        txtHealthData.setOnClickListener(this);
-        txtDaily.setOnClickListener(this);
-        txtAdvice.setOnClickListener(this);
         profileArrow.setOnClickListener(this);
-
     }
 
     public void onClick(View view) {
@@ -88,7 +78,8 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 usr.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(user_dashboard.this, "Verification Email has been Sent.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(user_dashboard.this, "Verification Email has been Sent.",
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
                 break;
