@@ -1,6 +1,7 @@
 package com.example.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -158,6 +159,11 @@ public class add_activity extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), show_routine.class));
+        finish();
     }
 }
