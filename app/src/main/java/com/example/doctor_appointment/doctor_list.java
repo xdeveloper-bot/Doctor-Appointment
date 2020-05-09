@@ -51,14 +51,14 @@ public class doctor_list extends AppCompatActivity {
 
         toolbar = findViewById(R.id.dlst_toolbar);
         txtSearch = findViewById(R.id.dlst_searchtxt);
-        dateTimeLayout = findViewById(R.id.dlst_dateTimeLayout);
-        txtDate = findViewById(R.id.dlst_date);
+        /*txtDate = findViewById(R.id.dlst_date);
         txtTime = findViewById(R.id.dlst_time);
+        btnSubmit = findViewById(R.id.dlst_submitBtn);
         btnSelectDate = findViewById(R.id.dlst_selectdate);
         btnSelectTime = findViewById(R.id.dlst_selecttime);
-        btnSubmit = findViewById(R.id.dlst_submitBtn);
+        dateTimeLayout = findViewById(R.id.dlst_dateTimeLayout);
         datePicker = findViewById(R.id.dlst_datePicker);
-        timePicker = findViewById(R.id.dlst_timePicker);
+        timePicker = findViewById(R.id.dlst_timePicker);*/
 
         valFromActivity = getIntent().getExtras().getString("value");
         txtSearch.setText(valFromActivity);
@@ -122,9 +122,9 @@ public class doctor_list extends AppCompatActivity {
                                 imgArrow.setImageResource(R.drawable.ic_chevron);
                                 btnBook.setOnClickListener(btnClick);
 
-                                txtName.setTag("Name " + intNum);
+                                //txtName.setTag("Name " + intNum);
                                 btnBook.setId(intNum);
-                                btnBook.setTag("Book " + intNum);
+                                //btnBook.setTag("Book " + intNum);
                                 intNum++;
                                 mainLayout.addView(tempView);
                             }
@@ -135,7 +135,7 @@ public class doctor_list extends AppCompatActivity {
                 });
 
         //Next line here
-        txtTime.setOnClickListener(new View.OnClickListener() {
+        /*txtTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnSubmit.setVisibility(View.GONE);
@@ -192,16 +192,16 @@ public class doctor_list extends AppCompatActivity {
                         date + " Time: " + time, Toast.LENGTH_SHORT).show();
                 dateTimeLayout.setVisibility(View.GONE);
             }
-        });
+        });*/
 
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //Toast.makeText(getApplicationContext(), "Button" + v.getId(), Toast.LENGTH_SHORT).show();
-            docID = v.getTag().toString();
-            dateTimeLayout.setVisibility(View.VISIBLE);
+            Toast.makeText(getApplicationContext(), "Button" + v.getId(), Toast.LENGTH_SHORT).show();
+            //docID = v.getTag().toString();
+            //dateTimeLayout.setVisibility(View.VISIBLE);
         }
     };
 
