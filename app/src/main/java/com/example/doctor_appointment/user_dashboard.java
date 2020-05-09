@@ -10,15 +10,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -84,7 +81,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                     }
                 });
                 break;
-            case R.id.dash_bookAppointment:
+            case R.id.dash_appointments:
                 startActivity(new Intent(this, bookappointment.class));
                 break;
             case R.id.dash_healthData:
@@ -101,7 +98,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(getApplicationContext(), user_profile.class));
                 break;
         }
-        overridePendingTransition(R.anim.our_slide_in_left, R.anim.our_slide_out_right);
+        //overridePendingTransition(R.anim.our_slide_in_left, R.anim.our_slide_out_right);
     }
 
     @Override
@@ -147,7 +144,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-            overridePendingTransition(R.anim.our_slide_in_right, R.anim.our_slide_out_left);
+            //overridePendingTransition(R.anim.our_slide_in_right, R.anim.our_slide_out_left);
         }
     }
 }

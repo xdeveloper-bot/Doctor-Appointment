@@ -97,7 +97,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/dash_bookAppointment"
+                    android:id="@+id/dash_appointments"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="onClick"/>
