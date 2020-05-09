@@ -7,7 +7,7 @@
     tools:context=".timeslotts">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/dlst_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -31,30 +31,30 @@
         app:srcCompat="@drawable/ic_date" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/dlst_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Select Date"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/dlst_time"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/dlst_time"
+        app:layout_constraintTop_toBottomOf="@+id/dlst_time" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/dlst_time"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/dlst_time"
         app:srcCompat="@drawable/ic_time" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/dlst_submitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="107dp"
