@@ -82,7 +82,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 });
                 break;
             case R.id.dash_appointments:
-                startActivity(new Intent(this, bookappointment.class));
+                startActivity(new Intent(this, appointments.class));
                 break;
             case R.id.dash_healthData:
                 startActivity(new Intent(this, health_data.class));

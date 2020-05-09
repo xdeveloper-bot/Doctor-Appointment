@@ -102,7 +102,10 @@ public class doctor_list extends AppCompatActivity {
                                 imgProfile.setImageResource(R.drawable.doctor);
                                 imgArrow.setImageResource(R.drawable.ic_chevron);
                                 btnBook.setOnClickListener(btnClick);
+
+                                txtName.setTag("Name " + intNum);
                                 btnBook.setId(intNum);
+                                btnBook.setTag("Book " + intNum);
                                 intNum++;
                                 mainLayout.addView(tempView);
                             }
@@ -119,17 +122,17 @@ public class doctor_list extends AppCompatActivity {
     View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            /*switch (v.getId()){
-                case 0:
+            switch (v.getTag().toString()){
+                case "Book 0":
                     // action
                     break;
-                case 1:
+                case "Book 1":
                     // as
                     break;
 
                 default:
                     break;
-            }*/
+            }
             Toast.makeText(getApplicationContext(), "Button" + v.getId(), Toast.LENGTH_SHORT).show();
         }
     };

@@ -61,12 +61,5 @@ public class bookappointment extends AppCompatActivity {
                 break;
         }
         startActivity(i);
-        //overridePendingTransition(R.anim.our_slide_in_left, R.anim.our_slide_out_right);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        //overridePendingTransition(R.anim.our_slide_in_right, R.anim.our_slide_out_left);
     }
 }
