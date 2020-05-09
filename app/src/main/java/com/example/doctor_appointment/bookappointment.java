@@ -13,6 +13,7 @@ public class bookappointment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().getAttributes().windowAnimations = R.style.Fade;
         setContentView(R.layout.activity_bookappointment);
 
         toolbar = findViewById(R.id.bapp_toolbar);
@@ -60,6 +61,12 @@ public class bookappointment extends AppCompatActivity {
                 break;
         }
         startActivity(i);
-        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        //overridePendingTransition(R.anim.our_slide_in_left, R.anim.our_slide_out_right);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //overridePendingTransition(R.anim.our_slide_in_right, R.anim.our_slide_out_left);
     }
 }

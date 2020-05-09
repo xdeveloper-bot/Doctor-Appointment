@@ -37,6 +37,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().getAttributes().windowAnimations = R.style.Fade;
         setContentView(R.layout.activity_user_dashboard);
 
         drawerLayout = findViewById(R.id.dash_DrawerLayout);
@@ -100,16 +101,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(getApplicationContext(), user_profile.class));
                 break;
         }
-        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        overridePendingTransition(R.anim.our_slide_in_left, R.anim.our_slide_out_right);
     }
 
     @Override
@@ -147,5 +139,15 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+            overridePendingTransition(R.anim.our_slide_in_right, R.anim.our_slide_out_left);
+        }
     }
 }

@@ -114,7 +114,6 @@ public class add_activity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), show_routine.class));
                 finish();
             }
         });
