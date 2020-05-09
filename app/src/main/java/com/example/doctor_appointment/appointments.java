@@ -19,7 +19,7 @@ public class appointments extends AppCompatActivity {
         setContentView(R.layout.activity_appointments);
 
         toolbar = findViewById(R.id.app_toolbar);
-        floatingActionButton = findViewById(R.id.appoint_plus);
+        floatingActionButton = findViewById(R.id.app_plus);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
