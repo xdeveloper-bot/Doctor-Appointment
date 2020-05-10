@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -27,13 +28,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class doctor_list extends AppCompatActivity {
     EditText txtSearch;
     FirebaseAuth fAuth;
-    String valFromActivity;
+    String valFromActivity, userID;
     FirebaseFirestore fStore;
     ConstraintLayout dateTimeLayout;
     TextView txtDate, txtTime;
@@ -41,8 +45,9 @@ public class doctor_list extends AppCompatActivity {
     DatePicker datePicker;
     TimePicker timePicker;
     Toolbar toolbar;
-    String searchText, docID, time, date;
-    Integer intNum = 0;
+    String searchText, docName, time, date;
+    Integer docID, intNum = 0;
+    LinearLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +64,14 @@ public class doctor_list extends AppCompatActivity {
         dateTimeLayout = findViewById(R.id.dlst_dateTimeLayout);
         datePicker = findViewById(R.id.dlst_datePicker);
         timePicker = findViewById(R.id.dlst_timePicker);
+        mainLayout = findViewById(R.id.mainLinearLayout);
 
         valFromActivity = getIntent().getExtras().getString("value");
         txtSearch.setText(valFromActivity);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +104,6 @@ public class doctor_list extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()){
-                            LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
                             LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                             for (QueryDocumentSnapshot document : task.getResult()){
                                 Log.d("TAG", document.getId() + " ==> " + document.getData());
@@ -122,9 +128,9 @@ public class doctor_list extends AppCompatActivity {
                                 imgArrow.setImageResource(R.drawable.ic_chevron);
                                 btnBook.setOnClickListener(btnClick);
 
-                                txtName.setTag("Name " + intNum);
                                 btnBook.setId(intNum);
-                                btnBook.setTag("Doc_" + intNum);
+                                txtName.setId(intNum + 50);
+                                txtName.setTag(Name);
                                 intNum++;
                                 mainLayout.addView(tempView);
                             }
@@ -161,7 +167,7 @@ public class doctor_list extends AppCompatActivity {
                         calender.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
                             @Override
                             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                date = datePicker.getDayOfMonth() + "-" + datePicker.getMonth() + "-" + datePicker.getYear();
+                                date = datePicker.getDayOfMonth() + "/" + datePicker.getMonth() + "/" + datePicker.getYear();
                             }
                         });
             }
@@ -190,21 +196,32 @@ public class doctor_list extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dateTimeLayout.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(), "DoctorID: " + docID + " Date: " +
-                        date + " Time: " + time, Toast.LENGTH_SHORT).show();
                 // book Appointment
+                Map<String, Object> appTime = new HashMap<>();
+                appTime.put("doctor", docName);
+                appTime.put("date", date);
+                appTime.put("time", time);
+                Map<String, Object> app = new HashMap<>();
+                app.put("app_" + date + "_" + time, appTime);
+                Map<String, Object> apps = new HashMap<>();
+                apps.put("appointments", app);
+                fStore.collection("users").document(userID).set(apps, SetOptions.merge());
 
+                Toast.makeText(getApplicationContext(), "DoctorName: " + docName + " Date: " +
+                        date + " Time: " + time, Toast.LENGTH_SHORT).show();
+                dateTimeLayout.setVisibility(View.GONE);
             }
         });
 
     }
 
-    View.OnClickListener btnClick = new View.OnClickListener() {
+    final View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "Button" + v.getId(), Toast.LENGTH_SHORT).show();
-            docID = v.getTag().toString();
+            //Toast.makeText(getApplicationContext(), "Button_" + v.getId(), Toast.LENGTH_SHORT).show();
+            docID = v.getId();
+            View nameView = mainLayout.findViewById(docID + 50);
+            docName = nameView.getTag().toString();
             dateTimeLayout.setVisibility(View.VISIBLE);
         }
     };
