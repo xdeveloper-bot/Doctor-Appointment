@@ -1,11 +1,13 @@
 package com.example.doctor_appointment;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -21,6 +25,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Map;
 
@@ -44,7 +50,6 @@ public class appointments extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
-
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,16 +87,32 @@ public class appointments extends AppCompatActivity {
                         View tempView = li.inflate(R.layout.appointment_template, null);
                         TextView txtName = tempView.findViewById(R.id.atmp_name);
                         TextView txtDate = tempView.findViewById(R.id.atmp_time);
-                        TextView txtHospital = tempView.findViewById(R.id.atmp_hospital);
-                        TextView txtPhone = tempView.findViewById(R.id.atmp_phone);
+                        final TextView txtHospital = tempView.findViewById(R.id.atmp_hospital);
+                        final TextView txtPhone = tempView.findViewById(R.id.atmp_phone);
                         TextView txtTouch = tempView.findViewById(R.id.atmp_touchTextView);
                         ImageView imgProfile = tempView.findViewById(R.id.atmp_profileImg);
                         ImageView imgDelete = tempView.findViewById(R.id.atmp_deleteImg);
 
+                        // get hospital and number
+                        fStore.collection("doctors")
+                                .whereEqualTo("name", docName)
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()){
+                                            for (QueryDocumentSnapshot document : task.getResult()){
+                                                txtHospital.setText(document.get("hospital").toString());
+                                                txtPhone.setText(document.get("number").toString());
+                                            }
+                                        } else {
+                                            Log.d("TAG", "Error getting documents: ",task.getException());
+                                        }
+                                    }
+                                });
+
                         txtName.setText(docName);
                         txtDate.setText(dateTime);
-                        txtHospital.setText("H");
-                        txtPhone.setText("P");
                         txtTouch.setId(intNum);
                         txtTouch.setTag(docName);
                         txtTouch.setOnClickListener(btnTouchClicked);
