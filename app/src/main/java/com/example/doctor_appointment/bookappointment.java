@@ -62,4 +62,11 @@ public class bookappointment extends AppCompatActivity {
         }
         startActivity(i);
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), appointments.class));
+        overridePendingTransition(R.anim.our_slide_in_top, R.anim.our_slide_out_bottom);
+        finish();
+    }
 }
