@@ -65,7 +65,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(near_hospital.this);
     }
 
     @Override
@@ -194,26 +194,17 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                 break;
 
 
-            case R.id.B_schools:
+            case R.id.B_pharmacy:
                 mMap.clear();
-                String school = "school";
-                url = getUrl(latitude, longitude, school);
+                String pharmacy = "Pharmacy";
+                url = getUrl(latitude, longitude, pharmacy);
                 dataTransfer[0] = mMap;
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(near_hospital.this, "Showing Nearby Schools", Toast.LENGTH_SHORT).show();
+                Toast.makeText(near_hospital.this, "Showing Nearby Pharmacy", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.B_restaurants:
-                mMap.clear();
-                String resturant = "restuarant";
-                url = getUrl(latitude, longitude, resturant);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(near_hospital.this, "Showing Nearby Restaurants", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.B_to:
         }
     }

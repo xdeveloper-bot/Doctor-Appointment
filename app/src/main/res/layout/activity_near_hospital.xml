@@ -49,29 +49,21 @@
         android:text="Hospitals" />
 
     <Button
-        android:id="@+id/B_schools"
+        android:id="@+id/B_pharmacy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TF_location"
         android:layout_toEndOf="@+id/B_hopistals"
         android:onClick="onClick"
-        android:text="Schools" />
+        android:text="Pharmacy" />
 
-    <Button
-        android:id="@+id/B_restaurants"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TF_location"
-        android:layout_toEndOf="@+id/B_schools"
-        android:onClick="onClick"
-        android:text="Restautants" />
 
     <Button
         android:id="@+id/B_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/B_restaurants"
-        android:layout_toEndOf="@+id/B_restaurants"
+        android:layout_alignBottom="@+id/B_pharmacy"
+        android:layout_toEndOf="@+id/B_pharmacy"
         android:onClick="onClick"
         android:text="To" />
 
