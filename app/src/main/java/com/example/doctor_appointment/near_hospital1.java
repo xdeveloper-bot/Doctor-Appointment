@@ -18,13 +18,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.doctor_appointment.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -165,7 +166,7 @@ public class near_hospital1 extends FragmentActivity implements OnMapReadyCallba
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(near_hospital1.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+                Toast.makeText(near_hospital1.this, "Showing Nearby Hospitals", Toast.LENGTH_LONG).show();
                 break;
             case R.id.B_pharmacy:
                 mMap.clear();
