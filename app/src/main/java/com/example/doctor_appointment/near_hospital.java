@@ -41,7 +41,6 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener{
 
-
     private GoogleMap mMap;
     private GoogleApiClient client;
     private LocationRequest locationRequest;
@@ -51,16 +50,13 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
     int PROXIMITY_RADIUS = 10000;
     double latitude,longitude;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_near_hospital);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
-
         }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -70,22 +66,16 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch(requestCode)
-        {
+        switch(requestCode) {
             case REQUEST_LOCATION_CODE:
-                if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                {
-                    if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) !=  PackageManager.PERMISSION_GRANTED)
-                    {
-                        if(client == null)
-                        {
+                if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) !=  PackageManager.PERMISSION_GRANTED) {
+                        if(client == null) {
                             bulidGoogleApiClient();
                         }
                         mMap.setMyLocationEnabled(true);
                     }
-                }
-                else
-                {
+                } else {
                     Toast.makeText(near_hospital.this,"Permission Denied", Toast.LENGTH_SHORT).show();
                 }
         }
@@ -103,30 +93,24 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
     }
 
-
     protected synchronized void bulidGoogleApiClient() {
         client = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
         client.connect();
-
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
         latitude = location.getLatitude();
         longitude = location.getLongitude();
         lastlocation = location;
-        if(currentLocationmMarker != null)
-        {
+        if(currentLocationmMarker != null) {
             currentLocationmMarker.remove();
-
         }
         Log.d("lat = ",""+latitude);
         LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
@@ -138,8 +122,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
 
-        if(client != null)
-        {
+        if(client != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(client,this);
         }
     }
@@ -149,25 +132,18 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
         Object dataTransfer[] = new Object[2];
         Getnearbyplaces getNearbyPlacesData = new Getnearbyplaces();
 
-        switch(v.getId())
-        {
+        switch(v.getId()) {
             case R.id.B_search:
                 EditText tf_location =  findViewById(R.id.TF_location);
                 String location = tf_location.getText().toString();
                 List<Address> addressList;
 
-
-                if(!location.equals(""))
-                {
+                if(!location.equals("")) {
                     Geocoder geocoder = new Geocoder(this);
-
                     try {
                         addressList = geocoder.getFromLocationName(location, 5);
-
-                        if(addressList != null)
-                        {
-                            for(int i = 0;i<addressList.size();i++)
-                            {
+                        if(addressList != null) {
+                            for(int i = 0;i<addressList.size();i++) {
                                 LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
                                 MarkerOptions markerOptions = new MarkerOptions();
                                 markerOptions.position(latLng);
@@ -192,8 +168,6 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                 getNearbyPlacesData.execute(dataTransfer);
                 Toast.makeText(near_hospital.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
                 break;
-
-
             case R.id.B_pharmacy:
                 mMap.clear();
                 String pharmacy = "Pharmacy";
@@ -204,15 +178,13 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                 getNearbyPlacesData.execute(dataTransfer);
                 Toast.makeText(near_hospital.this, "Showing Nearby Pharmacy", Toast.LENGTH_SHORT).show();
                 break;
-
             case R.id.B_to:
+
+                break;
         }
     }
 
-
-    private String getUrl(double latitude , double longitude , String nearbyPlace)
-    {
-
+    private String getUrl(double latitude , double longitude , String nearbyPlace) {
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlaceUrl.append("location="+latitude+","+longitude);
         googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
@@ -221,46 +193,33 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
         googlePlaceUrl.append("&key="+"AIzaSyBLEPBRfw7sMb73Mr88L91Jqh3tuE4mKsE");
 
         Log.d("Nears Hospital", "url = "+googlePlaceUrl.toString());
-
         return googlePlaceUrl.toString();
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-
         locationRequest = new LocationRequest();
         locationRequest.setInterval(100);
         locationRequest.setFastestInterval(1000);
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
-
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED)
-        {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED) {
             LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest, this);
         }
     }
 
-
-    public boolean checkLocationPermission()
-    {
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)  != PackageManager.PERMISSION_GRANTED )
-        {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION))
-            {
+    public boolean checkLocationPermission() {
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)  != PackageManager.PERMISSION_GRANTED ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)) {
                 ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION },REQUEST_LOCATION_CODE);
-            }
-            else
-            {
+            } else {
                 ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION },REQUEST_LOCATION_CODE);
             }
             return false;
-
-        }
-        else
+        } else{
             return true;
+        }
     }
-
 
     @Override
     public void onConnectionSuspended(int i) {

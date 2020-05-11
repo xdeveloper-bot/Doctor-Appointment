@@ -26,9 +26,7 @@ public class DownloadUrl {
 
             String line = "";
             while ((line = br.readLine()) != null) {
-
                 sb.append(line);
-
             }
 
             data = sb.toString();
@@ -45,5 +43,4 @@ public class DownloadUrl {
         }
         return data;
     }
-
 }

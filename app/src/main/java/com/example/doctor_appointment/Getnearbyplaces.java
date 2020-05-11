@@ -13,14 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Getnearbyplaces extends AsyncTask<Object, String, String> {
-
     String googlePlaces;
     GoogleMap mMap;
     String url;
 
     @Override
     protected String doInBackground(Object... objects) {
-
         mMap = (GoogleMap)objects[0];
         url = (String)objects[1];
         DownloadUrl downloadUrl = new DownloadUrl();
@@ -34,7 +32,6 @@ public class Getnearbyplaces extends AsyncTask<Object, String, String> {
 
     @Override
     protected void onPostExecute(String s) {
-
         List<HashMap<String, String>> nearbyPlaceList = null;
         DataParser parser = new DataParser();
         nearbyPlaceList =parser.parse(s);

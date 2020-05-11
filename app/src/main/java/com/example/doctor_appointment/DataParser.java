@@ -45,7 +45,6 @@ public class DataParser {
         int count =jsonArray.length();
         List<HashMap<String, String>> placeList = new ArrayList<>();
         HashMap<String, String> placemap = null;
-
                 for(int i=0;i<count;i++){
                     try {
                         placemap = getplaces((JSONObject) jsonArray.get(i));

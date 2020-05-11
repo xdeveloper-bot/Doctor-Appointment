@@ -91,7 +91,7 @@ public class user_dashboard extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(this, daily_routine.class));
                 break;
             case R.id.dash_advice:
-                startActivity(new Intent(this, free_advice.class));
+                startActivity(new Intent(this, near_hospital.class));
                 break;
             case R.id.hdr_arrow:
                 drawerLayout.closeDrawer(GravityCompat.START);
