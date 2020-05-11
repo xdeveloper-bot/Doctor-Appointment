@@ -47,7 +47,6 @@
         <activity android:name=".add_activity" />
         <activity android:name=".daily_routine" />
         <activity android:name=".free_advice" />
-        <activity android:name=".timeslotts" />
         <activity android:name=".doctor_list" />
         <activity android:name=".setting" />
         <activity android:name=".bookappointment" />
