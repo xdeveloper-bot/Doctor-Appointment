@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5,17 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".near_hospital">
+    tools:context=".near_hospital1">
 
     <EditText
         android:id="@+id/TF_location"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:hint="Name" />
 
     <Button
         android:id="@+id/B_search"
@@ -26,16 +27,14 @@
         android:onClick="onClick"
         android:text="Search" />
 
-
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".near_hospital"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/B_hopistals" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/B_pharmacy"
+        android:layout_marginTop="7dp"
+        tools:context=".near_hospital1" />
 
     <Button
         android:id="@+id/B_hopistals"

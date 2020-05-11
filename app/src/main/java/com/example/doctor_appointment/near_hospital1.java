@@ -18,14 +18,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.doctor_appointment.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -36,7 +35,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-public class near_hospital extends FragmentActivity implements OnMapReadyCallback,
+public class near_hospital1 extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener{
@@ -53,7 +52,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_near_hospital);
+        setContentView(R.layout.activity_near_hospital1);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
@@ -76,7 +75,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                         mMap.setMyLocationEnabled(true);
                     }
                 } else {
-                    Toast.makeText(near_hospital.this,"Permission Denied", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(near_hospital1.this,"Permission Denied", Toast.LENGTH_SHORT).show();
                 }
         }
     }
@@ -166,7 +165,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(near_hospital.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+                Toast.makeText(near_hospital1.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.B_pharmacy:
                 mMap.clear();
@@ -176,7 +175,7 @@ public class near_hospital extends FragmentActivity implements OnMapReadyCallbac
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(near_hospital.this, "Showing Nearby Pharmacy", Toast.LENGTH_SHORT).show();
+                Toast.makeText(near_hospital1.this, "Showing Nearby Pharmacy", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.B_to:
 
