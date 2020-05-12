@@ -1,11 +1,6 @@
 package com.example.doctor_appointment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +16,10 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -84,9 +83,11 @@ public class doctor_list extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 searchText = String.valueOf(s);
@@ -103,9 +104,9 @@ public class doctor_list extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                            for (QueryDocumentSnapshot document : task.getResult()){
+                            for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("TAG", document.getId() + " ==> " + document.getData());
                                 String Name = document.get("name").toString().trim();
                                 String Hospital = document.get("hospital").toString().trim();
@@ -114,12 +115,12 @@ public class doctor_list extends AppCompatActivity {
                                 // Create multiple Card Layout
                                 View tempView = li.inflate(R.layout.doctor_list_templete, null);
 
-                                TextView txtName = (TextView) tempView.findViewById(R.id.tmp_name);
-                                TextView txtSpecialty = (TextView) tempView.findViewById(R.id.tmp_specialty);
-                                TextView txtHospital = (TextView) tempView.findViewById(R.id.tmp_hospital);
-                                ImageView imgProfile = (ImageView) tempView.findViewById(R.id.tmp_profileimg);
-                                ImageView imgArrow = (ImageView) tempView.findViewById(R.id.tmp_arrow);
-                                Button btnBook = (Button) tempView.findViewById(R.id.tmp_btn);
+                                TextView txtName = tempView.findViewById(R.id.tmp_name);
+                                TextView txtSpecialty = tempView.findViewById(R.id.tmp_specialty);
+                                TextView txtHospital = tempView.findViewById(R.id.tmp_hospital);
+                                ImageView imgProfile = tempView.findViewById(R.id.tmp_profileimg);
+                                ImageView imgArrow = tempView.findViewById(R.id.tmp_arrow);
+                                Button btnBook = tempView.findViewById(R.id.tmp_btn);
 
                                 txtName.setText(Name);
                                 txtSpecialty.setText(Designation);
@@ -135,7 +136,7 @@ public class doctor_list extends AppCompatActivity {
                                 mainLayout.addView(tempView);
                             }
                         } else {
-                            Log.d("TAG", "Error getting documents: ",task.getException());
+                            Log.d("TAG", "Error getting documents: ", task.getException());
                         }
                     }
                 });
@@ -167,7 +168,7 @@ public class doctor_list extends AppCompatActivity {
                         calender.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
                             @Override
                             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                date = datePicker.getDayOfMonth() + "/" + datePicker.getMonth() + "/" + datePicker.getYear();
+                                date = datePicker.getDayOfMonth() + "-" + datePicker.getMonth() + "-" + datePicker.getYear();
                             }
                         });
             }
@@ -218,7 +219,6 @@ public class doctor_list extends AppCompatActivity {
     final View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //Toast.makeText(getApplicationContext(), "Button_" + v.getId(), Toast.LENGTH_SHORT).show();
             docID = v.getId();
             View nameView = mainLayout.findViewById(docID + 50);
             docName = nameView.getTag().toString();
@@ -228,9 +228,9 @@ public class doctor_list extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (dateTimeLayout.getVisibility()==View.VISIBLE){
+        if (dateTimeLayout.getVisibility() == View.VISIBLE) {
             dateTimeLayout.setVisibility(View.GONE);
-        }else {
+        } else {
             super.onBackPressed();
         }
     }

@@ -23,10 +23,10 @@
             android:id="@+id/dash_toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_menu_white"
             android:background="@color/colorPrimaryDark"
-            app:titleTextColor="@color/colorHeading"
-            app:title="@string/app_name"/>
+            app:navigationIcon="@drawable/ic_menu_white"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorHeading" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                     android:id="@+id/dash_appointments"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick" />
 
             </androidx.cardview.widget.CardView>
 
@@ -299,7 +299,7 @@
                     android:id="@+id/dash_healthData"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick" />
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -356,7 +356,7 @@
                     android:id="@+id/dash_daily"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick" />
 
             </androidx.cardview.widget.CardView>
 
@@ -435,16 +435,16 @@
                     android:id="@+id/dash_advice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick" />
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dash_verifyEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/dash_verifyEmail">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/dash_black"

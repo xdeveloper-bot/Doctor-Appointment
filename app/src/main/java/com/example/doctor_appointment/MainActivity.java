@@ -1,15 +1,13 @@
 package com.example.doctor_appointment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    public static  int SPLASH = 2000 ;
+    public static int SPLASH = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent h = new Intent(MainActivity.this , user_login.class);
+                Intent h = new Intent(MainActivity.this, user_login.class);
                 startActivity(h);
                 finish();
             }
-        },SPLASH);
+        }, SPLASH);
     }
 }

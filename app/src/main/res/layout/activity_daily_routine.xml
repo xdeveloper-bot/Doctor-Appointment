@@ -10,14 +10,14 @@
         android:id="@+id/daily_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:background="@color/colorPrimaryDark"
+        android:navigationIcon="@drawable/ic_arrow_back_white"
+        android:title="Your daily Routine"
         android:titleTextColor="@color/colorHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:title="Your daily Routine"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/daily_tabLayout"

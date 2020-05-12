@@ -19,8 +19,8 @@ public class Getnearbyplaces extends AsyncTask<Object, String, String> {
 
     @Override
     protected String doInBackground(Object... objects) {
-        mMap = (GoogleMap)objects[0];
-        url = (String)objects[1];
+        mMap = (GoogleMap) objects[0];
+        url = (String) objects[1];
         DownloadUrl downloadUrl = new DownloadUrl();
         try {
             googlePlaces = downloadUrl.readurl(url);
@@ -34,12 +34,12 @@ public class Getnearbyplaces extends AsyncTask<Object, String, String> {
     protected void onPostExecute(String s) {
         List<HashMap<String, String>> nearbyPlaceList = null;
         DataParser parser = new DataParser();
-        nearbyPlaceList =parser.parse(s);
+        nearbyPlaceList = parser.parse(s);
         showNearByPlaces(nearbyPlaceList);
     }
 
-    private void showNearByPlaces(List<HashMap<String, String>> nearbyPlacesList){
-        for(int i=0; i<nearbyPlacesList.size();i++){
+    private void showNearByPlaces(List<HashMap<String, String>> nearbyPlacesList) {
+        for (int i = 0; i < nearbyPlacesList.size(); i++) {
             MarkerOptions markerOptions = new MarkerOptions();
             HashMap<String, String> googleplace = nearbyPlacesList.get(i);
 
@@ -50,7 +50,7 @@ public class Getnearbyplaces extends AsyncTask<Object, String, String> {
 
             LatLng latLng = new LatLng(lat, lng);
             markerOptions.position(latLng);
-            markerOptions.title(placename+" : "+vicinity);
+            markerOptions.title(placename + " : " + vicinity);
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
 
             mMap.addMarker(markerOptions);

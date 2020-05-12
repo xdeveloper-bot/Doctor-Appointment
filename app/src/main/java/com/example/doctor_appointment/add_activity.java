@@ -1,12 +1,8 @@
 package com.example.doctor_appointment;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +11,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -138,7 +134,7 @@ public class add_activity extends AppCompatActivity {
                 }
 
                 Map<String, Object> time = new HashMap<>();
-                time.put("act_name", Name);
+                time.put("name", Name);
                 time.put("start", Start);
                 time.put("stop", Stop);
                 Map<String, Object> activity = new HashMap<>();
@@ -149,15 +145,12 @@ public class add_activity extends AppCompatActivity {
                 activities.put("activities", days);
 
                 fStore.collection("users").document(userID).set(activities, SetOptions.merge());
-                // {activities={Monday={act_three={act_name=three, stop=18:50, start=17:40}}}}
                 Toast.makeText(getApplicationContext(), "Activity Added", Toast.LENGTH_SHORT).show();
                 txtName.setText(null);
                 txtStart.setText(null);
                 txtStop.setText(null);
-
             }
         });
-
     }
 
     @Override

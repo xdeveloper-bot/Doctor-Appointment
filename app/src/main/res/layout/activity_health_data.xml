@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".health_data"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".health_data">
 
     <Toolbar
         android:id="@+id/hdta_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:background="@color/colorPrimaryDark"
-        android:titleTextColor="@color/colorHeading"
-        android:title="Your Health Data"/>
+        android:navigationIcon="@drawable/ic_arrow_back_white"
+        android:title="Your Health Data"
+        android:titleTextColor="@color/colorHeading" />
 
     <TextView
         android:id="@+id/textView4"

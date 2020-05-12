@@ -1,9 +1,5 @@
 package com.example.doctor_appointment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +10,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,31 +29,16 @@ public class user_login extends AppCompatActivity {
     ProgressBar progress;
     FirebaseAuth uAuth;
 
-    /*
-    public void init(){
-
-        btnsignup= (Button)findViewById(R.id.btn_signup);
-        btnsignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent reg = new Intent(userlogin.this, userregister.class);
-                startActivity(reg);
-            }
-        });
-
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
-        //init();
 
-        txtemail = (EditText) findViewById(R.id.ulin_email);
-        txtpass = (EditText) findViewById(R.id.ulin_pass);
-        btnlogin = (Button) findViewById(R.id.ulin_loginBtn);
-        txtregister = (TextView) findViewById(R.id.ulin_createaccount);
-        progress = (ProgressBar) findViewById(R.id.ulin_progressBar);
+        txtemail = findViewById(R.id.ulin_email);
+        txtpass = findViewById(R.id.ulin_pass);
+        btnlogin = findViewById(R.id.ulin_loginBtn);
+        txtregister = findViewById(R.id.ulin_createaccount);
+        progress = findViewById(R.id.ulin_progressBar);
         uAuth = FirebaseAuth.getInstance();
         forgetpass = findViewById(R.id.ulin_forget);
 
@@ -62,11 +47,9 @@ public class user_login extends AppCompatActivity {
             finish();
         }
 
-        //Login Button
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String email = txtemail.getText().toString().trim();
                 String pass = txtpass.getText().toString().trim();
 
@@ -143,7 +126,6 @@ public class user_login extends AppCompatActivity {
             }
         });
 
-
         //Create Account Btn
         txtregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,6 +134,5 @@ public class user_login extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

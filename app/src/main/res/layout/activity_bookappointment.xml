@@ -11,10 +11,10 @@
         android:id="@+id/bapp_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:background="@color/colorPrimaryDark"
-        android:titleTextColor="@color/colorHeading"
-        android:title="Search"/>
+        android:navigationIcon="@drawable/ic_arrow_back_white"
+        android:title="Search"
+        android:titleTextColor="@color/colorHeading" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/tmp_CardView"
@@ -425,8 +425,6 @@
                 </androidx.cardview.widget.CardView>
             </androidx.gridlayout.widget.GridLayout>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
 </LinearLayout>

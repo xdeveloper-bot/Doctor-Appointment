@@ -10,153 +10,153 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/uedpro_img"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="47dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man" />
+            <ImageView
+                android:id="@+id/uedpro_img"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="47dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/man" />
 
-        <ImageView
-            android:id="@+id/uedtpro_imageView4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="220dp"
-            android:layout_marginBottom="35dp"
-            app:layout_constraintBottom_toTopOf="@+id/uedtpro_imageView6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            <ImageView
+                android:id="@+id/uedtpro_imageView4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginBottom="35dp"
+                app:layout_constraintBottom_toTopOf="@+id/uedtpro_imageView6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_profile" />
 
-        <TextView
-            android:id="@+id/uedtpro_textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
-            android:text="Full Name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView4" />
+            <TextView
+                android:id="@+id/uedtpro_textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="85dp"
+                android:text="Full Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView4" />
 
-        <TextView
-            android:id="@+id/uedpro_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Your Name"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_textView4"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView4" />
+            <TextView
+                android:id="@+id/uedpro_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Your Name"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_textView4"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView4" />
 
-        <ImageView
-            android:id="@+id/uedtpro_imageView6"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="35dp"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView4"
-            app:srcCompat="@drawable/ic_email" />
+            <ImageView
+                android:id="@+id/uedtpro_imageView6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView4"
+                app:srcCompat="@drawable/ic_email" />
 
-        <TextView
-            android:id="@+id/uedtpro_textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email Id"
-            app:layout_constraintStart_toStartOf="@+id/uedpro_name"
-            app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView6" />
+            <TextView
+                android:id="@+id/uedtpro_textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Id"
+                app:layout_constraintStart_toStartOf="@+id/uedpro_name"
+                app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView6" />
 
-        <TextView
-            android:id="@+id/uedpro_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Your Email Address"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_textView6"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView6" />
+            <TextView
+                android:id="@+id/uedpro_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Your Email Address"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_textView6"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView6" />
 
-        <ImageView
-            android:id="@+id/uedtpro_imageView7"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="35dp"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView6"
-            app:srcCompat="@drawable/ic_phone" />
+            <ImageView
+                android:id="@+id/uedtpro_imageView7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView6"
+                app:srcCompat="@drawable/ic_phone" />
 
-        <TextView
-            android:id="@+id/uedtpro_textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone"
-            app:layout_constraintStart_toStartOf="@+id/uedpro_email"
-            app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView7" />
+            <TextView
+                android:id="@+id/uedtpro_textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                app:layout_constraintStart_toStartOf="@+id/uedpro_email"
+                app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView7" />
 
-        <TextView
-            android:id="@+id/uedpro_mobile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Your Mobile No."
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_textView8"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView8" />
+            <TextView
+                android:id="@+id/uedpro_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Your Mobile No."
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_textView8"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView8" />
 
-        <ImageView
-            android:id="@+id/uedtpro_imageView8"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="35dp"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView7"
-            app:srcCompat="@drawable/ic_home" />
+            <ImageView
+                android:id="@+id/uedtpro_imageView8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="35dp"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_imageView7"
+                app:srcCompat="@drawable/ic_home" />
 
-        <TextView
-            android:id="@+id/uedtpro_textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            app:layout_constraintStart_toStartOf="@+id/uedpro_mobile"
-            app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView8" />
+            <TextView
+                android:id="@+id/uedtpro_textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                app:layout_constraintStart_toStartOf="@+id/uedpro_mobile"
+                app:layout_constraintTop_toTopOf="@+id/uedtpro_imageView8" />
 
-        <TextView
-            android:id="@+id/uedpro_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Your Address"
-            app:layout_constraintStart_toStartOf="@+id/uedtpro_textView10"
-            app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView10" />
+            <TextView
+                android:id="@+id/uedpro_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Your Address"
+                app:layout_constraintStart_toStartOf="@+id/uedtpro_textView10"
+                app:layout_constraintTop_toBottomOf="@+id/uedtpro_textView10" />
 
 
-    <Button
-        android:id="@+id/uedpro_changebtn"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#979EA3"
-        android:text="Change Profile"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uedpro_address" />
+            <Button
+                android:id="@+id/uedpro_changebtn"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#979EA3"
+                android:text="Change Profile"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uedpro_address" />
 
-    <Button
-        android:id="@+id/uedpro_resetbtn"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#979EA8"
-        android:text="Reset Password"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/uedpro_changebtn"
-        app:layout_constraintTop_toBottomOf="@+id/uedpro_changebtn" />
+            <Button
+                android:id="@+id/uedpro_resetbtn"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#979EA8"
+                android:text="Reset Password"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toStartOf="@+id/uedpro_changebtn"
+                app:layout_constraintTop_toBottomOf="@+id/uedpro_changebtn" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 

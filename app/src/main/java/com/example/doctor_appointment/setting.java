@@ -1,16 +1,15 @@
 package com.example.doctor_appointment;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -87,7 +86,6 @@ public class setting extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void showAlertDialog2() {
@@ -107,12 +105,9 @@ public class setting extends AppCompatActivity {
             }
         });
         alertdialog.create().show();
-
     }
 
-
     private void showAlertDialog1() {
-
         final AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
         alertdialog.setTitle("Snooze Duration");
         String[] items = {"No popup Notification", "Only When screen is 'ON'", "Only When screen is 'OFF'", "Always Show popup"};
@@ -125,15 +120,12 @@ public class setting extends AppCompatActivity {
                     case 0:
                         Toast.makeText(setting.this, "No popup Notification", Toast.LENGTH_SHORT).show();
                         break;
-
                     case 1:
                         Toast.makeText(setting.this, "Only When screen is 'ON'", Toast.LENGTH_SHORT).show();
                         break;
-
                     case 2:
                         Toast.makeText(setting.this, "Only When screen is 'OFF'", Toast.LENGTH_SHORT).show();
                         break;
-
                     case 3:
                         Toast.makeText(setting.this, "Always Show popup", Toast.LENGTH_SHORT).show();
                         break;
@@ -151,15 +143,12 @@ public class setting extends AppCompatActivity {
             }
         });
 
-
         AlertDialog alert1 = alertdialog.create();
         alert1.setCanceledOnTouchOutside(true);
         alert1.show();
-
     }
 
     private void showAlertDialog() {
-
         AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
         alertdialog.setTitle("Snooze Duration");
         String[] items = {"snooze after 5 second", "Snooze after 10 second", "Snooze after 15 second"};
@@ -171,11 +160,9 @@ public class setting extends AppCompatActivity {
                     case 0:
                         Toast.makeText(setting.this, "Snooze after 5 second", Toast.LENGTH_SHORT).show();
                         break;
-
                     case 1:
                         Toast.makeText(setting.this, "Snooze after 10 second", Toast.LENGTH_SHORT).show();
                         break;
-
                     case 2:
                         Toast.makeText(setting.this, "Snooze after 15 second", Toast.LENGTH_SHORT).show();
                         break;
@@ -196,9 +183,5 @@ public class setting extends AppCompatActivity {
         AlertDialog alert = alertdialog.create();
         alert.setCanceledOnTouchOutside(true);
         alert.show();
-
-
     }
-
-
 }

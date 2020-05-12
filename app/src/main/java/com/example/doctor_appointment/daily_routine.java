@@ -47,10 +47,12 @@ public class daily_routine extends AppCompatActivity {
                 pager.setCurrentItem(tab.getPosition());
 
             }
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 

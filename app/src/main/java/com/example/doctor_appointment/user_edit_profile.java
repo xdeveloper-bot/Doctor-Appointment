@@ -1,21 +1,20 @@
 package com.example.doctor_appointment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,8 +31,8 @@ import com.squareup.picasso.Picasso;
 
 public class user_edit_profile extends AppCompatActivity {
     ImageView profileimg;
-    Button btnchange,btnreset;
-    TextView txtname,txtemail,txtmobile,txtaddress;
+    Button btnchange, btnreset;
+    TextView txtname, txtemail, txtmobile, txtaddress;
     FirebaseAuth uAuth;
     FirebaseFirestore fstore;
     StorageReference storageReference;
@@ -45,21 +44,21 @@ public class user_edit_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_edit_profile);
 
-        profileimg=findViewById(R.id.uedpro_img);
-        btnchange=findViewById(R.id.uedpro_changebtn);
-        btnreset=findViewById(R.id.uedpro_resetbtn);
-        txtname=findViewById(R.id.uedpro_name);
-        txtemail=findViewById(R.id.uedpro_email);
-        txtmobile=findViewById(R.id.uedpro_mobile);
-        txtaddress=findViewById(R.id.uedpro_address);
+        profileimg = findViewById(R.id.uedpro_img);
+        btnchange = findViewById(R.id.uedpro_changebtn);
+        btnreset = findViewById(R.id.uedpro_resetbtn);
+        txtname = findViewById(R.id.uedpro_name);
+        txtemail = findViewById(R.id.uedpro_email);
+        txtmobile = findViewById(R.id.uedpro_mobile);
+        txtaddress = findViewById(R.id.uedpro_address);
 
-        uAuth=FirebaseAuth.getInstance();
-        fstore=FirebaseFirestore.getInstance();
-        storageReference= FirebaseStorage.getInstance().getReference();
-        userID=uAuth.getCurrentUser().getUid();
-        user= uAuth.getCurrentUser();
+        uAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
+        userID = uAuth.getCurrentUser().getUid();
+        user = uAuth.getCurrentUser();
 
-        DocumentReference documentReference=fstore.collection("users").document(userID);
+        DocumentReference documentReference = fstore.collection("users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -70,7 +69,7 @@ public class user_edit_profile extends AppCompatActivity {
             }
         });
 
-        StorageReference profileRef = storageReference.child("users/"+ userID +"profile.jpg");
+        StorageReference profileRef = storageReference.child("users/" + userID + "profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -81,7 +80,7 @@ public class user_edit_profile extends AppCompatActivity {
         btnchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),user_details.class));
+                startActivity(new Intent(getApplicationContext(), user_details.class));
             }
         });
 

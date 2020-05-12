@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".user_details">
 
-
     <ImageView
         android:id="@+id/udtl_profileimg"
         android:layout_width="100dp"

@@ -1,7 +1,5 @@
 package com.example.doctor_appointment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +7,9 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-public class rating extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class rating extends AppCompatActivity {
     Button btnsubmit;
     RatingBar ratingBar;
 
@@ -23,16 +22,12 @@ public class rating extends AppCompatActivity {
 
     }
 
-
-    public void onBtnClick(View v){
-        float ratingvalue= ratingBar.getRating();
-        Toast.makeText(rating.this, "Rating is:"+ratingvalue,Toast.LENGTH_SHORT).show();
+    public void onBtnClick(View v) {
+        float ratingvalue = ratingBar.getRating();
+        Toast.makeText(rating.this, "Rating is:" + ratingvalue, Toast.LENGTH_SHORT).show();
 
         startActivity(new Intent(getApplicationContext(), setting.class));
         finish();
 
     }
-
-
-
 }

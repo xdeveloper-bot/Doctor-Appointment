@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
-
 public class DataParser {
-    private HashMap<String, String> getplaces(JSONObject googleplacesJson){
+    private HashMap<String, String> getplaces(JSONObject googleplacesJson) {
         HashMap<String, String> googleplacesmap = new HashMap<>();
         String placename = "-NA-";
         String vicinity = "-NA-";
@@ -20,10 +18,10 @@ public class DataParser {
         String reference = "";
 
         try {
-            if(!googleplacesJson.isNull("name")){
+            if (!googleplacesJson.isNull("name")) {
                 placename = googleplacesJson.getString("name");
             }
-            if(!googleplacesJson.isNull("Vicinity")){
+            if (!googleplacesJson.isNull("Vicinity")) {
                 vicinity = googleplacesJson.getString("Vicinity");
             }
             latitude = googleplacesJson.getJSONObject("geometrt").getJSONObject("location").getString("lat");
@@ -41,21 +39,23 @@ public class DataParser {
         }
         return googleplacesmap;
     }
-    private List<HashMap<String, String>> getplace(JSONArray jsonArray){
-        int count =jsonArray.length();
+
+    private List<HashMap<String, String>> getplace(JSONArray jsonArray) {
+        int count = jsonArray.length();
         List<HashMap<String, String>> placeList = new ArrayList<>();
         HashMap<String, String> placemap = null;
-                for(int i=0;i<count;i++){
-                    try {
-                        placemap = getplaces((JSONObject) jsonArray.get(i));
-                        placeList.add(placemap);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-                return placeList;
+        for (int i = 0; i < count; i++) {
+            try {
+                placemap = getplaces((JSONObject) jsonArray.get(i));
+                placeList.add(placemap);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return placeList;
     }
-    public List<HashMap<String,String>> parse(String jsonData){
+
+    public List<HashMap<String, String>> parse(String jsonData) {
         JSONObject jsonObject;
         JSONArray jsonArray = null;
 

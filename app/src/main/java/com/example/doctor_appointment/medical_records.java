@@ -1,18 +1,17 @@
 package com.example.doctor_appointment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,8 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,7 +47,6 @@ public class medical_records extends AppCompatActivity {
             }
         });
 
-        //add record
         uAuth = FirebaseAuth.getInstance();
         uStore = FirebaseFirestore.getInstance();
         userID = uAuth.getCurrentUser().getUid();
@@ -78,7 +74,6 @@ public class medical_records extends AppCompatActivity {
     }
 
     private void uploadImageToFirebase(Uri imageuri) {
-        //upload image to fire base storage
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         StorageReference fileref = storageReference.child("users/" + userID + "/prescription_" + timeStamp + ".jpg");
         fileref.putFile(imageuri).addOnSuccessListener((new OnSuccessListener<UploadTask.TaskSnapshot>() {

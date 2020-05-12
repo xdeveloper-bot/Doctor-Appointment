@@ -23,12 +23,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimaryDark"
             android:minHeight="?attr/actionBarSize"
+            android:navigationIcon="@drawable/ic_arrow_back_white"
             android:theme="?attr/actionBarTheme"
             android:title="Add Activity"
-            android:navigationIcon="@drawable/ic_arrow_back_white"
-            android:background="@color/colorPrimaryDark"
-            android:titleTextColor="@color/colorHeading"/>
+            android:titleTextColor="@color/colorHeading" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,8 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:singleLine="true"
-                android:hint="Activity" />
+                android:hint="Activity"
+                android:singleLine="true" />
 
         </LinearLayout>
 
@@ -70,7 +70,6 @@
                 android:gravity="center_vertical"
                 android:hint="Select Start Time"
                 android:textSize="18sp" />
-
 
         </LinearLayout>
 
@@ -133,7 +132,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".25"/>
+        app:layout_constraintVertical_bias=".25" />
 
     <Button
         android:id="@+id/aact_startBtn"

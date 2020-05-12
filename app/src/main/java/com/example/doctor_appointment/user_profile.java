@@ -1,8 +1,5 @@
 package com.example.doctor_appointment;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +24,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class user_profile extends AppCompatActivity {
-    TextView txtname,txtedit,txtreminder,txtprecription,txtshare,txtlogout;
+    TextView txtname, txtedit, txtreminder, txtprecription, txtshare, txtlogout;
     FirebaseAuth uAuth;
     FirebaseFirestore uStore;
     Toolbar toolbar;
@@ -37,18 +37,18 @@ public class user_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        profileimage=findViewById(R.id.upro_profilepic);
-        txtname=findViewById(R.id.upro_name);
-        txtedit=findViewById(R.id.upro_edit);
-        txtreminder=findViewById(R.id.upro_reminder);
-        txtprecription=findViewById(R.id.upro_precription);
-        txtshare=findViewById(R.id.upro_share);
-        txtlogout=findViewById(R.id.upro_logout);
-        toolbar=findViewById(R.id.upro_toolbar);
+        profileimage = findViewById(R.id.upro_profilepic);
+        txtname = findViewById(R.id.upro_name);
+        txtedit = findViewById(R.id.upro_edit);
+        txtreminder = findViewById(R.id.upro_reminder);
+        txtprecription = findViewById(R.id.upro_precription);
+        txtshare = findViewById(R.id.upro_share);
+        txtlogout = findViewById(R.id.upro_logout);
+        toolbar = findViewById(R.id.upro_toolbar);
 
         storageReference = FirebaseStorage.getInstance().getReference();
-        uAuth=FirebaseAuth.getInstance();
-        uStore=FirebaseFirestore.getInstance();
+        uAuth = FirebaseAuth.getInstance();
+        uStore = FirebaseFirestore.getInstance();
         userID = uAuth.getCurrentUser().getUid();
 
         DocumentReference documentReference = uStore.collection("users").document(userID);
@@ -59,7 +59,7 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
-        StorageReference profileRef = storageReference.child("users/"+ userID +"profile.jpg");
+        StorageReference profileRef = storageReference.child("users/" + userID + "profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -84,21 +84,21 @@ public class user_profile extends AppCompatActivity {
         txtreminder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(user_profile.this,"Reminder clicked.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_profile.this, "Reminder clicked.", Toast.LENGTH_SHORT).show();
             }
         });
 
         txtprecription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(user_profile.this,"Prescription clicked.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_profile.this, "Prescription clicked.", Toast.LENGTH_SHORT).show();
             }
         });
 
         txtshare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(user_profile.this,"Share",Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_profile.this, "Share", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,6 +110,5 @@ public class user_profile extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

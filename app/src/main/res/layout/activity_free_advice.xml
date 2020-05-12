@@ -15,11 +15,11 @@
             android:id="@+id/fad_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:navigationIcon="@drawable/ic_arrow_back_white"
             android:background="@color/colorPrimaryDark"
-            android:titleTextColor="@color/colorHeading"
+            android:navigationIcon="@drawable/ic_arrow_back_white"
             android:title="Ask Free Question"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            android:titleTextColor="@color/colorHeading"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <ImageView
             android:id="@+id/imageView17"
@@ -105,7 +105,6 @@
             android:gravity="start|top"
             android:hint="Desciption(min100 chars)"
             android:inputType="textMultiLine" />
-
 
     </RelativeLayout>
 </LinearLayout>

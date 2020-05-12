@@ -10,13 +10,13 @@
         android:id="@+id/tbok_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:background="@color/colorPrimaryDark"
-        android:titleTextColor="@color/colorHeading"
+        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:title="Diagnostics Test"
+        android:titleTextColor="@color/colorHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView8"

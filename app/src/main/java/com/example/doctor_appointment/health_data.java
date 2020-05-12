@@ -15,7 +15,6 @@ public class health_data extends AppCompatActivity {
     TextView txtBp, txtSugar, txtDiabetes, txtOther;
     String valBp, valSugar, valDiabetes, valOther;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,7 @@ public class health_data extends AppCompatActivity {
         txtDiabetes = findViewById(R.id.hdta_diabetes);
         txtOther = findViewById(R.id.hdta_other);
 
-        if (getIntent().getExtras() != null){
+        if (getIntent().getExtras() != null) {
             valBp = getIntent().getExtras().getString("bp");
             valSugar = getIntent().getExtras().getString("sugar");
             valDiabetes = getIntent().getExtras().getString("diabetes");

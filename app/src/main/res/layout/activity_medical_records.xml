@@ -10,27 +10,27 @@
         android:id="@+id/mrcd_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:background="@color/colorPrimaryDark"
-        android:titleTextColor="@color/colorHeading"
+        android:navigationIcon="@drawable/ic_arrow_back_white"
         android:title="Medical Records"
+        android:titleTextColor="@color/colorHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/mrcd_record"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="#979EA3"
-        android:id="@+id/mrcd_record"
         android:text="Add a records"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mrcd_toolbar"
-        app:layout_constraintVertical_bias="0.97"/>
+        app:layout_constraintVertical_bias="0.97" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
