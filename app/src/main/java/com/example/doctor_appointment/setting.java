@@ -92,7 +92,7 @@ public class setting extends AppCompatActivity {
         AlertDialog.Builder alertdialog = new AlertDialog.Builder(setting.this);
         alertdialog.setCancelable(false);
         alertdialog.setTitle("About Us");
-        alertdialog.setMessage("Yash Gupta and Deepanshu Varshney ko Billioner bna dega ye app");
+        alertdialog.setMessage("This app is use for patient convenient");
         alertdialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
